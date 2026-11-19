@@ -1,0 +1,10 @@
+Actual split-suite rerun after interrupted monolithic invocation:
+
+tests/meta/test_credit_speed.py: 19 passed, 1 skipped in 28.96s
+tests/meta/{test_framework,test_throughput,test_gpu_entrypoint}.py: 38 passed in 44.95s
+tests/{test_phase1,test_v2,test_tracking,test_experiments}.py: 25 passed in 10.32s
+Total distinct tests: 82 passed, 1 CUDA skip (CPU-only host).
+The previous monolithic rerun exited with SIGTERM (143); its partial output is not a successful test result.
+
+After adding explicit episode/exploration/downstream return fields:
+end_to_end_checkpoint_resume_and_logs + batch_resume_and_optimizer_budget: 2 passed in 7.48s.

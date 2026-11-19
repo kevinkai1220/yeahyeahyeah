@@ -208,7 +208,8 @@ state and per-world Q tables do not.
 
 The main objective is `lambda * sum(B rewards) + sum(K rewards)`, with neural
 `gamma=1.0`. GAE lambda (default .95) is distinct from exploration reward lambda
-(default .1). Advantages are normalized within each updated rollout/policy segment.
+(default .1). Legacy advantages are normalized within each updated rollout/policy segment.
+The corrected config uses policy-specific multi-episode batch normalization; see the diagnostics section below.
 The neural PPO minibatch is one complete recurrent trajectory, with configurable
 PPO epochs. No time-shuffled recurrent minibatches are used.
 
@@ -219,7 +220,7 @@ PPO epochs. No time-shuffled recurrent minibatches are used.
 | Dual Neural | One frozen-during-collection B+K rollout; B explorer and K exploiter receive separate PPO losses/optimizers | Frozen explorer produces B; independent exploiter replays history, then frozen/online K |
 | Dual Q | Shares the Neural-trained explorer; paired training-world Q diagnostics, no extra neural training | Same B history/state as Dual Neural; reverse offline TD replay then online Q |
 
-Full-episode dual GAE uses the corresponding acting policy's value at each step,
+Legacy full-episode dual GAE uses the corresponding acting policy's value at each step,
 including the exploiter value at the B/K boundary. Exploration actions therefore
 receive downstream credit; exploitation never learns the explorer's actions as
 its own PPO actions. Recurrent history replay can carry gradients through context,
@@ -353,3 +354,24 @@ require more training and a suitable compute environment. PPO opponent exact ora
 and DDP are not implemented. Main history categories measure observed informativeness;
 no hidden-rule-independent collector can guarantee discovery of every hidden optimum
 in an arbitrarily short noisy prefix.
+
+
+## Corrected credit assignment and adaptation-speed diagnostics
+
+Use `configs/meta/corrected.json` for new batch PPO training. The historical
+default remains a legacy comparison; do not resume an old final checkpoint under
+a changed objective. The corrected path batches independent episodes per policy,
+normalizes advantages across that policy's batch, and uses the observed complete
+suffix return for explorer boundary credit. Online test adaptation retains its
+separate single-world normalization setting and never uses future rewards.
+
+[Implementation, theory, tests, pilot commands and Phase 3–6 interfaces](docs/meta_learning_diagnostics.md)
+include history interventions, finite-horizon oracle-normalized adaptation curves,
+confirmed time-to-threshold, right censoring, RMST, paired bootstrap, and raw JSONL
+backfill. Original full-study results are preserved. Full study is not started
+by the diagnostic runner.
+
+Actual CPU pilot results and limitations are recorded in
+[the credit-diagnostics report](analysis/credit_diagnostics/REPORT.md).
+Corrected training does not yet establish improved held-out neural performance;
+CUDA execution remains unverified on the available CPU-only machine.

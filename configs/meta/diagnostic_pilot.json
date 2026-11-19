@@ -1,0 +1,17 @@
+{
+  "training": {
+    "train_worlds": 12, "pretraining_episodes": 24, "episodes": 96,
+    "hidden": 32, "exploration_steps": 8, "exploitation_steps": 32,
+    "learning_rate": 0.001, "ppo_epochs": 4, "history_pool_size": 3,
+    "rollout_batch_size": 8, "advantage_normalization": "batch", "dual_credit": "observed_suffix",
+    "pretraining_ppo": {"rollout_batch_size": 8, "advantage_normalization": "batch"}
+  },
+  "evaluation": {
+    "num_test_worlds": 6, "seeds": [0,1,2], "update_interval": 16,
+    "exploration_budgets": [8], "exploitation_budgets": [32], "auc_windows": [32],
+    "history_reference": false, "bootstrap_replicates": 200,
+    "adaptation_speed": {"window": 16, "hold": 8, "thresholds": [0.25,0.5,0.75,0.9]},
+    "online_advantage_normalization": "legacy_episode"
+  },
+  "logging": {"save_trajectories": true, "save_plots": true, "checkpoint_interval": 8}
+}

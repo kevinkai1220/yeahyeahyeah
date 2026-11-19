@@ -1,0 +1,96 @@
+B64 Type3: [{'regime': 'A3', 'B': 64, 'metric': 'exploitation_mean', 'mean': 0.45150438377718677, 'ci_low': 0.3237853779688105, 'ci_high': 0.579526741010092, 'n': 500, 'seed_means': {'0': 0.35170261535036745, '1': 0.5041751144178139, '2': 0.47190948550514167, '3': 0.6049851138024434, '4': 0.3247495898101676}, 'world_win_fraction': 0.634}, {'regime': 'A3', 'B': 64, 'metric': 'total_return', 'mean': -12.946340168434547, 'ci_low': -30.185474002258218, 'ci_high': 4.1136311874294735, 'n': 500, 'seed_means': {'0': -30.39117193600004, '1': -6.51660924551358, '2': -9.565393875222789, '3': 6.024353565839203, '4': -24.282879351275536}, 'world_win_fraction': 0.446}, {'regime': 'A3', 'B': 64, 'metric': 'auc_128', 'mean': -46.23736924852636, 'ci_low': -56.76461262398483, 'ci_high': -36.15973429672738, 'n': 500, 'seed_means': {'0': -59.97101365266627, '1': -43.19451387848986, '2': -43.62056093423225, '3': -34.996340969062935, '4': -49.404416808180486}, 'world_win_fraction': 0.282}]
+TYPE2 SEED BIAS [
+  {
+    "seed": 0,
+    "exploration_pair_frequencies": {
+      "BB": 0.84625,
+      "BA": 0.06875,
+      "AB": 0.0675,
+      "CB": 0.0075,
+      "AA": 0.005625,
+      "BC": 0.004375
+    },
+    "optimal_utilization_by_true_pair": {
+      "AA": 0.5941840277777778,
+      "BB": 0.11376953125,
+      "CC": 0.0107421875
+    },
+    "discovery": 0.35,
+    "discovered_neural_utilization": 0.146875,
+    "discovered_q_utilization": 0.6669642857142857
+  },
+  {
+    "seed": 1,
+    "exploration_pair_frequencies": {
+      "BB": 0.955,
+      "CB": 0.020625,
+      "BC": 0.01375,
+      "AB": 0.008125,
+      "BA": 0.0025
+    },
+    "optimal_utilization_by_true_pair": {
+      "BB": 0.001644736842105263,
+      "CC": 0.6526041666666667,
+      "AA": 0.03369140625
+    },
+    "discovery": 0.38,
+    "discovered_neural_utilization": 0.001644736842105263,
+    "discovered_q_utilization": 0.725328947368421
+  },
+  {
+    "seed": 2,
+    "exploration_pair_frequencies": {
+      "BB": 0.879375,
+      "AB": 0.054375,
+      "BA": 0.054375,
+      "CB": 0.00375,
+      "AA": 0.00625,
+      "BC": 0.001875
+    },
+    "optimal_utilization_by_true_pair": {
+      "AA": 0.150390625,
+      "CC": 0.8129340277777778,
+      "BB": 0.01220703125
+    },
+    "discovery": 0.34,
+    "discovered_neural_utilization": 0.019301470588235295,
+    "discovered_q_utilization": 0.7159926470588235
+  },
+  {
+    "seed": 3,
+    "exploration_pair_frequencies": {
+      "AA": 0.969375,
+      "CA": 0.00375,
+      "AC": 0.00625,
+      "AB": 0.009375,
+      "BA": 0.01125
+    },
+    "optimal_utilization_by_true_pair": {
+      "CC": 0.0,
+      "BB": 0.3849826388888889,
+      "AA": 0.14583333333333334
+    },
+    "discovery": 0.33,
+    "discovered_neural_utilization": 0.14583333333333334,
+    "discovered_q_utilization": 0.7348484848484849
+  },
+  {
+    "seed": 4,
+    "exploration_pair_frequencies": {
+      "BA": 0.03875,
+      "BB": 0.9225,
+      "AB": 0.03375,
+      "CB": 0.000625,
+      "BC": 0.0025,
+      "AA": 0.001875
+    },
+    "optimal_utilization_by_true_pair": {
+      "AA": 0.6517137096774194,
+      "BB": 0.0,
+      "CC": 0.146875
+    },
+    "discovery": 0.41,
+    "discovered_neural_utilization": 0.03467987804878049,
+    "discovered_q_utilization": 0.7122713414634146
+  }
+]

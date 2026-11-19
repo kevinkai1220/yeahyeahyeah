@@ -150,7 +150,7 @@ class Game:
         self.opponent_rng = np.random.default_rng(opponent_seed)
         self.opponent_kind = opponent_kind
         self.opponent_model = opponent_model
-        if opponent_kind not in ('random', 'fixed', 'ppo'):
+        if opponent_kind not in ('random', 'fixed', 'constant', 'ppo'):
             raise ValueError(opponent_kind)
         if opponent_kind == 'ppo' and (opponent_model is None or opponent_model.n_actions != 3):
             raise ValueError('PPO opponent requires a three-action pretrained model')
@@ -166,6 +166,8 @@ class Game:
             raise ValueError('invalid action or finished episode')
         if self.opponent_kind == 'random':
             b = int(self.opponent_rng.integers(3))
+        elif self.opponent_kind == 'constant':
+            b = 0
         elif self.opponent_kind == 'fixed':
             b = self.t % 3
         else:
@@ -190,17 +192,18 @@ class Game:
         return copy.deepcopy(self, memo)
 
 
-def oracle_values(world, horizon, opponent):
+def oracle_values(world, horizon, opponent, random_agent=False):
     """Adapted from marl.oracle: exact finite-horizon DP for iid/cyclic opponents."""
-    if opponent not in ('random', 'fixed'):
+    if opponent not in ('random', 'fixed', 'constant'):
         raise ValueError('Exact oracle unavailable for recurrent PPO opponent')
     values = np.zeros((horizon + 1, 4, 4))
     for t in reversed(range(horizon)):
-        p = np.full(3, 1 / 3) if opponent == 'random' else np.eye(3)[t % 3]
+        p = np.full(3, 1 / 3) if opponent == 'random' else np.eye(3)[0 if opponent == 'constant' else t % 3]
         future = values[t + 1, :3, :3]
         if t % 2 == 0:
-            values[t] = ((world.base + future) * p).sum(-1).max()
+            q = ((world.base + future) * p).sum(-1)
+            values[t] = q.mean() if random_agent else q.max()
         else:
             q = ((world.base + world.bonus + future) * p).sum(-1)
-            values[t, :3, :3] = q.max(-1)
+            values[t, :3, :3] = q.mean(-1) if random_agent else q.max(-1)
     return values

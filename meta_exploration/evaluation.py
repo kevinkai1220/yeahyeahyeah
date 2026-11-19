@@ -76,7 +76,7 @@ def metrics(history, world, B, opponent, config, reference=None):
         if k <= len(rewards):
             m[f'auc_{k}'] = float(rewards[:k].sum())
             m[f'auc_mean_{k}'] = float(rewards[:k].mean())
-    if opponent in ('random', 'fixed'):
+    if opponent in ('random', 'fixed', 'constant'):
         values = oracle_values(world, len(history), opponent)
         m['oracle_expected_return'] = float(values[0, 3, 3])
         m['oracle_regret'] = float(values[0, 3, 3] - means.sum())
@@ -90,6 +90,8 @@ def metrics(history, world, B, opponent, config, reference=None):
     if reference is not None:
         m['history_only_reference_expected_return'] = reference
         m['history_transfer_gap'] = reference - float(means[B:].sum())
+    from .adaptation import history_speed
+    m['adaptation_speed'] = history_speed(history, world, B, opponent, config)
     return m
 
 
@@ -98,7 +100,7 @@ def evaluate_world(config, models, world, seed, mode, opponent_model=None,
     B, K = config['training']['exploration_steps'], config['training']['exploitation_steps']
     online = mode == 'online'
     initial = make_game(world, B + K, seed, config, opponent_model)
-    results, update_counts = {}, {}
+    results, update_counts, update_diagnostics = {}, {}, {}
     if frozen_single is not None:
         assert not online
         results['single_policy'], updates = frozen_single, []
@@ -109,9 +111,12 @@ def evaluate_world(config, models, world, seed, mode, opponent_model=None,
         if not online:
             assert_equal(single.model, models['single_policy'])
     update_counts['single_policy'] = sum(u['updates'] for u in updates)
+    update_diagnostics['single_policy'] = dict(optimizer_update_seconds=sum(u['update_seconds'] for u in updates),
+        optimized_transitions=sum(u['transitions'] for u in updates), ppo_updates=updates)
     q = QLearner(config['q_learning'], seed)
     results['q_learning'] = collect(initial.snapshot(), q, B + K, online_q=True)
     update_counts['q_learning'] = 0
+    update_diagnostics['q_learning'] = dict(td_updates=q.update_count,td_update_seconds=q.update_seconds,offline_replay_updates=0)
     if exploration is None:
         shared_game = initial.snapshot()
         explorer = Controller(models['explorer'], seed)
@@ -133,9 +138,13 @@ def evaluate_world(config, models, world, seed, mode, opponent_model=None,
             assert_equal(exploit.model, models['dual_neural'])
     results['dual_neural'] = prefix + suffix
     update_counts['dual_neural'] = sum(u['updates'] for u in updates)
+    update_diagnostics['dual_neural'] = dict(optimizer_update_seconds=sum(u['update_seconds'] for u in updates),
+        optimized_transitions=sum(u['transitions'] for u in updates), ppo_updates=updates)
     q = QLearner(config['q_learning'], seed + 10000); q.replay(prefix)
     results['dual_q_table'] = prefix + collect(post_exploration.snapshot(), q, K, online_q=True)
     update_counts['dual_q_table'] = 0
+    update_diagnostics['dual_q_table'] = dict(td_updates=q.update_count,td_update_seconds=q.update_seconds,
+        offline_replay_updates=B*config['q_learning']['replay_passes'])
     if 'q_explorer' in models:
         game = initial.snapshot()
         controller = Controller(clone_model(models['q_explorer']), seed)
@@ -143,6 +152,8 @@ def evaluate_world(config, models, world, seed, mode, opponent_model=None,
         q = QLearner(config['q_learning'], seed+10000); q.replay(qprefix)
         results['dual_q_aware'] = qprefix + collect(game, q, K, online_q=True)
         update_counts['dual_q_aware'] = 0
+        update_diagnostics['dual_q_aware'] = dict(td_updates=q.update_count,td_update_seconds=q.update_seconds,
+            offline_replay_updates=B*config['q_learning']['replay_passes'])
     reference = None
     if config['evaluation']['history_reference']:
         qc = dict(config['q_learning'], replay_passes=50, epsilon_start=0., epsilon_end=0.)
@@ -155,6 +166,7 @@ def evaluate_world(config, models, world, seed, mode, opponent_model=None,
         summaries[method] = metrics(history, world, B, initial.opponent_kind, config,
                                     reference if method in ('dual_neural', 'dual_q_table') else None)
         summaries[method]['online_optimizer_steps'] = update_counts[method]
+        summaries[method]['adaptation_compute'] = update_diagnostics[method]
         summaries[method]['q_updates_enabled'] = method in ('q_learning', 'dual_q_table', 'dual_q_aware')
     return results, summaries
 

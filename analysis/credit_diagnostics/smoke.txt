@@ -1,0 +1,3 @@
+Training B/seed_0 on cpu
+Evaluating B/seed_0 on cpu, frozen batch=32
+run complete: runs/credit_smoke_v1

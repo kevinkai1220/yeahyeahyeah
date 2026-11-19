@@ -1,0 +1,9 @@
+{
+  "torch_version": "2.15.0+cpu",
+  "cuda_build": null,
+  "cuda_available": false,
+  "visible_devices": null,
+  "devices": [],
+  "usable_devices": [],
+  "nvidia_smi": "[Errno 2] No such file or directory: 'nvidia-smi'"
+}

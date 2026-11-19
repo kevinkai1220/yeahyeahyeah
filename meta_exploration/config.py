@@ -12,7 +12,8 @@ DEFAULT = {
                  'learning_rate': .0003, 'ppo_epochs': 4, 'clip': .2,
                  'value_coefficient': .5, 'entropy_coefficient': .01, 'max_grad_norm': .5,
                  'history_pool_size': 6, 'history_sampling_ratios': [.4, .3, .3],
-                 'privileged_curriculum': False, 'single_k_only': False, 'q_aware': False},
+                 'privileged_curriculum': False, 'single_k_only': False, 'q_aware': False, 'rollout_batch_size': 1,
+                 'advantage_normalization': 'legacy_episode', 'dual_credit': 'legacy_cross_critic'},
     'q_learning': {'alpha': .2, 'gamma': .99, 'epsilon_start': .3, 'epsilon_end': .05,
                    'epsilon_decay_steps': 160, 'replay_passes': 10},
     'evaluation': {'num_test_worlds': 100, 'seeds': [0, 1, 2, 3, 4],
@@ -45,7 +46,10 @@ def load_config(path=None):
     assert t['exploration_steps'] > 0 and t['exploitation_steps'] > 0
     assert 0 <= t['gamma'] <= 1 and 0 <= t['gae_lambda'] <= 1
     assert 0 <= t['exploration_lambda'] <= 1
-    assert t['train_worlds'] >= 3 and t['pretraining_episodes'] >= 3
+    assert t['rollout_batch_size'] >= 1
+    assert t['advantage_normalization'] in ('batch', 'legacy_episode', 'off')
+    assert t['dual_credit'] in ('observed_suffix', 'legacy_cross_critic')
+    assert t['train_worlds'] >= 1 and t['pretraining_episodes'] >= 3
     assert t['history_pool_size'] >= 3 and len(t['history_sampling_ratios']) == 3
     assert all(x >= 0 for x in t['history_sampling_ratios']) and sum(t['history_sampling_ratios']) > 0
     assert e['update_interval'] > 0 and e['num_test_worlds'] > 0

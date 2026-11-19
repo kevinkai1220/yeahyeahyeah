@@ -1,0 +1,5 @@
+regime,uniform_random_expected_exploitation_mean,best_immediate_fixed_action_expected_mean,note
+A1,0.8634537478044324,1.8561618542343203,Analytical hidden-parameter diagnostic; not a trained/evaluated agent. Exact finite-horizon expectations with iid/cyclic opponent.
+A2,0.4772004596123427,2.5053821427546015,Analytical hidden-parameter diagnostic; not a trained/evaluated agent. Exact finite-horizon expectations with iid/cyclic opponent.
+A3,0.470055902157899,2.502061527190113,Analytical hidden-parameter diagnostic; not a trained/evaluated agent. Exact finite-horizon expectations with iid/cyclic opponent.
+B,0.6067287651200759,2.277909944228201,Analytical hidden-parameter diagnostic; not a trained/evaluated agent. Exact finite-horizon expectations with iid/cyclic opponent.

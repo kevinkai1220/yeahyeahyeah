@@ -1,0 +1,218 @@
+[
+  {
+    "stage": "easy",
+    "variant": "legacy",
+    "contrast": "real minus reward_shuffled",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy",
+    "contrast": "real minus action_relabelled",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy",
+    "contrast": "real minus reset",
+    "mean": -0.025061832902770347,
+    "ci_low": -0.08043695094437113,
+    "ci_high": 0.014364781299307926,
+    "n_pairs": 18
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy_batch",
+    "contrast": "real minus reward_shuffled",
+    "mean": -0.0012481619651607298,
+    "ci_low": -0.004992647860642919,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy_batch",
+    "contrast": "real minus action_relabelled",
+    "mean": -0.00816785767100973,
+    "ci_low": -0.03267143068403892,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy_batch",
+    "contrast": "real minus reset",
+    "mean": -0.02290479763112013,
+    "ci_low": -0.08351503259357275,
+    "ci_high": 0.03286507125142798,
+    "n_pairs": 18
+  },
+  {
+    "stage": "easy",
+    "variant": "batch_cross_critic",
+    "contrast": "real minus reward_shuffled",
+    "mean": -0.0042503474494899355,
+    "ci_low": -0.014505065867638285,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "easy",
+    "variant": "batch_cross_critic",
+    "contrast": "real minus action_relabelled",
+    "mean": -0.01241820512049969,
+    "ci_low": -0.046670634997669554,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "easy",
+    "variant": "batch_cross_critic",
+    "contrast": "real minus reset",
+    "mean": -0.02557387890294836,
+    "ci_low": -0.09141041018614836,
+    "ci_high": 0.03965844328106825,
+    "n_pairs": 18
+  },
+  {
+    "stage": "easy",
+    "variant": "corrected",
+    "contrast": "real minus reward_shuffled",
+    "mean": -0.0012481619651607298,
+    "ci_low": -0.004992647860642919,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "easy",
+    "variant": "corrected",
+    "contrast": "real minus action_relabelled",
+    "mean": -0.009416019636170484,
+    "ci_low": -0.037664078544681935,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "easy",
+    "variant": "corrected",
+    "contrast": "real minus reset",
+    "mean": -0.020068417123060383,
+    "ci_low": -0.08840244963152745,
+    "ci_high": 0.04422928720030019,
+    "n_pairs": 18
+  },
+  {
+    "stage": "type1",
+    "variant": "corrected",
+    "contrast": "real minus reward_shuffled",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "type1",
+    "variant": "corrected",
+    "contrast": "real minus action_relabelled",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "type1",
+    "variant": "corrected",
+    "contrast": "real minus reset",
+    "mean": -0.026399714686986663,
+    "ci_low": -0.06680817262654076,
+    "ci_high": 0.0028856638933026286,
+    "n_pairs": 18
+  },
+  {
+    "stage": "type2",
+    "variant": "corrected",
+    "contrast": "real minus reward_shuffled",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "type2",
+    "variant": "corrected",
+    "contrast": "real minus action_relabelled",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "type2",
+    "variant": "corrected",
+    "contrast": "real minus reset",
+    "mean": 0.11662200682364628,
+    "ci_low": 0.007426614509422003,
+    "ci_high": 0.2400132717408095,
+    "n_pairs": 18
+  },
+  {
+    "stage": "type3",
+    "variant": "corrected",
+    "contrast": "real minus reward_shuffled",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "type3",
+    "variant": "corrected",
+    "contrast": "real minus action_relabelled",
+    "mean": -0.02730675642543121,
+    "ci_low": -0.10922702570172484,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "type3",
+    "variant": "corrected",
+    "contrast": "real minus reset",
+    "mean": 0.002240209662359808,
+    "ci_low": -0.11140286131307855,
+    "ci_high": 0.1034962715205569,
+    "n_pairs": 18
+  },
+  {
+    "stage": "mixed_noise",
+    "variant": "corrected",
+    "contrast": "real minus reward_shuffled",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "mixed_noise",
+    "variant": "corrected",
+    "contrast": "real minus action_relabelled",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 18
+  },
+  {
+    "stage": "mixed_noise",
+    "variant": "corrected",
+    "contrast": "real minus reset",
+    "mean": -0.010452949012924588,
+    "ci_low": -0.10570800323641756,
+    "ci_high": 0.08577341368657504,
+    "n_pairs": 18
+  }
+]

@@ -5,6 +5,7 @@ replay and clipped surrogate follow marl.ppo, with GAE, context masks and versio
 """
 from dataclasses import dataclass
 import copy
+import time
 import numpy as np
 import torch
 from torch.distributions import Categorical
@@ -42,7 +43,7 @@ class Controller:
         self.model, self.rng = model, np.random.default_rng(seed)
         self.hidden = None
         self.context = []
-        self.version = 0
+        self.version = getattr(model, "policy_version", 0)
 
     @property
     def device(self):
@@ -91,6 +92,8 @@ class QLearner:
         self.rng = np.random.default_rng(seed)
         self.q = np.zeros((2, 4, 4, 3))
         self.steps = 0
+        self.update_count = 0
+        self.update_seconds = 0.
 
     def act(self, observation):
         c = self.config
@@ -105,9 +108,12 @@ class QLearner:
         return a, dict(epsilon=epsilon, q_values=values.tolist(), action_probs=p.tolist())
 
     def update(self, t):
+        start = time.perf_counter()
         index = t.observation.q_state() + (t.action,)
         future = 0. if t.done else self.q[t.next_observation.q_state()].max()
         self.q[index] += self.config['alpha'] * (t.reward + self.config['gamma'] * future - self.q[index])
+        self.update_count += 1
+        self.update_seconds += time.perf_counter() - start
 
     def replay(self, history):
         # Prefix end is not terminal. Reverse backup propagates delayed reward.
@@ -139,44 +145,142 @@ def targets(history, config, start_step=0, bootstrap=0.):
                bootstrap, tr['gamma'], tr['gae_lambda'])
 
 
-def ppo_update(controller, optimizer, history, advantages, returns, config, prefix=(), refresh=True):
-    if not history:
-        return dict(updates=0, transitions=0, loss=0.)
-    versions = {t.info['policy_version'] for t in history}
-    if versions != {controller.version}:
-        raise ValueError(f'Off-policy rollout versions {versions}, expected {controller.version}')
-    model, device = controller.model, controller.device
+def dual_targets(prefix, suffix, config):
+    """Train-only boundary: observed suffix return, never the other critic.
+
+    GAE within B bootstraps at B with MC G_K. This is a sampled continuation
+    target, not an environment termination. Lambda attenuates earlier credit;
+    lambda=1 gives the complete weighted return minus the prefix critic.
+    """
     tr = config['training']
-    x = torch.tensor(np.array(list(prefix) + [t.observation.vector() for t in history]), device=device)[None]
-    actions = torch.tensor([t.action for t in history], device=device)
-    old_logs = torch.tensor([t.info['log_prob'] for t in history], device=device)
-    adv = torch.tensor(np.asarray(advantages, dtype=np.float32), device=device)
-    ret = torch.tensor(np.asarray(returns, dtype=np.float32), device=device)
-    adv = (adv - adv.mean()) / (adv.std(unbiased=False) + 1e-8)
-    losses, kls = [], []
-    for _ in range(tr['ppo_epochs']):
-        # Replay the prefix with current weights; gradients may flow through history,
-        # but prefix actions do not enter the exploiter surrogate.
-        logits, values, _ = model(x)
-        dist = Categorical(logits=logits[0, len(prefix):, 0])
-        logs = dist.log_prob(actions)
-        ratio = (logs - old_logs).exp()
-        surrogate = torch.minimum(ratio * adv, ratio.clamp(1-tr['clip'], 1+tr['clip']) * adv)
-        loss = -surrogate.mean() + tr['value_coefficient'] * (values[0, len(prefix):, 0] - ret).square().mean()
-        loss -= tr['entropy_coefficient'] * dist.entropy().mean()
-        if not torch.isfinite(loss):
-            raise FloatingPointError('Nonfinite PPO loss')
-        optimizer.zero_grad(set_to_none=True)
-        loss.backward()
-        torch.nn.utils.clip_grad_norm_(model.parameters(), tr['max_grad_norm'], error_if_nonfinite=True)
-        optimizer.step()
-        losses.append(float(loss.detach()))
-        kls.append(float(((ratio-1) - (logs-old_logs)).mean().detach()))
-    controller.version += 1
-    if refresh:
-        controller.refresh()
-    return dict(updates=tr['ppo_epochs'], transitions=len(history), loss=float(np.mean(losses)),
-                approximate_kl=float(np.mean(kls)), policy_version=controller.version)
+    if tr.get('dual_credit', 'legacy_cross_critic') == 'legacy_cross_critic':
+        a, r = targets(prefix + suffix, config)
+        return (a[:len(prefix)], r[:len(prefix)]), (a[len(prefix):], r[len(prefix):])
+    if suffix and not suffix[-1].done:
+        raise ValueError('Observed-suffix credit requires complete training episodes')
+    continuation = sum(tr['gamma'] ** i * t.reward for i, t in enumerate(suffix))
+    return targets(prefix, config, bootstrap=continuation), targets(suffix, config, len(prefix))
+
+
+def normalize_advantages(arrays, mode):
+    """Actor-only normalization. Ragged arrays contain valid tokens only."""
+    arrays = [np.asarray(a, dtype=np.float32) for a in arrays]
+    if mode == 'off':
+        return arrays
+    if mode == 'legacy_episode':
+        return [(a-a.mean()) / (a.std()+1e-8) for a in arrays]
+    if mode != 'batch':
+        raise ValueError(f'Unknown advantage normalization {mode}')
+    all_a = np.concatenate(arrays)
+    return [(a-all_a.mean()) / (all_a.std()+1e-8) for a in arrays]
+
+
+def ppo_batch_update(controller, optimizer, episodes, config, refresh=False, normalization=None):
+    """episodes=(history, raw_advantages, critic_targets, context_vectors).
+
+    Right padding is excluded from every loss/statistic by slicing valid tokens.
+    GRU rows start at independent zero states; prefixes condition only their row.
+    All old log probabilities must belong to this model's current version.
+    """
+    episodes = [e for e in episodes if len(e[0])]
+    if not episodes:
+        return dict(updates=0, transitions=0, loss=0.)
+    model, device = controller.model, controller.device
+    expected = getattr(model, 'policy_version', controller.version)
+    versions = {t.info['policy_version'] for h, _, _, _ in episodes for t in h}
+    if versions != {expected} or controller.version != expected:
+        raise ValueError(f'Off-policy rollout versions {versions}, expected {expected}')
+    tr = config['training']
+    norm = normalization or tr.get('advantage_normalization', 'legacy_episode')
+    normalized = normalize_advantages([e[1] for e in episodes], norm)
+    sequences = []
+    for h, a, r, prefix in episodes:
+        if len(h) != len(a) or len(h) != len(r):
+            raise ValueError('Target length mismatch')
+        sequences.append(torch.as_tensor(np.array(list(prefix)+[t.observation.vector() for t in h]), device=device))
+    x = torch.nn.utils.rnn.pad_sequence(sequences, batch_first=True)
+    actions = torch.tensor([t.action for h, _, _, _ in episodes for t in h], device=device)
+    old_logs = torch.tensor([t.info['log_prob'] for h, _, _, _ in episodes for t in h], device=device)
+    adv = torch.tensor(np.concatenate(normalized), device=device)
+    ret = torch.tensor(np.concatenate([e[2] for e in episodes]), dtype=torch.float32, device=device)
+    raw = np.concatenate([e[1] for e in episodes])
+    before = torch.cat([p.detach().flatten().clone() for p in model.parameters()])
+    stats = []
+    start = time.monotonic()
+    was_training = model.training
+    model.train()  # cuDNN RNN backward requires the forward to run in train mode.
+    try:
+        for _ in range(tr['ppo_epochs']):
+            logits, values, _ = model(x)
+            valid_logits = torch.cat([logits[i, len(e[3]):len(e[3])+len(e[0]), 0] for i,e in enumerate(episodes)])
+            valid_values = torch.cat([values[i, len(e[3]):len(e[3])+len(e[0]), 0] for i,e in enumerate(episodes)])
+            dist = Categorical(logits=valid_logits)
+            logs = dist.log_prob(actions)
+            ratio = (logs-old_logs).exp()
+            actor_loss = -torch.minimum(ratio*adv, ratio.clamp(1-tr['clip'],1+tr['clip'])*adv).mean()
+            critic_loss = (valid_values-ret).square().mean()
+            entropy = dist.entropy().mean()
+            loss = actor_loss + tr['value_coefficient']*critic_loss - tr['entropy_coefficient']*entropy
+            if not torch.isfinite(loss):
+                raise FloatingPointError('Nonfinite PPO loss')
+            parameters = tuple(model.parameters())
+            def grad_norm(term):
+                grads = torch.autograd.grad(term, parameters, retain_graph=True, allow_unused=True)
+                return float(torch.sqrt(sum(g.square().sum() for g in grads if g is not None)).detach())
+            actor_grad = grad_norm(actor_loss)
+            critic_grad = grad_norm(tr['value_coefficient']*critic_loss)
+            optimizer.zero_grad(set_to_none=True)
+            loss.backward()
+            total_grad = torch.nn.utils.clip_grad_norm_(parameters, tr['max_grad_norm'], error_if_nonfinite=True)
+            optimizer.step()
+            stats.append(dict(loss=float(loss.detach()), actor_loss=float(actor_loss.detach()),
+                critic_loss=float(critic_loss.detach()), entropy=float(entropy.detach()),
+                actor_gradient_norm=actor_grad, critic_gradient_norm=critic_grad,
+                gradient_norm=float(total_grad),
+                approximate_kl=float(((ratio-1)-(logs-old_logs)).mean().detach()),
+                clip_fraction=float(((ratio-1).abs()>tr['clip']).float().mean().detach()),
+                value_explained_variance=float((1-(ret-valid_values).var(unbiased=False)/(ret.var(unbiased=False)+1e-8)).detach())))
+        controller.version = expected+1
+        model.policy_version = controller.version
+        if refresh:
+            controller.refresh()
+    finally:
+        model.train(was_training)
+    if device.type == 'cuda':
+        torch.cuda.synchronize(device)
+    after = torch.cat([p.detach().flatten() for p in model.parameters()])
+    return dict(updates=tr['ppo_epochs'], transitions=len(actions), episodes=len(episodes),
+        policy_version=controller.version, rollout_policy_version=expected,
+        normalization=norm, raw_advantage_mean=float(raw.mean()), raw_advantage_std=float(raw.std()),
+        raw_advantage_min=float(raw.min()), raw_advantage_max=float(raw.max()),
+        normalized_advantage_mean=float(adv.mean()), normalized_advantage_std=float(adv.std(unbiased=False)),
+        normalized_episode_advantage_means=[float(a.mean()) for a in normalized],
+        parameter_delta_norm=float((after-before).norm()), update_seconds=time.monotonic()-start,
+        **{k:float(np.mean([row[k] for row in stats])) for k in stats[0]})
+
+
+def ppo_update(controller, optimizer, history, advantages, returns, config, prefix=(), refresh=True):
+    return ppo_batch_update(controller, optimizer, [(history, advantages, returns, prefix)], config, refresh)
+
+
+class RolloutBatch:
+    """One queue per policy/optimizer; collection never mutates its weights."""
+    def __init__(self, model, optimizer, config):
+        self.model, self.optimizer, self.config = model, optimizer, config
+        self.episodes, self.ids = [], []
+
+    def add(self, history, advantages, returns, prefix=(), episode_id=None):
+        self.episodes.append((history, advantages, returns, prefix))
+        self.ids.append(episode_id)
+        return dict(updates=0, transitions=0, loss=0., pending_batch=True)
+
+    def flush(self):
+        if not self.episodes:
+            return None
+        metrics = ppo_batch_update(Controller(self.model, 0), self.optimizer, self.episodes, self.config)
+        metrics['rollout_episode_ids'] = list(self.ids)
+        self.episodes, self.ids = [], []
+        return metrics
 
 
 def collect(game, actor, steps, online_q=False):
@@ -237,6 +341,7 @@ def adapt(game, controller, steps, optimizer, config, online=False):
         if online:
             bootstrap = 0. if segment[-1].done else controller.value(game.observation())
             adv, ret = targets(segment, config, start, bootstrap)
-            updates.append(ppo_update(controller, optimizer, segment, adv, ret, config, prefix,
-                                      refresh=not segment[-1].done))
+            updates.append(ppo_batch_update(controller, optimizer, [(segment, adv, ret, prefix)], config,
+                                      refresh=not segment[-1].done,
+                                      normalization=config['evaluation'].get('online_advantage_normalization', 'legacy_episode')))
     return history, updates

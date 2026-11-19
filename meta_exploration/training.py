@@ -1,13 +1,17 @@
 import copy
 import json
 import time
+import subprocess
+import platform
+import hashlib
+import math
 from pathlib import Path
 import numpy as np
 import torch
 from .config import REGIMES
 from .environment import Game, generate_world, ACTIONS
 from .learning import (Controller, QLearner, collect, make_model, clone_model,
-                       assert_equal, targets, ppo_update)
+                       assert_equal, targets, ppo_update, dual_targets, RolloutBatch)
 
 
 def atomic_save(data, path):
@@ -88,6 +92,12 @@ def observed_information(history):
                                           pair_counts={''.join(ACTIONS[a] for a in k): len(v) for k, v in buckets.items()})
 
 
+def episode_returns(history, B):
+    return dict(episode_return=float(sum(t.reward for t in history)),
+                exploration_return=float(sum(t.reward for t in history[:B])),
+                downstream_return=float(sum(t.reward for t in history[B:])))
+
+
 def log_history(out, config, history, world, method, episode):
     if not config['logging']['save_trajectories']:
         return
@@ -106,15 +116,21 @@ def log_history(out, config, history, world, method, episode):
 
 
 def pretrain(config, worlds, out, device, seed, opponent_model=None):
+    config = copy.deepcopy(config)
+    config['training'].update(config['training'].get('pretraining_ppo', {}))
     t = config['training']; B, K = t['exploration_steps'], t['exploitation_steps']
     model = make_model(config, device)
     optimizer = torch.optim.Adam(model.parameters(), lr=t['learning_rate'])
     progress = out / 'checkpoints' / 'pretrain_resume.pt'
     start, total_interactions = 0, 0
+    batch = RolloutBatch(model, optimizer, config)
+    batch_size = t.get('rollout_batch_size', 1)
     if progress.exists():
         saved = torch.load(progress, map_location=device, weights_only=False)
         model.load_state_dict(saved['model']); optimizer.load_state_dict(saved['optimizer'])
         start, total_interactions = saved['episode'], saved['interactions']
+        model.policy_version = saved.get('policy_version', 0)
+        restore_rng(saved)
     ratios = np.array(t['history_sampling_ratios']); ratios = ratios / ratios.sum()
     for episode in range(start, t['pretraining_episodes']):
         world = worlds[episode % len(worlds)]
@@ -147,17 +163,20 @@ def pretrain(config, worlds, out, device, seed, opponent_model=None):
         suffix = collect(game, controller, K)
         log_history(out, config, prefix + suffix, world, 'pretraining', episode)
         adv, ret = targets(suffix, config, B)
-        metrics = ppo_update(controller, optimizer, suffix, adv, ret, config,
-                             [x.observation.vector() for x in prefix], refresh=False)
+        metrics = batch.add(suffix, adv, ret, [x.observation.vector() for x in prefix], episode)
+        boundary = (episode+1) % batch_size == 0 or episode+1 == t['pretraining_episodes']
+        if boundary:
+            append_json(out / 'training.jsonl', dict(stage='pretraining_update', episode=episode, **batch.flush()))
         total_interactions += B * len(candidates) + K
         append_json(out / 'training.jsonl', dict(stage='pretraining', episode=episode,
                     world_id=world.world_id, world_type=world.world_type,
                     return_mean=float(np.mean([x.reward for x in suffix])),
                     interactions=total_interactions, history_stratum=('uninformative', 'ambiguous', 'informative')[group],
-                    stratum_definition='relative observed-score tercile', history_stats=stats, **metrics))
-        if (episode + 1) % config['logging']['checkpoint_interval'] == 0 or episode + 1 == t['pretraining_episodes']:
+                    stratum_definition='relative observed-score tercile', history_stats=stats,
+                    **episode_returns(prefix+suffix, B), **metrics))
+        if boundary:
             atomic_save(dict(model=model.state_dict(), optimizer=optimizer.state_dict(), episode=episode + 1,
-                             interactions=total_interactions), progress)
+                             interactions=total_interactions, policy_version=getattr(model, 'policy_version', 0), **rng_state()), progress)
     atomic_save(dict(model=model.state_dict(), config=config, train_fingerprints=[w.fingerprint for w in worlds],
                      interactions=total_interactions), out / 'checkpoints' / 'shared_exploitation_pretrain.pt')
     model.save(out / 'checkpoints' / 'three_action_policy.pt', purpose='optional frozen PPO opponent; trained on train worlds only')
@@ -171,6 +190,8 @@ def train(config, regime, seed, out, device='cpu', pretrain_only=False):
     if config_path.exists() and json.loads(config_path.read_text()) != config:
         raise ValueError('Refusing resume with different config')
     write_json(config_path, config)
+    if not (out / 'provenance.json').exists():
+        write_json(out / 'provenance.json', provenance(config, device, seed))
     torch.manual_seed(seed)
     worlds = world_set(config, regime, seed, 'train')
     tests = world_set(config, regime, seed, 'test')
@@ -194,11 +215,15 @@ def train(config, regime, seed, out, device='cpu', pretrain_only=False):
     optimizers = {k: torch.optim.Adam(m.parameters(), lr=t['learning_rate']) for k, m in models.items()}
     resume = out / 'checkpoints' / 'training_resume.pt'
     start = 0
+    batches = {k: RolloutBatch(m, optimizers[k], config) for k,m in models.items()}
+    batch_size = t.get('rollout_batch_size', 1)
     if resume.exists():
         ckpt = torch.load(resume, map_location=device, weights_only=False)
         start = ckpt['episode']
         for key in models:
             models[key].load_state_dict(ckpt['models'][key]); optimizers[key].load_state_dict(ckpt['optimizers'][key])
+            models[key].policy_version = ckpt.get('policy_versions', {}).get(key, 0)
+        restore_rng(ckpt)
     for episode in range(start, t['episodes']):
         world = worlds[episode % len(worlds)]; s = seed * 100000 + episode
         before = time.monotonic()
@@ -208,13 +233,14 @@ def train(config, regime, seed, out, device='cpu', pretrain_only=False):
         log_history(out, config, history, world, 'single_policy', episode)
         adv, ret = targets(history, config)
         cut = B if t['single_k_only'] else 0
-        metrics = ppo_update(controller, optimizers['single_policy'], history[cut:], adv[cut:], ret[cut:], config,
-                             [x.observation.vector() for x in history[:cut]], refresh=False)
+        metrics = batches['single_policy'].add(history[cut:], adv[cut:], ret[cut:],
+                             [x.observation.vector() for x in history[:cut]], episode)
         append_json(out / 'training.jsonl', dict(stage='single_policy', episode=episode,
                     world_id=world.world_id, world_type=world.world_type,
                     return_mean=float(np.mean([x.reward for x in history[B:]])),
                     objective=float(sum(x.reward * (t['exploration_lambda'] if i < B else 1.) for i, x in enumerate(history))),
-                    interactions=(episode+1)*(B+K), runtime_seconds=time.monotonic()-before, **metrics))
+                    interactions=(episode+1)*(B+K), runtime_seconds=time.monotonic()-before,
+                    **episode_returns(history, B), **metrics))
         game = make_game(world, B + K, s, config, opponent_model)
         explorer = Controller(models['explorer'], s)
         prefix = collect(game, explorer, B)
@@ -223,17 +249,16 @@ def train(config, regime, seed, out, device='cpu', pretrain_only=False):
         suffix = collect(game, exploit, K)
         full = prefix + suffix
         log_history(out, config, full, world, 'dual_neural', episode)
-        # Both policies are frozen throughout collection. GAE crosses B/K and
-        # every mode reset; separate masked losses/optimizers are applied afterward.
-        adv, ret = targets(full, config)
+        # Separate critics: corrected prefix credit uses observed complete suffix.
+        (pa, pr), (sa, sr) = dual_targets(prefix, suffix, config)
         for key, ctrl, hist, a, r, context in (
-            ('explorer', explorer, prefix, adv[:B], ret[:B], []),
-            ('dual_neural', exploit, suffix, adv[B:], ret[B:], [x.observation.vector() for x in prefix])):
-            metrics = ppo_update(ctrl, optimizers[key], hist, a, r, config, context, refresh=False)
+            ('explorer', explorer, prefix, pa, pr, []),
+            ('dual_neural', exploit, suffix, sa, sr, [x.observation.vector() for x in prefix])):
+            metrics = batches[key].add(hist, a, r, context, episode)
             append_json(out / 'training.jsonl', dict(stage=key, episode=episode,
                         world_id=world.world_id, world_type=world.world_type,
                         return_mean=float(np.mean([x.reward for x in suffix])),
-                        interactions=(episode+1)*(B+K), **metrics))
+                        interactions=(episode+1)*(B+K), **episode_returns(prefix+suffix, B), **metrics))
         # Training-world baseline diagnostics: no cross-world Q transfer and no
         # additional neural updates. The learned prefix is shared with dual-Q.
         q = QLearner(config['q_learning'], s)
@@ -245,7 +270,8 @@ def train(config, regime, seed, out, device='cpu', pretrain_only=False):
             append_json(out / 'training.jsonl', dict(stage=name, episode=episode, world_id=world.world_id,
                         world_type=world.world_type, return_mean=float(np.mean([x.reward for x in h[B:]])),
                         interactions=(episode+1)*(B+K), updates=0, transitions=0,
-                        protocol='training-world online Q diagnostic; table discarded after world'))
+                        protocol='training-world online Q diagnostic; table discarded after world',
+                        **episode_returns(h, B)))
         if 'q_explorer' in models:
             game = make_game(world, B+K, s, config, opponent_model)
             qctrl = Controller(models['q_explorer'], s)
@@ -257,12 +283,16 @@ def train(config, regime, seed, out, device='cpu', pretrain_only=False):
             # boundary, without using Q values as neural critic predictions.
             downstream = sum((t['gamma'] ** i) * x.reward for i, x in enumerate(suffix))
             a, r = targets(prefix, config, bootstrap=downstream)
-            metrics = ppo_update(qctrl, optimizers['q_explorer'], prefix, a, r, config, refresh=False)
+            metrics = batches['q_explorer'].add(prefix, a, r, episode_id=episode)
             append_json(out / 'training.jsonl', dict(stage='q_explorer', episode=episode,
-                        return_mean=float(np.mean([x.reward for x in suffix])), interactions=(episode+1)*(B+K), **metrics))
-        if (episode+1) % config['logging']['checkpoint_interval'] == 0 or episode+1 == t['episodes']:
+                        return_mean=float(np.mean([x.reward for x in suffix])), interactions=(episode+1)*(B+K), **episode_returns(prefix+suffix, B), **metrics))
+        if (episode+1) % batch_size == 0 or episode+1 == t['episodes']:
+            for key, batch in batches.items():
+                append_json(out / 'training.jsonl', dict(stage=key+'_update', episode=episode, **batch.flush()))
             atomic_save(dict(episode=episode+1, models={k: m.state_dict() for k, m in models.items()},
-                             optimizers={k: o.state_dict() for k, o in optimizers.items()}), resume)
+                             optimizers={k: o.state_dict() for k, o in optimizers.items()},
+                             policy_versions={k:getattr(m, 'policy_version', 0) for k,m in models.items()},
+                             **rng_state()), resume)
     atomic_save(dict(models={k: m.state_dict() for k, m in models.items()}, config=config), out / 'checkpoints' / 'trained.pt')
     n = sum(p.numel() for p in shared.parameters())
     write_json(out / 'costs.json', dict(pretraining_interactions=pretrain_interactions,
@@ -270,10 +300,11 @@ def train(config, regime, seed, out, device='cpu', pretrain_only=False):
         single_optimized_transitions=t['episodes']*(K if t['single_k_only'] else B+K),
         dual_exploiter_optimized_transitions=t['episodes']*K,
         explorer_optimized_transitions=t['episodes']*B,
-        single_optimizer_steps=t['episodes']*t['ppo_epochs'],
-        dual_exploiter_optimizer_steps=t['episodes']*t['ppo_epochs'],
-        extra_explorer_optimizer_steps=t['episodes']*t['ppo_epochs'],
-        pretraining_optimizer_steps=t['pretraining_episodes']*t['ppo_epochs'],
+        single_optimizer_steps=math.ceil(t['episodes']/batch_size)*t['ppo_epochs'],
+        dual_exploiter_optimizer_steps=math.ceil(t['episodes']/batch_size)*t['ppo_epochs'],
+        extra_explorer_optimizer_steps=math.ceil(t['episodes']/batch_size)*t['ppo_epochs'],
+        pretraining_optimizer_steps=math.ceil(t['pretraining_episodes']/t.get('pretraining_ppo', {}).get('rollout_batch_size', batch_size))*t.get('pretraining_ppo', {}).get('ppo_epochs', t['ppo_epochs']),
+        rollout_batch_size=batch_size, advantage_normalization=t.get('advantage_normalization', 'legacy_episode'),
         neural_parameters=n, single_trainable_parameters=n, dual_trainable_parameters=2*n,
         dual_q_trainable_parameters=n, q_table_entries=96, q_baseline_training_interactions=t['episodes']*(B+K),
         q_baseline_transferred_parameters=0,
@@ -296,3 +327,29 @@ def load_opponent(config, device):
         raise ValueError('Opponent checkpoint must have 3 actions / 11 observation features')
     model.eval()
     return model.to(device)
+
+
+def rng_state():
+    return dict(torch_rng=torch.get_rng_state(), numpy_rng=np.random.get_state(),
+                cuda_rng=torch.cuda.get_rng_state_all() if torch.cuda.is_available() else [])
+
+
+def restore_rng(saved):
+    if 'torch_rng' in saved:
+        torch.set_rng_state(saved['torch_rng'].cpu())
+        np.random.set_state(saved['numpy_rng'])
+        if saved.get('cuda_rng') and torch.cuda.is_available():
+            torch.cuda.set_rng_state_all([s.cpu() for s in saved['cuda_rng']])
+
+
+def provenance(config, device, seed):
+    def git(*args):
+        return subprocess.run(['git', *args], capture_output=True, text=True).stdout.strip()
+    sources = list(Path('meta_exploration').glob('*.py')) + [Path('marl/models.py')]
+    return dict(git_commit=git('rev-parse', 'HEAD'), git_status=git('status', '--short'),
+                source_sha256={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
+                python=platform.python_version(), platform=platform.platform(),
+                torch=torch.__version__, cuda=torch.version.cuda, device=str(device), seed=seed,
+                config=config, rollout_order='episode index modulo training world count; per-episode local RNG',
+                checkpoint_boundary='complete rollout batch; no pending trajectories',
+                checkpoint_rng='torch CPU/CUDA, numpy global; per-episode controller/environment RNG seeded by episode')

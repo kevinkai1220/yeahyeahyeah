@@ -1,0 +1,362 @@
+[
+  {
+    "method": "single_policy",
+    "B": 16,
+    "reference_B": 8,
+    "metric": "rmst_90",
+    "mean": -1.0333333333333334,
+    "ci_low": -3.2227777777777784,
+    "ci_high": 1.0555555555555556,
+    "n_pairs": 17
+  },
+  {
+    "method": "single_policy",
+    "B": 16,
+    "reference_B": 8,
+    "metric": "total_interaction_rmst_90",
+    "mean": 6.966666666666666,
+    "ci_low": 4.777222222222222,
+    "ci_high": 9.055555555555555,
+    "n_pairs": 17
+  },
+  {
+    "method": "single_policy",
+    "B": 16,
+    "reference_B": 8,
+    "metric": "reach_90",
+    "mean": 0.05555555555555555,
+    "ci_low": 0.0,
+    "ci_high": 0.2222222222222222,
+    "n_pairs": 17
+  },
+  {
+    "method": "single_policy",
+    "B": 32,
+    "reference_B": 8,
+    "metric": "rmst_90",
+    "mean": -3.655555555555555,
+    "ci_low": -8.299999999999999,
+    "ci_high": 0.0,
+    "n_pairs": 17
+  },
+  {
+    "method": "single_policy",
+    "B": 32,
+    "reference_B": 8,
+    "metric": "total_interaction_rmst_90",
+    "mean": 20.344444444444445,
+    "ci_low": 15.700000000000001,
+    "ci_high": 24.0,
+    "n_pairs": 17
+  },
+  {
+    "method": "single_policy",
+    "B": 32,
+    "reference_B": 8,
+    "metric": "reach_90",
+    "mean": 0.05555555555555555,
+    "ci_low": 0.0,
+    "ci_high": 0.2222222222222222,
+    "n_pairs": 17
+  },
+  {
+    "method": "single_policy",
+    "B": 64,
+    "reference_B": 8,
+    "metric": "rmst_90",
+    "mean": -3.6888888888888887,
+    "ci_low": -13.890000000000002,
+    "ci_high": 5.6694444444444425,
+    "n_pairs": 17
+  },
+  {
+    "method": "single_policy",
+    "B": 64,
+    "reference_B": 8,
+    "metric": "total_interaction_rmst_90",
+    "mean": 52.31111111111111,
+    "ci_low": 42.11,
+    "ci_high": 61.66944444444444,
+    "n_pairs": 17
+  },
+  {
+    "method": "single_policy",
+    "B": 64,
+    "reference_B": 8,
+    "metric": "reach_90",
+    "mean": 0.05555555555555555,
+    "ci_low": 0.0,
+    "ci_high": 0.2222222222222222,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_neural",
+    "B": 16,
+    "reference_B": 8,
+    "metric": "rmst_90",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_neural",
+    "B": 16,
+    "reference_B": 8,
+    "metric": "total_interaction_rmst_90",
+    "mean": 8.0,
+    "ci_low": 8.0,
+    "ci_high": 8.0,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_neural",
+    "B": 16,
+    "reference_B": 8,
+    "metric": "reach_90",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_neural",
+    "B": 32,
+    "reference_B": 8,
+    "metric": "rmst_90",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_neural",
+    "B": 32,
+    "reference_B": 8,
+    "metric": "total_interaction_rmst_90",
+    "mean": 24.0,
+    "ci_low": 24.0,
+    "ci_high": 24.0,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_neural",
+    "B": 32,
+    "reference_B": 8,
+    "metric": "reach_90",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_neural",
+    "B": 64,
+    "reference_B": 8,
+    "metric": "rmst_90",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_neural",
+    "B": 64,
+    "reference_B": 8,
+    "metric": "total_interaction_rmst_90",
+    "mean": 56.0,
+    "ci_low": 56.0,
+    "ci_high": 56.0,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_neural",
+    "B": 64,
+    "reference_B": 8,
+    "metric": "reach_90",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 17
+  },
+  {
+    "method": "q_learning",
+    "B": 16,
+    "reference_B": 8,
+    "metric": "rmst_90",
+    "mean": -3.4,
+    "ci_low": -5.222222222222222,
+    "ci_high": -1.5327777777777782,
+    "n_pairs": 17
+  },
+  {
+    "method": "q_learning",
+    "B": 16,
+    "reference_B": 8,
+    "metric": "total_interaction_rmst_90",
+    "mean": 4.6000000000000005,
+    "ci_low": 2.7777777777777772,
+    "ci_high": 6.467222222222221,
+    "n_pairs": 17
+  },
+  {
+    "method": "q_learning",
+    "B": 16,
+    "reference_B": 8,
+    "metric": "reach_90",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 17
+  },
+  {
+    "method": "q_learning",
+    "B": 32,
+    "reference_B": 8,
+    "metric": "rmst_90",
+    "mean": -1.5444444444444443,
+    "ci_low": -10.738333333333333,
+    "ci_high": 9.008333333333326,
+    "n_pairs": 17
+  },
+  {
+    "method": "q_learning",
+    "B": 32,
+    "reference_B": 8,
+    "metric": "total_interaction_rmst_90",
+    "mean": 22.45555555555556,
+    "ci_low": 13.261666666666667,
+    "ci_high": 33.008333333333326,
+    "n_pairs": 17
+  },
+  {
+    "method": "q_learning",
+    "B": 32,
+    "reference_B": 8,
+    "metric": "reach_90",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 17
+  },
+  {
+    "method": "q_learning",
+    "B": 64,
+    "reference_B": 8,
+    "metric": "rmst_90",
+    "mean": -4.588888888888889,
+    "ci_low": -15.377777777777778,
+    "ci_high": 4.534166666666666,
+    "n_pairs": 17
+  },
+  {
+    "method": "q_learning",
+    "B": 64,
+    "reference_B": 8,
+    "metric": "total_interaction_rmst_90",
+    "mean": 51.41111111111112,
+    "ci_low": 40.62222222222222,
+    "ci_high": 60.534166666666664,
+    "n_pairs": 17
+  },
+  {
+    "method": "q_learning",
+    "B": 64,
+    "reference_B": 8,
+    "metric": "reach_90",
+    "mean": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_q_table",
+    "B": 16,
+    "reference_B": 8,
+    "metric": "rmst_90",
+    "mean": -3.777777777777778,
+    "ci_low": -18.166666666666668,
+    "ci_high": 7.779166666666665,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_q_table",
+    "B": 16,
+    "reference_B": 8,
+    "metric": "total_interaction_rmst_90",
+    "mean": 4.222222222222222,
+    "ci_low": -10.166666666666666,
+    "ci_high": 15.779166666666665,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_q_table",
+    "B": 16,
+    "reference_B": 8,
+    "metric": "reach_90",
+    "mean": 0.1111111111111111,
+    "ci_low": -0.1111111111111111,
+    "ci_high": 0.3333333333333333,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_q_table",
+    "B": 32,
+    "reference_B": 8,
+    "metric": "rmst_90",
+    "mean": -18.566666666666666,
+    "ci_low": -39.55888888888888,
+    "ci_high": 2.0366666666666635,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_q_table",
+    "B": 32,
+    "reference_B": 8,
+    "metric": "total_interaction_rmst_90",
+    "mean": 5.433333333333334,
+    "ci_low": -15.558888888888891,
+    "ci_high": 26.03666666666666,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_q_table",
+    "B": 32,
+    "reference_B": 8,
+    "metric": "reach_90",
+    "mean": 0.2888888888888889,
+    "ci_low": -0.0005555555555555229,
+    "ci_high": 0.5777777777777778,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_q_table",
+    "B": 64,
+    "reference_B": 8,
+    "metric": "rmst_90",
+    "mean": -54.31111111111111,
+    "ci_low": -74.89222222222222,
+    "ci_high": -32.49805555555556,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_q_table",
+    "B": 64,
+    "reference_B": 8,
+    "metric": "total_interaction_rmst_90",
+    "mean": 1.6888888888888889,
+    "ci_low": -18.892222222222223,
+    "ci_high": 23.501944444444444,
+    "n_pairs": 17
+  },
+  {
+    "method": "dual_q_table",
+    "B": 64,
+    "reference_B": 8,
+    "metric": "reach_90",
+    "mean": 0.5222222222222223,
+    "ci_low": 0.18888888888888888,
+    "ci_high": 0.8333333333333334,
+    "n_pairs": 17
+  }
+]

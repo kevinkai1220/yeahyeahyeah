@@ -1,0 +1,178 @@
+[
+  {
+    "method": "single_policy",
+    "B": 8,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 2448,
+    "optimizer_steps": 648,
+    "td_updates": 0,
+    "ppo_update_seconds": 45.00994144845754,
+    "td_update_seconds": 0
+  },
+  {
+    "method": "single_policy",
+    "B": 16,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 2592,
+    "optimizer_steps": 648,
+    "td_updates": 0,
+    "ppo_update_seconds": 53.735649989917874,
+    "td_update_seconds": 0
+  },
+  {
+    "method": "single_policy",
+    "B": 32,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 2880,
+    "optimizer_steps": 720,
+    "td_updates": 0,
+    "ppo_update_seconds": 62.0050010336563,
+    "td_update_seconds": 0
+  },
+  {
+    "method": "single_policy",
+    "B": 64,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 3456,
+    "optimizer_steps": 864,
+    "td_updates": 0,
+    "ppo_update_seconds": 61.351579478010535,
+    "td_update_seconds": 0
+  },
+  {
+    "method": "dual_neural",
+    "B": 8,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 2448,
+    "optimizer_steps": 576,
+    "td_updates": 0,
+    "ppo_update_seconds": 41.94820084609091,
+    "td_update_seconds": 0
+  },
+  {
+    "method": "dual_neural",
+    "B": 16,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 2592,
+    "optimizer_steps": 576,
+    "td_updates": 0,
+    "ppo_update_seconds": 49.30390678718686,
+    "td_update_seconds": 0
+  },
+  {
+    "method": "dual_neural",
+    "B": 32,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 2880,
+    "optimizer_steps": 576,
+    "td_updates": 0,
+    "ppo_update_seconds": 50.01230282988399,
+    "td_update_seconds": 0
+  },
+  {
+    "method": "dual_neural",
+    "B": 64,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 3456,
+    "optimizer_steps": 576,
+    "td_updates": 0,
+    "ppo_update_seconds": 52.73067780956626,
+    "td_update_seconds": 0
+  },
+  {
+    "method": "q_learning",
+    "B": 8,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 2448,
+    "optimizer_steps": 0,
+    "td_updates": 2448,
+    "ppo_update_seconds": 0,
+    "td_update_seconds": 0.024671606719493866
+  },
+  {
+    "method": "q_learning",
+    "B": 16,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 2592,
+    "optimizer_steps": 0,
+    "td_updates": 2592,
+    "ppo_update_seconds": 0,
+    "td_update_seconds": 0.031620548106729984
+  },
+  {
+    "method": "q_learning",
+    "B": 32,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 2880,
+    "optimizer_steps": 0,
+    "td_updates": 2880,
+    "ppo_update_seconds": 0,
+    "td_update_seconds": 0.028885683976113796
+  },
+  {
+    "method": "q_learning",
+    "B": 64,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 3456,
+    "optimizer_steps": 0,
+    "td_updates": 3456,
+    "ppo_update_seconds": 0,
+    "td_update_seconds": 0.027169092558324337
+  },
+  {
+    "method": "dual_q_table",
+    "B": 8,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 2448,
+    "optimizer_steps": 0,
+    "td_updates": 3744,
+    "ppo_update_seconds": 0,
+    "td_update_seconds": 0.0354022141546011
+  },
+  {
+    "method": "dual_q_table",
+    "B": 16,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 2592,
+    "optimizer_steps": 0,
+    "td_updates": 5184,
+    "ppo_update_seconds": 0,
+    "td_update_seconds": 0.050028891302645206
+  },
+  {
+    "method": "dual_q_table",
+    "B": 32,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 2880,
+    "optimizer_steps": 0,
+    "td_updates": 8064,
+    "ppo_update_seconds": 0,
+    "td_update_seconds": 0.0914407204836607
+  },
+  {
+    "method": "dual_q_table",
+    "B": 64,
+    "K": 128,
+    "worlds": 18,
+    "environment_interactions": 3456,
+    "optimizer_steps": 0,
+    "td_updates": 13824,
+    "ppo_update_seconds": 0,
+    "td_update_seconds": 0.07811271212995052
+  }
+]

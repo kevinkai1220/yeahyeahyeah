@@ -1,0 +1,482 @@
+[
+  {
+    "stage": "type1",
+    "variant": "corrected",
+    "split": "train",
+    "method": "single_policy",
+    "mean": 0.846653057679414,
+    "ci_low": 0.1427119627358688,
+    "ci_high": 1.424709787746343,
+    "seed_means": {
+      "0": 1.2844228539344746,
+      "1": 1.0778063388106274,
+      "2": 0.17772998029314038
+    },
+    "random_expected_reward": 0.739169223266996
+  },
+  {
+    "stage": "type1",
+    "variant": "corrected",
+    "split": "train",
+    "method": "q_learning",
+    "mean": 1.7091774392592425,
+    "ci_low": 0.8782673137992427,
+    "ci_high": 2.5728557247584347,
+    "seed_means": {
+      "0": 2.2831838517433263,
+      "1": 2.118205350689574,
+      "2": 0.7261431153448269
+    },
+    "random_expected_reward": 0.739169223266996
+  },
+  {
+    "stage": "type1",
+    "variant": "corrected",
+    "split": "train",
+    "method": "dual_neural",
+    "mean": 0.8283422321547387,
+    "ci_low": 0.08030836012625701,
+    "ci_high": 1.4868762131643831,
+    "seed_means": {
+      "0": 1.427083396151037,
+      "1": 1.0208464124507057,
+      "2": 0.03709688786247337
+    },
+    "random_expected_reward": 0.739169223266996
+  },
+  {
+    "stage": "type1",
+    "variant": "corrected",
+    "split": "train",
+    "method": "dual_q_table",
+    "mean": 1.4044279215137925,
+    "ci_low": 0.6865833694375159,
+    "ci_high": 2.066700791444763,
+    "seed_means": {
+      "0": 1.2517068927466013,
+      "1": 2.133971792666808,
+      "2": 0.8276050791279682
+    },
+    "random_expected_reward": 0.739169223266996
+  },
+  {
+    "stage": "type1",
+    "variant": "corrected",
+    "split": "test",
+    "method": "single_policy",
+    "mean": 1.0472083180362883,
+    "ci_low": 0.3375382922735965,
+    "ci_high": 1.676968807177587,
+    "seed_means": {
+      "0": 0.7331840023439259,
+      "1": 1.6040040098158965,
+      "2": 0.8044369419490426
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "type1",
+    "variant": "corrected",
+    "split": "test",
+    "method": "q_learning",
+    "mean": 1.9318184352988013,
+    "ci_low": 1.3236728723645819,
+    "ci_high": 2.4417719389222223,
+    "seed_means": {
+      "0": 1.7026298229370134,
+      "1": 2.248999293609343,
+      "2": 1.8438261893500478
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "type1",
+    "variant": "corrected",
+    "split": "test",
+    "method": "dual_neural",
+    "mean": 0.8845339405417043,
+    "ci_low": 0.32221922174196843,
+    "ci_high": 1.2323571507923783,
+    "seed_means": {
+      "0": 0.6790477815576774,
+      "1": 1.1751769636084555,
+      "2": 0.7993770764589803
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "type1",
+    "variant": "corrected",
+    "split": "test",
+    "method": "dual_q_table",
+    "mean": 1.6514528186474962,
+    "ci_low": 1.0358196734588865,
+    "ci_high": 2.2313983850922305,
+    "seed_means": {
+      "0": 1.5093188528320665,
+      "1": 2.1232989457452547,
+      "2": 1.3217406573651667
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "type2",
+    "variant": "corrected",
+    "split": "train",
+    "method": "single_policy",
+    "mean": 1.6953178957100905,
+    "ci_low": 0.6736145070563856,
+    "ci_high": 2.718256259894733,
+    "seed_means": {
+      "0": 2.816354273320789,
+      "1": 1.1858029908015995,
+      "2": 1.0837964230078836
+    },
+    "random_expected_reward": 0.41583944798453565
+  },
+  {
+    "stage": "type2",
+    "variant": "corrected",
+    "split": "train",
+    "method": "q_learning",
+    "mean": 2.025775994421197,
+    "ci_low": 1.767876724594182,
+    "ci_high": 2.2822191681204176,
+    "seed_means": {
+      "0": 1.9830794777437142,
+      "1": 2.1732343819540083,
+      "2": 1.921014123565868
+    },
+    "random_expected_reward": 0.41583944798453565
+  },
+  {
+    "stage": "type2",
+    "variant": "corrected",
+    "split": "train",
+    "method": "dual_neural",
+    "mean": 1.5586939426817148,
+    "ci_low": 0.2843313642598341,
+    "ci_high": 3.245593980423696,
+    "seed_means": {
+      "0": 3.302803269116161,
+      "1": 0.8831004465378806,
+      "2": 0.49017811239110326
+    },
+    "random_expected_reward": 0.41583944798453565
+  },
+  {
+    "stage": "type2",
+    "variant": "corrected",
+    "split": "train",
+    "method": "dual_q_table",
+    "mean": 2.108768835377782,
+    "ci_low": 1.5298517499130986,
+    "ci_high": 2.642065897755501,
+    "seed_means": {
+      "0": 2.4877492619623465,
+      "1": 1.9841155758628082,
+      "2": 1.8544416683081912
+    },
+    "random_expected_reward": 0.41583944798453565
+  },
+  {
+    "stage": "type2",
+    "variant": "corrected",
+    "split": "test",
+    "method": "single_policy",
+    "mean": 1.6559707918071973,
+    "ci_low": 0.4524017291796498,
+    "ci_high": 3.2295884200904865,
+    "seed_means": {
+      "0": 3.2583439338632894,
+      "1": 0.9966479530579769,
+      "2": 0.7129204885003247
+    },
+    "random_expected_reward": 0.43078969802984657
+  },
+  {
+    "stage": "type2",
+    "variant": "corrected",
+    "split": "test",
+    "method": "q_learning",
+    "mean": 1.9732578328705914,
+    "ci_low": 1.7357454456752641,
+    "ci_high": 2.2489624262696424,
+    "seed_means": {
+      "0": 1.8263506499124604,
+      "1": 2.0008472597158415,
+      "2": 2.0925755889834723
+    },
+    "random_expected_reward": 0.43078969802984657
+  },
+  {
+    "stage": "type2",
+    "variant": "corrected",
+    "split": "test",
+    "method": "dual_neural",
+    "mean": 1.9400678121414565,
+    "ci_low": 0.4441257250314385,
+    "ci_high": 4.257416851656535,
+    "seed_means": {
+      "0": 4.380442796120076,
+      "1": 0.9526119660900784,
+      "2": 0.48714867421421526
+    },
+    "random_expected_reward": 0.43078969802984657
+  },
+  {
+    "stage": "type2",
+    "variant": "corrected",
+    "split": "test",
+    "method": "dual_q_table",
+    "mean": 2.099938286862505,
+    "ci_low": 1.596654911186528,
+    "ci_high": 2.537250435095655,
+    "seed_means": {
+      "0": 2.4026554704461467,
+      "1": 1.6007693977400101,
+      "2": 2.2963899924013593
+    },
+    "random_expected_reward": 0.43078969802984657
+  },
+  {
+    "stage": "type3",
+    "variant": "corrected",
+    "split": "train",
+    "method": "single_policy",
+    "mean": 0.5764892617529906,
+    "ci_low": -0.010408769557802702,
+    "ci_high": 1.2831659100215824,
+    "seed_means": {
+      "0": 1.3531277651028482,
+      "1": 0.3916633911630667,
+      "2": -0.015323371006942995
+    },
+    "random_expected_reward": 0.5757326865327255
+  },
+  {
+    "stage": "type3",
+    "variant": "corrected",
+    "split": "train",
+    "method": "q_learning",
+    "mean": 1.961850831603473,
+    "ci_low": 1.7271405044857542,
+    "ci_high": 2.3349074149114064,
+    "seed_means": {
+      "0": 1.8914058916949719,
+      "1": 1.8099440686295083,
+      "2": 2.184202534485939
+    },
+    "random_expected_reward": 0.5757326865327255
+  },
+  {
+    "stage": "type3",
+    "variant": "corrected",
+    "split": "train",
+    "method": "dual_neural",
+    "mean": 0.8832930321968071,
+    "ci_low": 0.2819859555826524,
+    "ci_high": 1.633836537260737,
+    "seed_means": {
+      "0": 1.6565683818551624,
+      "1": 0.641506659732194,
+      "2": 0.3518040550030648
+    },
+    "random_expected_reward": 0.5757326865327255
+  },
+  {
+    "stage": "type3",
+    "variant": "corrected",
+    "split": "train",
+    "method": "dual_q_table",
+    "mean": 1.7265999160987944,
+    "ci_low": 1.0936317959191721,
+    "ci_high": 2.3994842977620063,
+    "seed_means": {
+      "0": 1.4080630707388024,
+      "1": 2.1055437476698757,
+      "2": 1.6661929298877052
+    },
+    "random_expected_reward": 0.5757326865327255
+  },
+  {
+    "stage": "type3",
+    "variant": "corrected",
+    "split": "test",
+    "method": "single_policy",
+    "mean": 0.47214857934342547,
+    "ci_low": 0.1777359492157519,
+    "ci_high": 0.7572937020089057,
+    "seed_means": {
+      "0": 0.35197413201192146,
+      "1": 0.4974552667611274,
+      "2": 0.5670163392572277
+    },
+    "random_expected_reward": 0.44631950556507305
+  },
+  {
+    "stage": "type3",
+    "variant": "corrected",
+    "split": "test",
+    "method": "q_learning",
+    "mean": 1.7570228049323953,
+    "ci_low": 1.5694952045585473,
+    "ci_high": 1.9971707475916616,
+    "seed_means": {
+      "0": 1.7421128939332693,
+      "1": 1.7653318162105058,
+      "2": 1.7636237046534105
+    },
+    "random_expected_reward": 0.44631950556507305
+  },
+  {
+    "stage": "type3",
+    "variant": "corrected",
+    "split": "test",
+    "method": "dual_neural",
+    "mean": 0.3355465211795603,
+    "ci_low": -0.3621403964494765,
+    "ci_high": 0.8065768451874484,
+    "seed_means": {
+      "0": -0.1535704613509253,
+      "1": 0.7761987780854515,
+      "2": 0.38401124680415477
+    },
+    "random_expected_reward": 0.44631950556507305
+  },
+  {
+    "stage": "type3",
+    "variant": "corrected",
+    "split": "test",
+    "method": "dual_q_table",
+    "mean": 1.7842565358823759,
+    "ci_low": 1.377294695296011,
+    "ci_high": 2.2758075255238803,
+    "seed_means": {
+      "0": 1.9195427393904805,
+      "1": 1.8013088951248637,
+      "2": 1.6319179731317834
+    },
+    "random_expected_reward": 0.44631950556507305
+  },
+  {
+    "stage": "mixed_noise",
+    "variant": "corrected",
+    "split": "train",
+    "method": "single_policy",
+    "mean": 0.8956544342936595,
+    "ci_low": 0.3236588860246464,
+    "ci_high": 1.679799658001885,
+    "seed_means": {
+      "0": 0.4654921833496701,
+      "1": 1.5078731853356773,
+      "2": 0.7135979341956312
+    },
+    "random_expected_reward": 0.6334119524257978
+  },
+  {
+    "stage": "mixed_noise",
+    "variant": "corrected",
+    "split": "train",
+    "method": "q_learning",
+    "mean": 1.4800740411250652,
+    "ci_low": 1.1091927183825236,
+    "ci_high": 1.8604826896169258,
+    "seed_means": {
+      "0": 1.6019984401722116,
+      "1": 1.712201852484274,
+      "2": 1.1260218307187106
+    },
+    "random_expected_reward": 0.6334119524257978
+  },
+  {
+    "stage": "mixed_noise",
+    "variant": "corrected",
+    "split": "train",
+    "method": "dual_neural",
+    "mean": 0.9860948760929533,
+    "ci_low": 0.1799910942931391,
+    "ci_high": 1.7642833544596424,
+    "seed_means": {
+      "0": 0.7028159225075156,
+      "1": 1.5513692689514107,
+      "2": 0.7040994368199338
+    },
+    "random_expected_reward": 0.6334119524257978
+  },
+  {
+    "stage": "mixed_noise",
+    "variant": "corrected",
+    "split": "train",
+    "method": "dual_q_table",
+    "mean": 1.297652888129415,
+    "ci_low": 0.8317530098542614,
+    "ci_high": 1.7764658499406456,
+    "seed_means": {
+      "0": 1.3229891099119533,
+      "1": 1.6710430806376984,
+      "2": 0.8989264738385931
+    },
+    "random_expected_reward": 0.6334119524257978
+  },
+  {
+    "stage": "mixed_noise",
+    "variant": "corrected",
+    "split": "test",
+    "method": "single_policy",
+    "mean": 0.4503495486377625,
+    "ci_low": -0.39918368865838333,
+    "ci_high": 1.0084500714834757,
+    "seed_means": {
+      "0": 0.8191669497371463,
+      "1": -0.3441330703962084,
+      "2": 0.8760147665723497
+    },
+    "random_expected_reward": 0.5019913682161579
+  },
+  {
+    "stage": "mixed_noise",
+    "variant": "corrected",
+    "split": "test",
+    "method": "q_learning",
+    "mean": 1.2138806865680125,
+    "ci_low": 0.8495396030376421,
+    "ci_high": 1.528166248602654,
+    "seed_means": {
+      "0": 1.2941990300033304,
+      "1": 1.3224957308073695,
+      "2": 1.024947298893338
+    },
+    "random_expected_reward": 0.5019913682161579
+  },
+  {
+    "stage": "mixed_noise",
+    "variant": "corrected",
+    "split": "test",
+    "method": "dual_neural",
+    "mean": 0.720171019705108,
+    "ci_low": -0.2267098247515707,
+    "ci_high": 2.012666139936344,
+    "seed_means": {
+      "0": 1.7054816623846267,
+      "1": -0.23255671205803505,
+      "2": 0.6875881087887324
+    },
+    "random_expected_reward": 0.5019913682161579
+  },
+  {
+    "stage": "mixed_noise",
+    "variant": "corrected",
+    "split": "test",
+    "method": "dual_q_table",
+    "mean": 1.1329776344116425,
+    "ci_low": 0.8469600583044223,
+    "ci_high": 1.5819051748804263,
+    "seed_means": {
+      "0": 1.4026278138445802,
+      "1": 1.0844705717963419,
+      "2": 0.9118345175940051
+    },
+    "random_expected_reward": 0.5019913682161579
+  }
+]

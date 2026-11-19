@@ -1,0 +1,482 @@
+[
+  {
+    "stage": "easy",
+    "variant": "legacy",
+    "split": "train",
+    "method": "single_policy",
+    "mean": 2.9776187044828597,
+    "ci_low": 2.719210678667414,
+    "ci_high": 3.424856711815906,
+    "seed_means": {
+      "0": 2.8533969069561143,
+      "1": 3.424856711815906,
+      "2": 2.654602494676559
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy",
+    "split": "train",
+    "method": "q_learning",
+    "mean": 1.2925513017680468,
+    "ci_low": 1.1139571445394982,
+    "ci_high": 1.6184578093865618,
+    "seed_means": {
+      "0": 1.618457809386562,
+      "1": 1.1139571445394982,
+      "2": 1.1452389513780799
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy",
+    "split": "train",
+    "method": "dual_neural",
+    "mean": 2.9052858586109047,
+    "ci_low": 2.5921469440916884,
+    "ci_high": 3.424856711815906,
+    "seed_means": {
+      "0": 2.797938968913306,
+      "1": 3.424856711815906,
+      "2": 2.4930618951035024
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy",
+    "split": "train",
+    "method": "dual_q_table",
+    "mean": 1.225323727717095,
+    "ci_low": 0.26970330163031775,
+    "ci_high": 2.4610686997975897,
+    "seed_means": {
+      "0": 0.26970330163031775,
+      "1": 2.4610686997975897,
+      "2": 0.9451991817233774
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy",
+    "split": "test",
+    "method": "single_policy",
+    "mean": 0.9762468843612572,
+    "ci_low": -0.3898224538126195,
+    "ci_high": 2.436232107661361,
+    "seed_means": {
+      "0": -0.05153897991898796,
+      "1": 2.425500630109411,
+      "2": 0.5547790028933484
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy",
+    "split": "test",
+    "method": "q_learning",
+    "mean": 1.9318184352988013,
+    "ci_low": 1.3236728723645819,
+    "ci_high": 2.4417719389222223,
+    "seed_means": {
+      "0": 1.7026298229370134,
+      "1": 2.248999293609343,
+      "2": 1.8438261893500478
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy",
+    "split": "test",
+    "method": "dual_neural",
+    "mean": 0.9428445244313881,
+    "ci_low": -0.478295866992105,
+    "ci_high": 2.3884233553755068,
+    "seed_means": {
+      "0": -0.09809515328529178,
+      "1": 2.3505790660669637,
+      "2": 0.5760496605124926
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy",
+    "split": "test",
+    "method": "dual_q_table",
+    "mean": 1.806336764868279,
+    "ci_low": 1.067265095959061,
+    "ci_high": 2.303427554036484,
+    "seed_means": {
+      "0": 1.4848152798190373,
+      "1": 2.143049653674193,
+      "2": 1.7911453611116073
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy_batch",
+    "split": "train",
+    "method": "single_policy",
+    "mean": 2.500101941939614,
+    "ci_low": 2.1351532897352072,
+    "ci_high": 3.1792494878043254,
+    "seed_means": {
+      "0": 2.2330278240702635,
+      "1": 3.1792494878043254,
+      "2": 2.088028513944254
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy_batch",
+    "split": "train",
+    "method": "q_learning",
+    "mean": 1.2925513017680468,
+    "ci_low": 1.1139571445394982,
+    "ci_high": 1.6184578093865618,
+    "seed_means": {
+      "0": 1.618457809386562,
+      "1": 1.1139571445394982,
+      "2": 1.1452389513780799
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy_batch",
+    "split": "train",
+    "method": "dual_neural",
+    "mean": 2.477570489599538,
+    "ci_low": 2.2246948750734905,
+    "ci_high": 2.9373704405983454,
+    "seed_means": {
+      "0": 2.313315197033402,
+      "1": 2.937370440598346,
+      "2": 2.1820258311668663
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy_batch",
+    "split": "train",
+    "method": "dual_q_table",
+    "mean": 1.5011361940811814,
+    "ci_low": 0.37771964361486027,
+    "ci_high": 2.580144134997779,
+    "seed_means": {
+      "0": 0.3777196436148603,
+      "1": 2.580144134997779,
+      "2": 1.545544803630905
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy_batch",
+    "split": "test",
+    "method": "single_policy",
+    "mean": 1.1490305118824053,
+    "ci_low": 0.043211398259248794,
+    "ci_high": 2.2895910232791015,
+    "seed_means": {
+      "0": 0.3314760137309693,
+      "1": 2.2779626039392364,
+      "2": 0.8376529179770106
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy_batch",
+    "split": "test",
+    "method": "q_learning",
+    "mean": 1.9318184352988013,
+    "ci_low": 1.3236728723645819,
+    "ci_high": 2.4417719389222223,
+    "seed_means": {
+      "0": 1.7026298229370134,
+      "1": 2.248999293609343,
+      "2": 1.8438261893500478
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy_batch",
+    "split": "test",
+    "method": "dual_neural",
+    "mean": 1.0674956677827836,
+    "ci_low": 0.045554909754851956,
+    "ci_high": 2.2157823396762724,
+    "seed_means": {
+      "0": 0.2391481522337878,
+      "1": 2.2077694228477287,
+      "2": 0.7555694282668343
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "legacy_batch",
+    "split": "test",
+    "method": "dual_q_table",
+    "mean": 1.4786108563974374,
+    "ci_low": 0.8671442697230556,
+    "ci_high": 1.9420882317437536,
+    "seed_means": {
+      "0": 1.313511616585681,
+      "1": 1.8319254515755177,
+      "2": 1.2903955010311134
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "batch_cross_critic",
+    "split": "train",
+    "method": "single_policy",
+    "mean": 2.620731758516353,
+    "ci_low": 2.3135223680714145,
+    "ci_high": 3.1792494878043254,
+    "seed_means": {
+      "0": 2.4213315390179444,
+      "1": 3.1792494878043254,
+      "2": 2.261614248726789
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "batch_cross_critic",
+    "split": "train",
+    "method": "q_learning",
+    "mean": 1.2925513017680468,
+    "ci_low": 1.1139571445394982,
+    "ci_high": 1.6184578093865618,
+    "seed_means": {
+      "0": 1.618457809386562,
+      "1": 1.1139571445394982,
+      "2": 1.1452389513780799
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "batch_cross_critic",
+    "split": "train",
+    "method": "dual_neural",
+    "mean": 2.512333211325852,
+    "ci_low": 2.2598001862184667,
+    "ci_high": 2.933642263792745,
+    "seed_means": {
+      "0": 2.4213315390179444,
+      "1": 2.933642263792745,
+      "2": 2.1820258311668663
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "batch_cross_critic",
+    "split": "train",
+    "method": "dual_q_table",
+    "mean": 1.7280017714458396,
+    "ci_low": 1.2386569216211087,
+    "ci_high": 2.580144134997779,
+    "seed_means": {
+      "0": 1.4827124983806153,
+      "1": 2.580144134997779,
+      "2": 1.121148680959124
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "batch_cross_critic",
+    "split": "test",
+    "method": "single_policy",
+    "mean": 1.1314236678370189,
+    "ci_low": 0.009207518047027376,
+    "ci_high": 2.293858772559488,
+    "seed_means": {
+      "0": 0.29358884112106465,
+      "1": 2.2823228938563527,
+      "2": 0.8183592685336395
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "batch_cross_critic",
+    "split": "test",
+    "method": "q_learning",
+    "mean": 1.9318184352988013,
+    "ci_low": 1.3236728723645819,
+    "ci_high": 2.4417719389222223,
+    "seed_means": {
+      "0": 1.7026298229370134,
+      "1": 2.248999293609343,
+      "2": 1.8438261893500478
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "batch_cross_critic",
+    "split": "test",
+    "method": "dual_neural",
+    "mean": 1.0719876146359202,
+    "ci_low": 0.04411513445740115,
+    "ci_high": 2.215449116580794,
+    "seed_means": {
+      "0": 0.2458304882305381,
+      "1": 2.2093617103072902,
+      "2": 0.7607706453699322
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "batch_cross_critic",
+    "split": "test",
+    "method": "dual_q_table",
+    "mean": 1.690655987075609,
+    "ci_low": 1.0528357265156691,
+    "ci_high": 2.254583510456268,
+    "seed_means": {
+      "0": 1.4162752670497902,
+      "1": 2.155837986950884,
+      "2": 1.4998547072261523
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "corrected",
+    "split": "train",
+    "method": "single_policy",
+    "mean": 2.620731758516353,
+    "ci_low": 2.3135223680714145,
+    "ci_high": 3.1792494878043254,
+    "seed_means": {
+      "0": 2.4213315390179444,
+      "1": 3.1792494878043254,
+      "2": 2.261614248726789
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "corrected",
+    "split": "train",
+    "method": "q_learning",
+    "mean": 1.2925513017680468,
+    "ci_low": 1.1139571445394982,
+    "ci_high": 1.6184578093865618,
+    "seed_means": {
+      "0": 1.618457809386562,
+      "1": 1.1139571445394982,
+      "2": 1.1452389513780799
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "corrected",
+    "split": "train",
+    "method": "dual_neural",
+    "mean": 2.512333211325852,
+    "ci_low": 2.2598001862184667,
+    "ci_high": 2.933642263792745,
+    "seed_means": {
+      "0": 2.4213315390179444,
+      "1": 2.933642263792745,
+      "2": 2.1820258311668663
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "corrected",
+    "split": "train",
+    "method": "dual_q_table",
+    "mean": 1.5757035038263396,
+    "ci_low": 1.0258176955221154,
+    "ci_high": 2.580144134997779,
+    "seed_means": {
+      "0": 1.0258176955221154,
+      "1": 2.580144134997779,
+      "2": 1.121148680959124
+    },
+    "random_expected_reward": 1.0078476578309121
+  },
+  {
+    "stage": "easy",
+    "variant": "corrected",
+    "split": "test",
+    "method": "single_policy",
+    "mean": 1.1314236678370189,
+    "ci_low": 0.009207518047027376,
+    "ci_high": 2.293858772559488,
+    "seed_means": {
+      "0": 0.29358884112106465,
+      "1": 2.2823228938563527,
+      "2": 0.8183592685336395
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "corrected",
+    "split": "test",
+    "method": "q_learning",
+    "mean": 1.9318184352988013,
+    "ci_low": 1.3236728723645819,
+    "ci_high": 2.4417719389222223,
+    "seed_means": {
+      "0": 1.7026298229370134,
+      "1": 2.248999293609343,
+      "2": 1.8438261893500478
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "corrected",
+    "split": "test",
+    "method": "dual_neural",
+    "mean": 1.0719876146359202,
+    "ci_low": 0.04411513445740115,
+    "ci_high": 2.215449116580794,
+    "seed_means": {
+      "0": 0.2458304882305381,
+      "1": 2.2093617103072902,
+      "2": 0.7607706453699322
+    },
+    "random_expected_reward": 0.9656077736918165
+  },
+  {
+    "stage": "easy",
+    "variant": "corrected",
+    "split": "test",
+    "method": "dual_q_table",
+    "mean": 1.620991444929821,
+    "ci_low": 0.9491035444897788,
+    "ci_high": 2.254583510456268,
+    "seed_means": {
+      "0": 1.4974240941548158,
+      "1": 2.155837986950884,
+      "2": 1.209712253683764
+    },
+    "random_expected_reward": 0.9656077736918165
+  }
+]

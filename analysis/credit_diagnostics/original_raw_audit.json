@@ -1,0 +1,12 @@
+{
+  "source": "/home/kevinlees1220/yeahyeahyeah/examples/full_study",
+  "n_reconstructed": 0,
+  "n_missing": 64000,
+  "missing_raw_files_example": [
+    "/home/kevinlees1220/yeahyeahyeah/examples/full_study/A1/seed_0/evaluation/frozen_B8_K128/test-type1-1_single_policy.jsonl",
+    "/home/kevinlees1220/yeahyeahyeah/examples/full_study/A1/seed_0/evaluation/frozen_B8_K128/test-type1-1_q_learning.jsonl",
+    "/home/kevinlees1220/yeahyeahyeah/examples/full_study/A1/seed_0/evaluation/frozen_B8_K128/test-type1-1_dual_neural.jsonl",
+    "/home/kevinlees1220/yeahyeahyeah/examples/full_study/A1/seed_0/evaluation/frozen_B8_K128/test-type1-1_dual_q_table.jsonl"
+  ],
+  "server_access": "Only the local checkout of uploaded results was accessible; no remote GPU-server credentials/session supplied."
+}

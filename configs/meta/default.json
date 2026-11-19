@@ -34,7 +34,10 @@
     ],
     "privileged_curriculum": false,
     "single_k_only": false,
-    "q_aware": false
+    "q_aware": false,
+    "rollout_batch_size": 1,
+    "advantage_normalization": "legacy_episode",
+    "dual_credit": "legacy_cross_critic"
   },
   "q_learning": {
     "alpha": 0.2,

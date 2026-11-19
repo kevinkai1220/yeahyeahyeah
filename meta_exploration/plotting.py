@@ -197,6 +197,8 @@ def plot_results(root, output=None):
         identity = json.loads((p.parent / 'identity.json').read_text()) if (p.parent / 'identity.json').exists() else {'regime':p.parent.name, 'seed':0}
         for line in p.read_text().splitlines():
             r = json.loads(line)
+            if 'return_mean' not in r:
+                continue
             key = identity['regime'], r['stage'], identity['seed']
             training[key][r['episode']] = r
     if training:

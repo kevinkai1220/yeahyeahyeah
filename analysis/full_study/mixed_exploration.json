@@ -1,0 +1,30 @@
+[
+  {
+    "world_type": "type2",
+    "regime": "mixed",
+    "n": 165,
+    "discovery": 0.5515151515151515,
+    "same_action_fraction": 0.6291666666666667
+  },
+  {
+    "world_type": "type2",
+    "regime": "specialized",
+    "n": 165,
+    "discovery": 0.4,
+    "same_action_fraction": 0.9102272727272728
+  },
+  {
+    "world_type": "type3",
+    "regime": "mixed",
+    "n": 165,
+    "discovery": 0.45454545454545453,
+    "same_action_fraction": 0.6416666666666667
+  },
+  {
+    "world_type": "type3",
+    "regime": "specialized",
+    "n": 165,
+    "discovery": 0.793939393939394,
+    "same_action_fraction": 0.36477272727272725
+  }
+]

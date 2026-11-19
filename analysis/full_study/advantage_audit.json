@@ -1,0 +1,49 @@
+{
+  "note": "Diagnostic: zero prefix rewards, zero critic values; suffix reward 1 vs 10. Uses production targets and exact per-segment normalization formula. Main GAE=.95 retains some temporal/critic-dependent signal in general; this counterexample does not prove all downstream credit vanishes in real runs.",
+  "results": [
+    {
+      "gae_lambda": 1.0,
+      "low_downstream_return": 128.0,
+      "high_downstream_return": 1280.0,
+      "raw_advantage_means": [
+        128.0,
+        1280.0
+      ],
+      "per_episode_normalized_means": [
+        0.0,
+        0.0
+      ],
+      "max_difference_after_per_episode_normalization": 0.0,
+      "per_episode_normalized_norms": [
+        0.0,
+        0.0
+      ],
+      "pooled_batch_normalized_episode_means": [
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "gae_lambda": 0.95,
+      "low_downstream_return": 128.0,
+      "high_downstream_return": 1280.0,
+      "raw_advantage_means": [
+        9.561195373535156,
+        95.6119384765625
+      ],
+      "per_episode_normalized_means": [
+        -2.3469328880310059e-07,
+        1.2665987014770508e-07
+      ],
+      "max_difference_after_per_episode_normalization": 7.152557373046875e-07,
+      "per_episode_normalized_norms": [
+        5.656853675842285,
+        5.656854152679443
+      ],
+      "pooled_batch_normalized_episode_means": [
+        -0.8069764971733093,
+        0.806976318359375
+      ]
+    }
+  ]
+}

@@ -1,0 +1,347 @@
+[
+  {
+    "seed": "seed_0",
+    "config": {
+      "environment": {
+        "n_actions": 3,
+        "reward_sigma": 0.0,
+        "difficulty": "medium",
+        "opponent_dependence": 0.0,
+        "opponents": [
+          "constant"
+        ],
+        "opponent_checkpoint": null
+      },
+      "training": {
+        "train_worlds": 1,
+        "pretraining_episodes": 24,
+        "episodes": 96,
+        "hidden": 32,
+        "exploration_steps": 8,
+        "exploitation_steps": 128,
+        "exploration_lambda": 0.1,
+        "gamma": 1.0,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.001,
+        "ppo_epochs": 4,
+        "clip": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01,
+        "max_grad_norm": 0.5,
+        "history_pool_size": 3,
+        "history_sampling_ratios": [
+          0.4,
+          0.3,
+          0.3
+        ],
+        "privileged_curriculum": false,
+        "single_k_only": false,
+        "q_aware": false,
+        "rollout_batch_size": 8,
+        "advantage_normalization": "batch",
+        "dual_credit": "observed_suffix",
+        "pretraining_ppo": {
+          "rollout_batch_size": 8,
+          "advantage_normalization": "batch"
+        }
+      },
+      "q_learning": {
+        "alpha": 0.2,
+        "gamma": 0.99,
+        "epsilon_start": 0.3,
+        "epsilon_end": 0.05,
+        "epsilon_decay_steps": 160,
+        "replay_passes": 10
+      },
+      "evaluation": {
+        "num_test_worlds": 6,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "modes": [
+          "frozen",
+          "online"
+        ],
+        "update_interval": 16,
+        "auc_windows": [
+          32
+        ],
+        "exploration_budgets": [
+          8,
+          16,
+          32,
+          64
+        ],
+        "exploitation_budgets": [
+          128
+        ],
+        "history_reference": false,
+        "bootstrap_replicates": 200,
+        "adaptation_speed": {
+          "window": 16,
+          "hold": 8,
+          "thresholds": [
+            0.25,
+            0.5,
+            0.75,
+            0.9
+          ]
+        },
+        "online_advantage_normalization": "legacy_episode"
+      },
+      "hardware": {
+        "device": "auto",
+        "use_all_available_gpus": true,
+        "cpu_workers": 1,
+        "threads_per_worker": 1,
+        "max_retries": 1
+      },
+      "logging": {
+        "save_trajectories": true,
+        "save_plots": true,
+        "checkpoint_interval": 8
+      }
+    },
+    "source": {
+      "checkpoint": "/home/kevinlees1220/yeahyeahyeah/runs/credit_diagnostics_easy_v1/easy/corrected/seed_0/checkpoints/trained.pt",
+      "sha256": "c47df81163dd758847e1483ef5cd0b0edd380bfd709f1b7c21ad3711bbd80d34",
+      "training_performed": false
+    },
+    "runtime": {
+      "evaluation_seconds": 124.38847476895899,
+      "device": "cpu"
+    }
+  },
+  {
+    "seed": "seed_1",
+    "config": {
+      "environment": {
+        "n_actions": 3,
+        "reward_sigma": 0.0,
+        "difficulty": "medium",
+        "opponent_dependence": 0.0,
+        "opponents": [
+          "constant"
+        ],
+        "opponent_checkpoint": null
+      },
+      "training": {
+        "train_worlds": 1,
+        "pretraining_episodes": 24,
+        "episodes": 96,
+        "hidden": 32,
+        "exploration_steps": 8,
+        "exploitation_steps": 128,
+        "exploration_lambda": 0.1,
+        "gamma": 1.0,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.001,
+        "ppo_epochs": 4,
+        "clip": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01,
+        "max_grad_norm": 0.5,
+        "history_pool_size": 3,
+        "history_sampling_ratios": [
+          0.4,
+          0.3,
+          0.3
+        ],
+        "privileged_curriculum": false,
+        "single_k_only": false,
+        "q_aware": false,
+        "rollout_batch_size": 8,
+        "advantage_normalization": "batch",
+        "dual_credit": "observed_suffix",
+        "pretraining_ppo": {
+          "rollout_batch_size": 8,
+          "advantage_normalization": "batch"
+        }
+      },
+      "q_learning": {
+        "alpha": 0.2,
+        "gamma": 0.99,
+        "epsilon_start": 0.3,
+        "epsilon_end": 0.05,
+        "epsilon_decay_steps": 160,
+        "replay_passes": 10
+      },
+      "evaluation": {
+        "num_test_worlds": 6,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "modes": [
+          "frozen",
+          "online"
+        ],
+        "update_interval": 16,
+        "auc_windows": [
+          32
+        ],
+        "exploration_budgets": [
+          8,
+          16,
+          32,
+          64
+        ],
+        "exploitation_budgets": [
+          128
+        ],
+        "history_reference": false,
+        "bootstrap_replicates": 200,
+        "adaptation_speed": {
+          "window": 16,
+          "hold": 8,
+          "thresholds": [
+            0.25,
+            0.5,
+            0.75,
+            0.9
+          ]
+        },
+        "online_advantage_normalization": "legacy_episode"
+      },
+      "hardware": {
+        "device": "auto",
+        "use_all_available_gpus": true,
+        "cpu_workers": 1,
+        "threads_per_worker": 1,
+        "max_retries": 1
+      },
+      "logging": {
+        "save_trajectories": true,
+        "save_plots": true,
+        "checkpoint_interval": 8
+      }
+    },
+    "source": {
+      "checkpoint": "/home/kevinlees1220/yeahyeahyeah/runs/credit_diagnostics_easy_v1/easy/corrected/seed_1",
+      "sha256": "3a94aa3738e95a865ec4b02c74f1c767080b44dd033dde5abebc374832999b80",
+      "training_performed": false
+    },
+    "runtime": {
+      "evaluation_seconds": 212.14763742592186,
+      "device": "cpu"
+    }
+  },
+  {
+    "seed": "seed_2",
+    "config": {
+      "environment": {
+        "n_actions": 3,
+        "reward_sigma": 0.0,
+        "difficulty": "medium",
+        "opponent_dependence": 0.0,
+        "opponents": [
+          "constant"
+        ],
+        "opponent_checkpoint": null
+      },
+      "training": {
+        "train_worlds": 1,
+        "pretraining_episodes": 24,
+        "episodes": 96,
+        "hidden": 32,
+        "exploration_steps": 8,
+        "exploitation_steps": 128,
+        "exploration_lambda": 0.1,
+        "gamma": 1.0,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.001,
+        "ppo_epochs": 4,
+        "clip": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01,
+        "max_grad_norm": 0.5,
+        "history_pool_size": 3,
+        "history_sampling_ratios": [
+          0.4,
+          0.3,
+          0.3
+        ],
+        "privileged_curriculum": false,
+        "single_k_only": false,
+        "q_aware": false,
+        "rollout_batch_size": 8,
+        "advantage_normalization": "batch",
+        "dual_credit": "observed_suffix",
+        "pretraining_ppo": {
+          "rollout_batch_size": 8,
+          "advantage_normalization": "batch"
+        }
+      },
+      "q_learning": {
+        "alpha": 0.2,
+        "gamma": 0.99,
+        "epsilon_start": 0.3,
+        "epsilon_end": 0.05,
+        "epsilon_decay_steps": 160,
+        "replay_passes": 10
+      },
+      "evaluation": {
+        "num_test_worlds": 6,
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "modes": [
+          "frozen",
+          "online"
+        ],
+        "update_interval": 16,
+        "auc_windows": [
+          32
+        ],
+        "exploration_budgets": [
+          8,
+          16,
+          32,
+          64
+        ],
+        "exploitation_budgets": [
+          128
+        ],
+        "history_reference": false,
+        "bootstrap_replicates": 200,
+        "adaptation_speed": {
+          "window": 16,
+          "hold": 8,
+          "thresholds": [
+            0.25,
+            0.5,
+            0.75,
+            0.9
+          ]
+        },
+        "online_advantage_normalization": "legacy_episode"
+      },
+      "hardware": {
+        "device": "auto",
+        "use_all_available_gpus": true,
+        "cpu_workers": 1,
+        "threads_per_worker": 1,
+        "max_retries": 1
+      },
+      "logging": {
+        "save_trajectories": true,
+        "save_plots": true,
+        "checkpoint_interval": 8
+      }
+    },
+    "source": {
+      "checkpoint": "/home/kevinlees1220/yeahyeahyeah/runs/credit_diagnostics_easy_v1/easy/corrected/seed_2",
+      "sha256": "c43a3cce2f65e326b8efbc2dc9ae200fcd54e1208009b71e488934a0bbfe334e",
+      "training_performed": false
+    },
+    "runtime": {
+      "evaluation_seconds": 182.7706129392609,
+      "device": "cpu"
+    }
+  }
+]

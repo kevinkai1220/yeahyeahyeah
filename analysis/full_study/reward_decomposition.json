@@ -1,0 +1,130 @@
+[
+  {
+    "regime": "B",
+    "world_type": "type2",
+    "method": "single_policy",
+    "expected_reward_mean": 1.1683967622018345,
+    "base_component": -0.3769824214696536,
+    "bonus_component": 1.5453791836714885
+  },
+  {
+    "regime": "B",
+    "world_type": "type2",
+    "method": "q_learning",
+    "expected_reward_mean": 2.331982654622649,
+    "base_component": 1.6107567968923466,
+    "bonus_component": 0.721225857730301
+  },
+  {
+    "regime": "B",
+    "world_type": "type2",
+    "method": "dual_neural",
+    "expected_reward_mean": 0.8962211576050434,
+    "base_component": -0.309013154591006,
+    "bonus_component": 1.2052343121960492
+  },
+  {
+    "regime": "B",
+    "world_type": "type2",
+    "method": "dual_q_table",
+    "expected_reward_mean": 2.557052775231238,
+    "base_component": 0.3694681146023143,
+    "bonus_component": 2.1875846606289224
+  },
+  {
+    "regime": "B",
+    "world_type": "type3",
+    "method": "single_policy",
+    "expected_reward_mean": 0.1382367713345131,
+    "base_component": -0.3983238716311172,
+    "bonus_component": 0.5365606429656306
+  },
+  {
+    "regime": "B",
+    "world_type": "type3",
+    "method": "q_learning",
+    "expected_reward_mean": 2.2532636413633074,
+    "base_component": 1.685546944215474,
+    "bonus_component": 0.5677166971478329
+  },
+  {
+    "regime": "B",
+    "world_type": "type3",
+    "method": "dual_neural",
+    "expected_reward_mean": 0.48432754593858085,
+    "base_component": -0.0842150712990993,
+    "bonus_component": 0.5685426172376801
+  },
+  {
+    "regime": "B",
+    "world_type": "type3",
+    "method": "dual_q_table",
+    "expected_reward_mean": 1.8704743395036083,
+    "base_component": 0.5981725996965547,
+    "bonus_component": 1.272301739807054
+  },
+  {
+    "regime": "A2",
+    "world_type": "type2",
+    "method": "single_policy",
+    "expected_reward_mean": 1.3140590748849885,
+    "base_component": -0.2114064499053411,
+    "bonus_component": 1.5254655247903304
+  },
+  {
+    "regime": "A2",
+    "world_type": "type2",
+    "method": "q_learning",
+    "expected_reward_mean": 2.2966132201849185,
+    "base_component": 1.642960301898764,
+    "bonus_component": 0.6536529182861514
+  },
+  {
+    "regime": "A2",
+    "world_type": "type2",
+    "method": "dual_neural",
+    "expected_reward_mean": 1.6484596995641816,
+    "base_component": -0.15841124133935913,
+    "bonus_component": 1.8068709409035408
+  },
+  {
+    "regime": "A2",
+    "world_type": "type2",
+    "method": "dual_q_table",
+    "expected_reward_mean": 2.712246775772291,
+    "base_component": 0.5867912545184416,
+    "bonus_component": 2.12545552125385
+  },
+  {
+    "regime": "A3",
+    "world_type": "type3",
+    "method": "single_policy",
+    "expected_reward_mean": 0.5048619114503015,
+    "base_component": -0.15364444663916654,
+    "bonus_component": 0.6585063580894679
+  },
+  {
+    "regime": "A3",
+    "world_type": "type3",
+    "method": "q_learning",
+    "expected_reward_mean": 2.2535913990937226,
+    "base_component": 1.6504378680755787,
+    "bonus_component": 0.6031535310181432
+  },
+  {
+    "regime": "A3",
+    "world_type": "type3",
+    "method": "dual_neural",
+    "expected_reward_mean": 0.507804662376242,
+    "base_component": -0.11014342823643855,
+    "bonus_component": 0.6179480906126807
+  },
+  {
+    "regime": "A3",
+    "world_type": "type3",
+    "method": "dual_q_table",
+    "expected_reward_mean": 2.0106802320351935,
+    "base_component": 0.08772904372693578,
+    "bonus_component": 1.9229511883082604
+  }
+]

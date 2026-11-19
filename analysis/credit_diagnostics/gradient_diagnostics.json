@@ -1,0 +1,20 @@
+{
+  "single_policy": {
+    "n_batches": 36,
+    "actor_gradient_median": 0.2846275791525841,
+    "critic_gradient_median": 69.55787467956543,
+    "fraction_batches_mean_norm_above_clip": 1.0
+  },
+  "explorer": {
+    "n_batches": 36,
+    "actor_gradient_median": 0.22656618803739548,
+    "critic_gradient_median": 112.75258922576904,
+    "fraction_batches_mean_norm_above_clip": 1.0
+  },
+  "dual_neural": {
+    "n_batches": 36,
+    "actor_gradient_median": 0.3331952318549156,
+    "critic_gradient_median": 70.62730407714844,
+    "fraction_batches_mean_norm_above_clip": 1.0
+  }
+}

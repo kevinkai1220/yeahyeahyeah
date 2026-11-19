@@ -1,0 +1,15 @@
+{
+  "training": {
+    "train_worlds": 3, "pretraining_episodes": 4, "episodes": 4,
+    "hidden": 8, "exploration_steps": 3, "exploitation_steps": 5,
+    "ppo_epochs": 1, "history_pool_size": 3,
+    "rollout_batch_size": 2, "advantage_normalization": "batch", "dual_credit": "observed_suffix"
+  },
+  "evaluation": {
+    "num_test_worlds": 3, "seeds": [0], "update_interval": 2,
+    "auc_windows": [4,8], "exploration_budgets": [3], "exploitation_budgets": [5],
+    "bootstrap_replicates": 20, "history_reference": false,
+    "adaptation_speed": {"window": 2, "hold": 2, "thresholds": [0.25,0.5,0.75,0.9]}
+  },
+  "logging": {"checkpoint_interval": 2}
+}
