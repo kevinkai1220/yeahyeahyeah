@@ -1,0 +1,8 @@
+{
+  "training": {"train_worlds": 6, "pretraining_episodes": 6, "episodes": 6, "hidden": 16,
+    "exploration_steps": 18, "exploitation_steps": 24, "ppo_epochs": 1, "history_pool_size": 3},
+  "evaluation": {"num_test_worlds": 6, "seeds": [0, 1, 2, 3, 4], "update_interval": 8,
+    "auc_windows": [16, 32], "exploration_budgets": [9, 18], "exploitation_budgets": [24],
+    "bootstrap_replicates": 300},
+  "logging": {"checkpoint_interval": 2}
+}

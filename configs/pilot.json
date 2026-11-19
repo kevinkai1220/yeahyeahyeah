@@ -1,0 +1,37 @@
+{
+  "seed": 0,
+  "horizon": 100,
+  "budgets": [
+    10,
+    25,
+    50
+  ],
+  "training_tasks": 256,
+  "evaluation_tasks": 128,
+  "tasks_per_update": 8,
+  "rollouts_per_task": 8,
+  "updates": 100,
+  "opponent_updates": 100,
+  "evaluation_rollouts": 8,
+  "hidden": 128,
+  "learning_rate": 0.0003,
+  "checkpoint_every": 10,
+  "ppo": {
+    "epochs": 4,
+    "minibatch": 16,
+    "clip": 0.2,
+    "value_coefficient": 0.5,
+    "max_grad_norm": 0.5
+  },
+  "generator": {
+    "safe_reward": 0.6,
+    "prefix_cost": -3.0,
+    "combo_reward": 9.0,
+    "interaction": 0.05
+  },
+  "q_learning": {
+    "alpha": 0.2,
+    "epsilon": 0.2,
+    "gamma": 1.0
+  }
+}

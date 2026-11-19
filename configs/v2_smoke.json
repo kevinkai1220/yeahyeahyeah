@@ -1,0 +1,39 @@
+{
+  "seed": 0,
+  "horizon": 8,
+  "budgets": [
+    3
+  ],
+  "training_tasks": 8,
+  "evaluation_tasks": 2,
+  "tasks_per_update": 2,
+  "rollouts_per_task": 2,
+  "updates": 1,
+  "opponent_updates": 1,
+  "evaluation_rollouts": 1,
+  "hidden": 128,
+  "learning_rate": 0.0003,
+  "checkpoint_every": 1,
+  "ppo": {
+    "epochs": 1,
+    "minibatch": 4,
+    "clip": 0.2,
+    "value_coefficient": 0.5,
+    "max_grad_norm": 0.5
+  },
+  "generator": {
+    "safe_reward": 0.6,
+    "prefix_cost": -3.0,
+    "combo_reward": 9.0,
+    "interaction": 0.05
+  },
+  "q_learning": {
+    "alpha": 0.2,
+    "epsilon": 0.2,
+    "gamma": 1.0
+  },
+  "gpu_pipeline": true,
+  "device": "cpu",
+  "exploit_pretrain_updates": 1,
+  "history_injection_probability": 0.75
+}
