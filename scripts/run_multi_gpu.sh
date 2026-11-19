@@ -9,4 +9,5 @@ if [[ $# -ge 1 ]]; then shift; fi
 if [[ $# -ge 1 ]]; then shift; fi
 export MPLBACKEND=Agg
 export OMP_NUM_THREADS="${OMP_NUM_THREADS:-1}"
-exec bash scripts/meta.sh launch --require-gpu --config "$META_CONFIG" --out "$META_OUTPUT" "$@"
+exec bash scripts/meta.sh launch --require-gpu --config "$META_CONFIG" --out "$META_OUTPUT" \
+    --workers-per-gpu "${WORKERS_PER_GPU:-2}" --frozen-batch-size "${FROZEN_BATCH_SIZE:-32}" "$@"

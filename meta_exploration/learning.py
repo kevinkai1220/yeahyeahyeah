@@ -24,6 +24,19 @@ def assert_equal(a, b):
     assert all(torch.equal(v, b.state_dict()[k]) for k, v in a.state_dict().items())
 
 
+def action_statistics(logits, values):
+    """Categorical statistics with one device-to-host transfer for the whole batch."""
+    logs = logits - logits.logsumexp(dim=-1, keepdim=True)
+    return torch.cat((logs.softmax(-1), logs, values[..., None]), dim=-1).cpu().numpy()
+
+
+def sample_statistics(stats, rng, version=0):
+    p = stats[:3].astype(float)
+    a = int(rng.choice(3, p=p / p.sum()))
+    return a, dict(log_prob=float(stats[3+a]), value=float(stats[6]),
+                   action_probs=p.tolist(), policy_version=version)
+
+
 class Controller:
     def __init__(self, model, seed):
         self.model, self.rng = model, np.random.default_rng(seed)
@@ -39,12 +52,9 @@ class Controller:
     def act(self, observation):
         x = observation.vector()
         logits, values, self.hidden = self.model(torch.tensor(x, device=self.device)[None, None], self.hidden)
-        dist = Categorical(logits=logits[0, 0, 0])
-        p = dist.probs.cpu().numpy().astype(float)
-        a = int(self.rng.choice(3, p=p / p.sum()))
+        stats = action_statistics(logits[0, 0, 0], values[0, 0, 0])
         self.context.append(x)
-        return a, dict(log_prob=float(dist.log_prob(torch.tensor(a, device=self.device))),
-                       value=float(values[0, 0, 0]), action_probs=p.tolist(), policy_version=self.version)
+        return sample_statistics(stats, self.rng, self.version)
 
     @torch.no_grad()
     def value(self, observation):
@@ -129,7 +139,7 @@ def targets(history, config, start_step=0, bootstrap=0.):
                bootstrap, tr['gamma'], tr['gae_lambda'])
 
 
-def ppo_update(controller, optimizer, history, advantages, returns, config, prefix=()):
+def ppo_update(controller, optimizer, history, advantages, returns, config, prefix=(), refresh=True):
     if not history:
         return dict(updates=0, transitions=0, loss=0.)
     versions = {t.info['policy_version'] for t in history}
@@ -163,7 +173,8 @@ def ppo_update(controller, optimizer, history, advantages, returns, config, pref
         losses.append(float(loss.detach()))
         kls.append(float(((ratio-1) - (logs-old_logs)).mean().detach()))
     controller.version += 1
-    controller.refresh()
+    if refresh:
+        controller.refresh()
     return dict(updates=tr['ppo_epochs'], transitions=len(history), loss=float(np.mean(losses)),
                 approximate_kl=float(np.mean(kls)), policy_version=controller.version)
 
@@ -181,6 +192,39 @@ def collect(game, actor, steps, online_q=False):
     return history
 
 
+@torch.no_grad()
+def collect_batched(games, model, seeds, steps, prefixes=None):
+    """Batch independent frozen policies sharing weights, never adaptation state.
+
+    Each row keeps its own environment, RNG and GRU hidden state. CPU environment
+    semantics and per-world action seeds are identical to scalar collection.
+    """
+    if len(games) != len(seeds):
+        raise ValueError('One seed per game is required')
+    if not games:
+        return []
+    device = next(model.parameters()).device
+    rngs = [np.random.default_rng(s) for s in seeds]
+    histories = [[] for _ in games]
+    hidden = None
+    if prefixes is not None:
+        if len(prefixes) != len(games) or len({len(h) for h in prefixes}) != 1:
+            raise ValueError('Equal-length independent prefixes are required')
+        if prefixes[0]:
+            context = np.array([[t.observation.vector() for t in h] for h in prefixes])
+            _, _, hidden = model(torch.from_numpy(context).to(device))
+    for _ in range(steps):
+        observations = [game.observation() for game in games]
+        x = torch.from_numpy(np.stack([o.vector() for o in observations])).to(device)[:, None]
+        logits, values, hidden = model(x, hidden)
+        stats = action_statistics(logits[:, 0, 0], values[:, 0, 0])
+        for i, (game, observation, rng) in enumerate(zip(games, observations, rngs)):
+            action, info = sample_statistics(stats[i], rng)
+            nxt, reward, done, b = game.step(action)
+            histories[i].append(Transition(observation, action, reward, nxt, done, b, info))
+    return histories
+
+
 def adapt(game, controller, steps, optimizer, config, online=False):
     history, updates = [], []
     interval = config['evaluation']['update_interval']
@@ -193,5 +237,6 @@ def adapt(game, controller, steps, optimizer, config, online=False):
         if online:
             bootstrap = 0. if segment[-1].done else controller.value(game.observation())
             adv, ret = targets(segment, config, start, bootstrap)
-            updates.append(ppo_update(controller, optimizer, segment, adv, ret, config, prefix))
+            updates.append(ppo_update(controller, optimizer, segment, adv, ret, config, prefix,
+                                      refresh=not segment[-1].done))
     return history, updates

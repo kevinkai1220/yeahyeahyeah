@@ -25,7 +25,7 @@ bash scripts/run_multi_gpu.sh
 TORCH_INDEX_URL=https://download.pytorch.org/whl/cu128 bash scripts/setup_gpu.sh
 ```
 
-`run_multi_gpu.sh`는 모든 정상 **visible GPU**에 worker를 하나씩 배치해
+`run_multi_gpu.sh`는 모든 정상 **visible GPU**에 기본 2개 worker를 배치해
 A1/A2/A3/Mixed × 5 seeds의 20개 job을 동적으로 실행합니다. 별도의 `torchrun`은
 필요 없습니다. GPU가 하나도 정상 동작하지 않으면 CPU로 조용히 넘어가지 않고
 오류를 냅니다. 실행 중 특정 GPU에 CUDA 오류가 생기면 해당 worker는 CPU로 재시도하고
@@ -52,6 +52,41 @@ tail -f multi_gpu.log
 저장됩니다. 각 job의 진행 로그는 `REGIME/seed_N/worker_*.log`,
 `training.jsonl`에 있습니다. `runs/`와 가상환경은 Git에 포함하지 않습니다.
 작은 CPU pilot의 요약 결과와 대표 그림은 [`examples/pilot/`](examples/pilot/)에 포함했습니다.
+
+## GPU 사용률 / throughput 조정
+
+이 실험의 GRU는 작고 환경·Q-table 연산은 CPU에서 실행됩니다. GPU를 여러 개
+배정하는 것만으로 높은 사용률이 보장되지는 않습니다. 현재 구현은 다음 비용을 줄입니다:
+
+- Actor의 확률·log-prob·value를 step당 한 번에 CPU로 가져옵니다.
+- Frozen explorer는 여러 test worlds를 함께 추론합니다. Frozen evaluation의
+  Single/Dual Neural도 동일 weights를 공유하는 world들끼리 batch 추론합니다.
+- Online adaptation은 world별 weights와 optimizer를 독립적으로 유지합니다.
+  PPO episode/update 횟수, interaction budget, reward objective는 바꾸지 않습니다.
+- Training episode 종료 후 버려질 recurrent state를 다시 계산하지 않습니다.
+- GPU당 복수 job으로 CPU 환경·Q 연산 중 생기는 대기 구간을 겹칩니다.
+
+기존 실행을 중단한 뒤 `git pull`하고 같은 output 경로로 재개할 수 있습니다.
+Worker 수와 frozen batch size는 runtime 설정이므로 기존 scientific config와
+checkpoint를 그대로 사용할 수 있습니다.
+
+```bash
+git pull --ff-only
+WORKERS_PER_GPU=2 FROZEN_BATCH_SIZE=32 bash scripts/run_multi_gpu.sh
+
+# 여유 GPU 메모리/CPU 코어가 충분할 때 비교해 볼 설정
+WORKERS_PER_GPU=4 FROZEN_BATCH_SIZE=64 bash scripts/run_multi_gpu.sh
+
+# 서버에서 scalar vs batched frozen evaluation의 실제 처리량 측정
+.venv/bin/python -m meta_exploration.benchmark --device cuda:0 --worlds 32 --out runs/throughput_gpu.json
+```
+
+동시 worker를 무조건 늘리면 CPU 또는 메모리 경합으로 느려질 수 있습니다.
+GPU 사용률만 보지 말고 `launcher.jsonl`의 job runtime과 `runtime.json`의
+training/evaluation 시간을 비교하세요. `scheduling.json`과 evaluation의
+`protocol.json`에 runtime 설정이 기록됩니다. Batch 연산은 부동소수점 반올림이
+scalar와 미세하게 다를 수 있지만, world별 RNG/state 분리와 paired history는
+유지됩니다. `FROZEN_BATCH_SIZE=1`로 scalar 경로를 사용할 수 있습니다.
 
 ## Other commands
 
@@ -290,8 +325,8 @@ identical total training cost. Training progress is separate from test metrics.
 
 `hardware` records nvidia-smi, PyTorch/CUDA availability, visible-device mapping,
 GPU memory and an actual matrix multiply on each visible GPU in isolated child
-processes. Failed probes are excluded. One independent worker per healthy GPU
-pulls new jobs dynamically. Small GRUs do not use DDP; this implementation does
+processes. Failed probes are excluded. A configurable number of independent workers per healthy GPU
+pulls new jobs dynamically (server wrapper default: 2; general CLI default: 1). Small GRUs do not use DDP; this implementation does
 not claim DDP support. With no healthy GPU it uses CPU workers. Config can force
 CPU, select a CUDA device, or limit all-device usage. CUDA probes are real, not
 inferred just from device count.

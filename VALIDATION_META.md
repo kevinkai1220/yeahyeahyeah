@@ -86,3 +86,32 @@ The original pilot's learning implementation is unchanged by these packaging fix
   checkpoints, virtual environments, and installed dependency files are not uploaded.
 - `validation/source_manifest.json` describes the original local pilot source;
   `validation/publish_manifest.json` describes the published source and entrypoints.
+
+## Throughput revision
+
+The first GPU launcher used one independent job per device and scalar recurrent
+inference. The revised server wrapper defaults to two jobs per GPU and batches
+shared frozen policies across test worlds (default batch size 32). Adaptive neural
+weights/optimizers remain per world; training PPO batch/update schedules and logical
+interaction budgets are unchanged. Scalar action probabilities, log-probabilities
+and values now share one device-to-host transfer. Discarded terminal recurrent
+states are no longer replayed after PPO updates.
+
+- **63 tests passed** (`validation/throughput_tests.txt`), including scalar/batched
+  trajectory equivalence on CPU, independent online adaptation, shared paired
+  prefix identity, unchanged PPO weights when skipping terminal replay, and four
+  concurrent jobs assigned to two mocked GPUs without output collisions.
+- The updated launcher completed an end-to-end CPU smoke run with frozen batch
+  size 2 (including a partial last batch), both evaluation modes, and PNG/PDF output.
+- Measured CPU frozen-evaluation benchmark: 32 worlds, hidden=64, B=32/K=128,
+  all four methods plus Q replay/reference/diagnostics, three timed repetitions:
+  scalar median **7.127 s**, batch-32 median **2.330 s**, **3.059×** throughput.
+  Details: `validation/throughput_cpu.json`. This excludes training and disk I/O;
+  it is not a measured GPU speedup or GPU-utilization claim.
+- GPU utilization/throughput must still be measured on the user's CUDA server.
+  `python -m meta_exploration.benchmark --device cuda:0 --worlds 32` provides the
+  same comparative benchmark. Raising worker count can hurt if CPU/memory bound.
+- Runtime worker/batch controls are stored separately from scientific config,
+  preserving compatibility with existing checkpoints. Batch floating-point rounding
+  can differ slightly on GPU; per-world RNG streams, observation boundaries and
+  the paired evaluation design remain unchanged.

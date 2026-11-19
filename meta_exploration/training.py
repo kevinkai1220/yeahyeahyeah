@@ -148,7 +148,7 @@ def pretrain(config, worlds, out, device, seed, opponent_model=None):
         log_history(out, config, prefix + suffix, world, 'pretraining', episode)
         adv, ret = targets(suffix, config, B)
         metrics = ppo_update(controller, optimizer, suffix, adv, ret, config,
-                             [x.observation.vector() for x in prefix])
+                             [x.observation.vector() for x in prefix], refresh=False)
         total_interactions += B * len(candidates) + K
         append_json(out / 'training.jsonl', dict(stage='pretraining', episode=episode,
                     world_id=world.world_id, world_type=world.world_type,
@@ -209,7 +209,7 @@ def train(config, regime, seed, out, device='cpu', pretrain_only=False):
         adv, ret = targets(history, config)
         cut = B if t['single_k_only'] else 0
         metrics = ppo_update(controller, optimizers['single_policy'], history[cut:], adv[cut:], ret[cut:], config,
-                             [x.observation.vector() for x in history[:cut]])
+                             [x.observation.vector() for x in history[:cut]], refresh=False)
         append_json(out / 'training.jsonl', dict(stage='single_policy', episode=episode,
                     world_id=world.world_id, world_type=world.world_type,
                     return_mean=float(np.mean([x.reward for x in history[B:]])),
@@ -229,7 +229,7 @@ def train(config, regime, seed, out, device='cpu', pretrain_only=False):
         for key, ctrl, hist, a, r, context in (
             ('explorer', explorer, prefix, adv[:B], ret[:B], []),
             ('dual_neural', exploit, suffix, adv[B:], ret[B:], [x.observation.vector() for x in prefix])):
-            metrics = ppo_update(ctrl, optimizers[key], hist, a, r, config, context)
+            metrics = ppo_update(ctrl, optimizers[key], hist, a, r, config, context, refresh=False)
             append_json(out / 'training.jsonl', dict(stage=key, episode=episode,
                         world_id=world.world_id, world_type=world.world_type,
                         return_mean=float(np.mean([x.reward for x in suffix])),
@@ -257,7 +257,7 @@ def train(config, regime, seed, out, device='cpu', pretrain_only=False):
             # boundary, without using Q values as neural critic predictions.
             downstream = sum((t['gamma'] ** i) * x.reward for i, x in enumerate(suffix))
             a, r = targets(prefix, config, bootstrap=downstream)
-            metrics = ppo_update(qctrl, optimizers['q_explorer'], prefix, a, r, config)
+            metrics = ppo_update(qctrl, optimizers['q_explorer'], prefix, a, r, config, refresh=False)
             append_json(out / 'training.jsonl', dict(stage='q_explorer', episode=episode,
                         return_mean=float(np.mean([x.reward for x in suffix])), interactions=(episode+1)*(B+K), **metrics))
         if (episode+1) % config['logging']['checkpoint_interval'] == 0 or episode+1 == t['episodes']:

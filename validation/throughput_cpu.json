@@ -1,0 +1,31 @@
+{
+  "device": "cpu",
+  "torch_version": "2.15.0+cpu",
+  "worlds": 32,
+  "evaluation": "frozen",
+  "hidden": 64,
+  "timings": [
+    {
+      "batch_size": 1,
+      "seconds": [
+        6.988732250407338,
+        7.127443801611662,
+        7.238902532495558
+      ],
+      "median_seconds": 7.127443801611662,
+      "logical_method_steps_per_second": 2873.400418165212
+    },
+    {
+      "batch_size": 32,
+      "seconds": [
+        2.1138904271647334,
+        2.3303442802280188,
+        2.49309026543051
+      ],
+      "median_seconds": 2.3303442802280188,
+      "logical_method_steps_per_second": 8788.400998841287
+    }
+  ],
+  "speedup": 3.058536827405716,
+  "note": "Includes all four methods, Q replay, history reference and diagnostics; excludes disk logging/training. GPU utilization is not inferred from CPU timings."
+}

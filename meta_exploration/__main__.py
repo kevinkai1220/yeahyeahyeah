@@ -19,6 +19,8 @@ def main():
     parser.add_argument('--seed', type=int, default=0); parser.add_argument('--seeds', type=int, nargs='+')
     parser.add_argument('--device'); parser.add_argument('--history', nargs='+')
     parser.add_argument('--require-gpu', action='store_true', help='Fail launch if no usable CUDA GPU is found')
+    parser.add_argument('--workers-per-gpu', type=int, default=1, help='Independent concurrent jobs on each GPU')
+    parser.add_argument('--frozen-batch-size', type=int, default=32, help='Worlds per shared frozen-policy inference batch; 1 disables batching')
     args = parser.parse_args(); config = load_config(args.config)
     torch.set_num_threads(config['hardware']['threads_per_worker'])
     if args.command == 'hardware':
@@ -35,7 +37,8 @@ def main():
         if not args.config:
             parser.error('--config required for launcher')
         launch(config, args.config, args.out, args.regimes, args.seeds or config['evaluation']['seeds'],
-               require_gpu=args.require_gpu)
+               require_gpu=args.require_gpu, workers_per_gpu=args.workers_per_gpu,
+               frozen_batch_size=args.frozen_batch_size)
         if config['logging']['save_plots']:
             from .plotting import plot_results
             plot_results(args.out)
@@ -60,12 +63,20 @@ def main():
             usable = hardware_report()['usable_devices']
             device = f'cuda:{usable[0]}' if usable else 'cpu'
         start = time.monotonic()
+        training_seconds, evaluation_seconds = 0., 0.
         if args.command in ('run', 'pretrain', 'train'):
+            print(f'Training {args.regime}/seed_{args.seed} on {device}', flush=True)
             train(config, args.regime, args.seed, out, device, pretrain_only=args.command=='pretrain')
+            training_seconds = time.monotonic() - start
         if args.command in ('run', 'evaluate'):
-            evaluate(config, args.regime, args.seed, out, device)
+            eval_start = time.monotonic()
+            print(f'Evaluating {args.regime}/seed_{args.seed} on {device}, frozen batch={args.frozen_batch_size}', flush=True)
+            evaluate(config, args.regime, args.seed, out, device, frozen_batch_size=args.frozen_batch_size)
+            evaluation_seconds = time.monotonic() - eval_start
         write_json(out / 'runtime.json', dict(device=device, torch_version=torch.__version__,
                     runtime_seconds=time.monotonic()-start,
+                    training_seconds=training_seconds, evaluation_seconds=evaluation_seconds,
+                    frozen_batch_size=args.frozen_batch_size,
                     peak_gpu_memory_bytes=torch.cuda.max_memory_allocated(device) if device.startswith('cuda') else 0))
         if args.command == 'run':
             write_json(out / 'complete.json', dict(regime=args.regime, seed=args.seed, status='complete'))

@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 import torch
 from .environment import ACTIONS, oracle_values
-from .learning import Controller, QLearner, collect, adapt, clone_model, make_model, assert_equal
+from .learning import Controller, QLearner, collect, collect_batched, adapt, clone_model, make_model, assert_equal
 from .training import world_set, make_game, load_opponent, write_json, append_json
 
 
@@ -93,33 +93,46 @@ def metrics(history, world, B, opponent, config, reference=None):
     return m
 
 
-def evaluate_world(config, models, world, seed, mode, opponent_model=None):
+def evaluate_world(config, models, world, seed, mode, opponent_model=None,
+                   exploration=None, frozen_single=None, frozen_suffix=None):
     B, K = config['training']['exploration_steps'], config['training']['exploitation_steps']
     online = mode == 'online'
     initial = make_game(world, B + K, seed, config, opponent_model)
     results, update_counts = {}, {}
-    single = Controller(clone_model(models['single_policy']), seed)
-    optimizer = torch.optim.Adam(single.model.parameters(), lr=config['training']['learning_rate'])
-    results['single_policy'], updates = adapt(initial.snapshot(), single, B + K, optimizer, config, online)
+    if frozen_single is not None:
+        assert not online
+        results['single_policy'], updates = frozen_single, []
+    else:
+        single = Controller(clone_model(models['single_policy']), seed)
+        optimizer = torch.optim.Adam(single.model.parameters(), lr=config['training']['learning_rate'])
+        results['single_policy'], updates = adapt(initial.snapshot(), single, B + K, optimizer, config, online)
+        if not online:
+            assert_equal(single.model, models['single_policy'])
     update_counts['single_policy'] = sum(u['updates'] for u in updates)
-    if not online:
-        assert_equal(single.model, models['single_policy'])
     q = QLearner(config['q_learning'], seed)
     results['q_learning'] = collect(initial.snapshot(), q, B + K, online_q=True)
     update_counts['q_learning'] = 0
-    shared_game = initial.snapshot()
-    explorer = Controller(clone_model(models['explorer']), seed)
-    prefix = collect(shared_game, explorer, B)
+    if exploration is None:
+        shared_game = initial.snapshot()
+        explorer = Controller(models['explorer'], seed)
+        prefix = collect(shared_game, explorer, B)
+    else:
+        prefix, shared_game = exploration
+        assert len(prefix) == B and shared_game.t == B
     # This is the ONLY learned-prefix collection for both main dual methods.
     post_exploration = shared_game.snapshot()
-    exploit = Controller(clone_model(models['dual_neural']), seed + 10000)
-    exploit.ingest(prefix)
-    optimizer = torch.optim.Adam(exploit.model.parameters(), lr=config['training']['learning_rate'])
-    suffix, updates = adapt(post_exploration.snapshot(), exploit, K, optimizer, config, online)
+    if frozen_suffix is not None:
+        assert not online
+        suffix, updates = frozen_suffix, []
+    else:
+        exploit = Controller(clone_model(models['dual_neural']), seed + 10000)
+        exploit.ingest(prefix)
+        optimizer = torch.optim.Adam(exploit.model.parameters(), lr=config['training']['learning_rate'])
+        suffix, updates = adapt(post_exploration.snapshot(), exploit, K, optimizer, config, online)
+        if not online:
+            assert_equal(exploit.model, models['dual_neural'])
     results['dual_neural'] = prefix + suffix
     update_counts['dual_neural'] = sum(u['updates'] for u in updates)
-    if not online:
-        assert_equal(exploit.model, models['dual_neural'])
     q = QLearner(config['q_learning'], seed + 10000); q.replay(prefix)
     results['dual_q_table'] = prefix + collect(post_exploration.snapshot(), q, K, online_q=True)
     update_counts['dual_q_table'] = 0
@@ -146,7 +159,32 @@ def evaluate_world(config, models, world, seed, mode, opponent_model=None):
     return results, summaries
 
 
-def evaluate(config, regime, seed, out, device='cpu'):
+def evaluate_worlds(config, models, worlds, seed, mode, opponent_model=None, frozen_batch_size=32):
+    if frozen_batch_size < 1:
+        raise ValueError('frozen_batch_size must be positive')
+    B, K = config['training']['exploration_steps'], config['training']['exploitation_steps']
+    for start in range(0, len(worlds), frozen_batch_size):
+        batch = worlds[start:start+frozen_batch_size]
+        seeds = [seed * 100000 + w.seed for w in batch]
+        if frozen_batch_size == 1:
+            for world, s in zip(batch, seeds):
+                yield world, evaluate_world(config, models, world, s, mode, opponent_model)
+            continue
+        games = [make_game(w, B+K, s, config, opponent_model) for w, s in zip(batch, seeds)]
+        prefixes = collect_batched(games, models['explorer'], seeds, B)
+        singles, suffixes = [None]*len(batch), [None]*len(batch)
+        if mode == 'frozen':
+            singles = collect_batched([make_game(w, B+K, s, config, opponent_model) for w,s in zip(batch,seeds)],
+                                      models['single_policy'], seeds, B+K)
+            suffixes = collect_batched([g.snapshot() for g in games], models['dual_neural'],
+                                       [s+10000 for s in seeds], K, prefixes=prefixes)
+        for i, (world, s) in enumerate(zip(batch, seeds)):
+            yield world, evaluate_world(config, models, world, s, mode, opponent_model,
+                                        exploration=(prefixes[i], games[i]),
+                                        frozen_single=singles[i], frozen_suffix=suffixes[i])
+
+
+def evaluate(config, regime, seed, out, device='cpu', frozen_batch_size=32):
     out = Path(out)
     checkpoint = torch.load(out / 'checkpoints' / 'trained.pt', map_location=device, weights_only=False)
     models = {}
@@ -169,8 +207,8 @@ def evaluate(config, regime, seed, out, device='cpu'):
             for mode in config['evaluation']['modes']:
                 folder = root / f'{mode}_B{B}_K{K}'; folder.mkdir(exist_ok=True)
                 rows = []
-                for i, world in enumerate(worlds):
-                    histories, summaries = evaluate_world(cfg, models, world, seed * 100000 + world.seed, mode, opponent_model)
+                for world, (histories, summaries) in evaluate_worlds(cfg, models, worlds, seed, mode, opponent_model,
+                                                                   frozen_batch_size):
                     paired_rows.append(dict(regime=regime, seed=seed, world_id=world.world_id, world_type=world.world_type,
                                             evaluation=mode, B=B, K=K,
                                             neural_minus_q_exploitation_mean=summaries['dual_neural']['exploitation_mean']-summaries['dual_q_table']['exploitation_mean']))
@@ -196,6 +234,7 @@ def evaluate(config, regime, seed, out, device='cpu'):
     write_json(root / 'metrics.json', all_rows)
     write_json(root / 'paired_differences.json', paired_rows)
     write_json(root / 'protocol.json', dict(
+        frozen_batch_size=frozen_batch_size,
         frozen='Only neural parameters frozen; Q methods still update, report separately.',
         paired='One B-prefix collected, environment/opponent/mode/RNG cloned for both exploiters.',
         history_reference='50 observed-only reverse TD replay passes, greedy frozen Q policy on a clone; empirical comparator, not an upper bound.',
