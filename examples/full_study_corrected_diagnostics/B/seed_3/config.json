@@ -1,0 +1,105 @@
+{
+  "environment": {
+    "n_actions": 3,
+    "reward_sigma": 1.0,
+    "difficulty": "medium",
+    "opponent_dependence": 0.0,
+    "opponents": [
+      "random",
+      "fixed"
+    ],
+    "opponent_checkpoint": null
+  },
+  "training": {
+    "train_worlds": 60,
+    "pretraining_episodes": 300,
+    "episodes": 1200,
+    "hidden": 64,
+    "exploration_steps": 32,
+    "exploitation_steps": 128,
+    "exploration_lambda": 0.1,
+    "gamma": 1.0,
+    "gae_lambda": 0.95,
+    "learning_rate": 0.0003,
+    "ppo_epochs": 4,
+    "clip": 0.2,
+    "value_coefficient": 0.5,
+    "entropy_coefficient": 0.01,
+    "max_grad_norm": 0.5,
+    "history_pool_size": 6,
+    "history_sampling_ratios": [
+      0.4,
+      0.3,
+      0.3
+    ],
+    "privileged_curriculum": false,
+    "single_k_only": false,
+    "q_aware": false,
+    "rollout_batch_size": 8,
+    "advantage_normalization": "batch",
+    "dual_credit": "observed_suffix"
+  },
+  "q_learning": {
+    "alpha": 0.2,
+    "gamma": 0.99,
+    "epsilon_start": 0.3,
+    "epsilon_end": 0.05,
+    "epsilon_decay_steps": 160,
+    "replay_passes": 10
+  },
+  "evaluation": {
+    "num_test_worlds": 100,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "modes": [
+      "frozen",
+      "online"
+    ],
+    "update_interval": 32,
+    "auc_windows": [
+      32,
+      64,
+      128
+    ],
+    "exploration_budgets": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "exploitation_budgets": [
+      128
+    ],
+    "history_reference": true,
+    "bootstrap_replicates": 1000,
+    "adaptation_speed": {
+      "window": 16,
+      "hold": 8,
+      "thresholds": [
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "denominator_epsilon": 1e-08
+    },
+    "online_advantage_normalization": "legacy_episode"
+  },
+  "hardware": {
+    "device": "auto",
+    "use_all_available_gpus": true,
+    "cpu_workers": 1,
+    "threads_per_worker": 1,
+    "max_retries": 1
+  },
+  "logging": {
+    "save_trajectories": true,
+    "save_plots": true,
+    "checkpoint_interval": 20
+  }
+}
