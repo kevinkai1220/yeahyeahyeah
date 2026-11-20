@@ -1,0 +1,1838 @@
+[
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "real",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.3095718436463475,
+    "optimal_utilization": 0.9084821428571429,
+    "ordered": {
+      "first_action_probability": 0.9312340702329364,
+      "second_action_probability": 0.9233315331595284,
+      "ordered_product_probability": 0.875840020307579
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "reward_shuffled",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 0.8571428571428571,
+    "reward": 5.338810749696445,
+    "optimal_utilization": 0.9107142857142857,
+    "ordered": {
+      "first_action_probability": 0.878682017326355,
+      "second_action_probability": 0.8741030693054199,
+      "ordered_product_probability": 0.8311249854326199
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "action_shuffled",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.3341363108849515,
+    "optimal_utilization": 0.9107142857142857,
+    "ordered": {
+      "first_action_probability": 0.9240472061293465,
+      "second_action_probability": 0.9151424850736346,
+      "ordered_product_probability": 0.8668960805598646
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "reset",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 0.8571428571428571,
+    "reward": 4.911376427428058,
+    "optimal_utilization": 0.8459821428571429,
+    "ordered": {
+      "first_action_probability": 0.44428615484918865,
+      "second_action_probability": 0.43014765637261526,
+      "ordered_product_probability": 0.20800783442093834
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "coverage",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 0.5714285714285714,
+    "reward": 5.192743933829819,
+    "optimal_utilization": 0.8816964285714286,
+    "ordered": {
+      "first_action_probability": 0.6624959579535893,
+      "second_action_probability": 0.6244510348354068,
+      "ordered_product_probability": 0.5107823520714837
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "random",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.602108254632596,
+    "optimal_utilization": 0.953125,
+    "ordered": {
+      "first_action_probability": 0.9123856425285339,
+      "second_action_probability": 0.8880716562271118,
+      "ordered_product_probability": 0.8271508704816516
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "repeat",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 0.5714285714285714,
+    "reward": 4.669913641716912,
+    "optimal_utilization": 0.8058035714285714,
+    "ordered": {
+      "first_action_probability": 0.638839741902692,
+      "second_action_probability": 0.6274319535919598,
+      "ordered_product_probability": 0.5601465123367563
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "q_learning",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.558889187975201,
+    "optimal_utilization": 0.9464285714285714,
+    "ordered": {
+      "first_action_probability": 0.9253462723323277,
+      "second_action_probability": 0.9211499094963074,
+      "ordered_product_probability": 0.8654328546236663
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "successful_observed",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.617304797722768,
+    "optimal_utilization": 0.9553571428571429,
+    "ordered": {
+      "first_action_probability": 0.9817588159016201,
+      "second_action_probability": 0.9811583416802543,
+      "ordered_product_probability": 0.9633611991354921
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "real",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.633520607868928,
+    "optimal_utilization": 0.9598214285714286,
+    "ordered": {
+      "first_action_probability": 0.9554212178502764,
+      "second_action_probability": 0.9612791282790047,
+      "ordered_product_probability": 0.9216051927603195
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "reward_shuffled",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.5429026058860424,
+    "optimal_utilization": 0.9419642857142857,
+    "ordered": {
+      "first_action_probability": 0.901227171931948,
+      "second_action_probability": 0.8906281249863761,
+      "ordered_product_probability": 0.8407003894282818
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "action_shuffled",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.65152355755582,
+    "optimal_utilization": 0.9620535714285714,
+    "ordered": {
+      "first_action_probability": 0.97462169613157,
+      "second_action_probability": 0.9763566085270473,
+      "ordered_product_probability": 0.9517238139525733
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "reset",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 0.42857142857142855,
+    "reward": 5.069934593368504,
+    "optimal_utilization": 0.8683035714285714,
+    "ordered": {
+      "first_action_probability": 0.40683385729789734,
+      "second_action_probability": 0.36766126326152254,
+      "ordered_product_probability": 0.17234379773818972
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "coverage",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.650526893463791,
+    "optimal_utilization": 0.9620535714285714,
+    "ordered": {
+      "first_action_probability": 0.9738406794411796,
+      "second_action_probability": 0.9748291288103376,
+      "ordered_product_probability": 0.9496786980615164
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "random",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.664330001514692,
+    "optimal_utilization": 0.9642857142857143,
+    "ordered": {
+      "first_action_probability": 0.9772769553320748,
+      "second_action_probability": 0.9772098064422607,
+      "ordered_product_probability": 0.9551226233767096
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "repeat",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 0.5714285714285714,
+    "reward": 5.137402794357911,
+    "optimal_utilization": 0.8772321428571429,
+    "ordered": {
+      "first_action_probability": 0.6367781662515232,
+      "second_action_probability": 0.6207504815288952,
+      "ordered_product_probability": 0.563974629911981
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "q_learning",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.641320889561257,
+    "optimal_utilization": 0.9598214285714286,
+    "ordered": {
+      "first_action_probability": 0.9078196542603629,
+      "second_action_probability": 0.9017864976610456,
+      "ordered_product_probability": 0.8564591161133842
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "successful_observed",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.664330001514692,
+    "optimal_utilization": 0.9642857142857143,
+    "ordered": {
+      "first_action_probability": 0.9843644074031285,
+      "second_action_probability": 0.9833541682788304,
+      "ordered_product_probability": 0.9679971669135169
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "real",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.280196080512519,
+    "optimal_utilization": 0.9017857142857143,
+    "ordered": {
+      "first_action_probability": 0.9312340702329364,
+      "second_action_probability": 0.9233315331595284,
+      "ordered_product_probability": 0.875840020307579
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "reward_shuffled",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 0.8571428571428571,
+    "reward": 5.290265497205283,
+    "optimal_utilization": 0.9017857142857143,
+    "ordered": {
+      "first_action_probability": 0.878682017326355,
+      "second_action_probability": 0.8741030693054199,
+      "ordered_product_probability": 0.8311249854326199
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "action_shuffled",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.2855910583937895,
+    "optimal_utilization": 0.9017857142857143,
+    "ordered": {
+      "first_action_probability": 0.9240472061293465,
+      "second_action_probability": 0.9151424850736346,
+      "ordered_product_probability": 0.8668960805598646
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "reset",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 0.8571428571428571,
+    "reward": 4.336932438539483,
+    "optimal_utilization": 0.7566964285714286,
+    "ordered": {
+      "first_action_probability": 0.44428615484918865,
+      "second_action_probability": 0.43014765637261526,
+      "ordered_product_probability": 0.20800783442093834
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "coverage",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 0.5714285714285714,
+    "reward": 5.148783582991922,
+    "optimal_utilization": 0.8727678571428571,
+    "ordered": {
+      "first_action_probability": 0.6624959579535893,
+      "second_action_probability": 0.6244510348354068,
+      "ordered_product_probability": 0.5107823520714837
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "random",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.546783131172186,
+    "optimal_utilization": 0.9441964285714286,
+    "ordered": {
+      "first_action_probability": 0.9123856425285339,
+      "second_action_probability": 0.8880716562271118,
+      "ordered_product_probability": 0.8271508704816516
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "repeat",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 0.5714285714285714,
+    "reward": 4.258117384708554,
+    "optimal_utilization": 0.7410714285714286,
+    "ordered": {
+      "first_action_probability": 0.638839741902692,
+      "second_action_probability": 0.6274319535919598,
+      "ordered_product_probability": 0.5601465123367563
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "q_learning",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.498979162861526,
+    "optimal_utilization": 0.9375,
+    "ordered": {
+      "first_action_probability": 0.9253462723323277,
+      "second_action_probability": 0.9211499094963074,
+      "ordered_product_probability": 0.8654328546236663
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "successful_observed",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.557394772609094,
+    "optimal_utilization": 0.9464285714285714,
+    "ordered": {
+      "first_action_probability": 0.9817588159016201,
+      "second_action_probability": 0.9811583416802543,
+      "ordered_product_probability": 0.9633611991354921
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "real",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.62566093434041,
+    "optimal_utilization": 0.9575892857142857,
+    "ordered": {
+      "first_action_probability": 0.9554212178502764,
+      "second_action_probability": 0.9612791282790047,
+      "ordered_product_probability": 0.9216051927603195
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "reward_shuffled",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.535042932357525,
+    "optimal_utilization": 0.9397321428571429,
+    "ordered": {
+      "first_action_probability": 0.901227171931948,
+      "second_action_probability": 0.8906281249863761,
+      "ordered_product_probability": 0.8407003894282818
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "action_shuffled",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.643663884027303,
+    "optimal_utilization": 0.9598214285714286,
+    "ordered": {
+      "first_action_probability": 0.97462169613157,
+      "second_action_probability": 0.9763566085270473,
+      "ordered_product_probability": 0.9517238139525733
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "reset",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 0.42857142857142855,
+    "reward": 4.99962228679398,
+    "optimal_utilization": 0.8571428571428571,
+    "ordered": {
+      "first_action_probability": 0.40683385729789734,
+      "second_action_probability": 0.36766126326152254,
+      "ordered_product_probability": 0.17234379773818972
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "coverage",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.642667219935274,
+    "optimal_utilization": 0.9598214285714286,
+    "ordered": {
+      "first_action_probability": 0.9738406794411796,
+      "second_action_probability": 0.9748291288103376,
+      "ordered_product_probability": 0.9496786980615164
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "random",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.656470327986175,
+    "optimal_utilization": 0.9620535714285714,
+    "ordered": {
+      "first_action_probability": 0.9772769553320748,
+      "second_action_probability": 0.9772098064422607,
+      "ordered_product_probability": 0.9551226233767096
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "repeat",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 0.5714285714285714,
+    "reward": 4.688241190614298,
+    "optimal_utilization": 0.8102678571428571,
+    "ordered": {
+      "first_action_probability": 0.6367781662515232,
+      "second_action_probability": 0.6207504815288952,
+      "ordered_product_probability": 0.563974629911981
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "q_learning",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.63346121603274,
+    "optimal_utilization": 0.9575892857142857,
+    "ordered": {
+      "first_action_probability": 0.9078196542603629,
+      "second_action_probability": 0.9017864976610456,
+      "ordered_product_probability": 0.8564591161133842
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "successful_observed",
+    "preferred_matches": true,
+    "worlds": 7,
+    "seeds": 2,
+    "switching_rate": 1.0,
+    "reward": 5.656470327986175,
+    "optimal_utilization": 0.9620535714285714,
+    "ordered": {
+      "first_action_probability": 0.9843644074031285,
+      "second_action_probability": 0.9833541682788304,
+      "ordered_product_probability": 0.9679971669135169
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "real",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.833798456736155,
+    "optimal_utilization": 0.046875,
+    "ordered": {
+      "first_action_probability": 0.025118326768279076,
+      "second_action_probability": 0.022365948744118215,
+      "ordered_product_probability": 0.0005931769383021098
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "reward_shuffled",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.8898262771989647,
+    "optimal_utilization": 0.040625,
+    "ordered": {
+      "first_action_probability": 0.04079293385148049,
+      "second_action_probability": 0.038882420398294926,
+      "ordered_product_probability": 0.002686352362143954
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "action_shuffled",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.8217557091145494,
+    "optimal_utilization": 0.046875,
+    "ordered": {
+      "first_action_probability": 0.02561978027224541,
+      "second_action_probability": 0.02263040319085121,
+      "ordered_product_probability": 0.0006082785651614443
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "reset",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.2,
+    "reward": 0.9048339764604758,
+    "optimal_utilization": 0.05,
+    "ordered": {
+      "first_action_probability": 0.2542449653148651,
+      "second_action_probability": 0.18588599115610122,
+      "ordered_product_probability": 0.06238152450199188
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "coverage",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.9293429376491791,
+    "optimal_utilization": 0.04375,
+    "ordered": {
+      "first_action_probability": 0.03465284779667854,
+      "second_action_probability": 0.031860414519906045,
+      "ordered_product_probability": 0.0014480353616346184
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "random",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.8843199309109355,
+    "optimal_utilization": 0.040625,
+    "ordered": {
+      "first_action_probability": 0.03507875520735979,
+      "second_action_probability": 0.03230716697871685,
+      "ordered_product_probability": 0.001688925818612158
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "repeat",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.2,
+    "reward": 0.5307670976197295,
+    "optimal_utilization": 0.046875,
+    "ordered": {
+      "first_action_probability": 0.17523002913221716,
+      "second_action_probability": 0.16668271673843266,
+      "ordered_product_probability": 0.06853278543230985
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "q_learning",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.5035585923404666,
+    "optimal_utilization": 0.04375,
+    "ordered": {
+      "first_action_probability": 0.019973985478281976,
+      "second_action_probability": 0.019402860105037688,
+      "ordered_product_probability": 0.0004487813072878797
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "successful_observed",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.47510847355987823,
+    "optimal_utilization": 0.040625,
+    "ordered": {
+      "first_action_probability": 0.017606817930936814,
+      "second_action_probability": 0.01737031126394868,
+      "ordered_product_probability": 0.00034221562423240306
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "real",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.9819394052510951,
+    "optimal_utilization": 0.053125,
+    "ordered": {
+      "first_action_probability": 0.07633503824472428,
+      "second_action_probability": 0.07451347447931767,
+      "ordered_product_probability": 0.021012761760278754
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "reward_shuffled",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.9632066549774333,
+    "optimal_utilization": 0.053125,
+    "ordered": {
+      "first_action_probability": 0.025713559426367282,
+      "second_action_probability": 0.02050576191395521,
+      "ordered_product_probability": 0.0006911021104541238
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "action_shuffled",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.9581450110363228,
+    "optimal_utilization": 0.053125,
+    "ordered": {
+      "first_action_probability": 0.058545929938554765,
+      "second_action_probability": 0.05411456897854805,
+      "ordered_product_probability": 0.009715653915740625
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "reset",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.4,
+    "reward": 1.0232874123172473,
+    "optimal_utilization": 0.053125,
+    "ordered": {
+      "first_action_probability": 0.23896281719207763,
+      "second_action_probability": 0.1858846940100193,
+      "ordered_product_probability": 0.06352142694312544
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "coverage",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.9861433954979215,
+    "optimal_utilization": 0.053125,
+    "ordered": {
+      "first_action_probability": 0.047839788161218165,
+      "second_action_probability": 0.03983141370117664,
+      "ordered_product_probability": 0.004953522112931727
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "random",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.9571349668643965,
+    "optimal_utilization": 0.053125,
+    "ordered": {
+      "first_action_probability": 0.09393243938684463,
+      "second_action_probability": 0.08796314895153046,
+      "ordered_product_probability": 0.021530689493218874
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "repeat",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.2,
+    "reward": 0.9512180581416892,
+    "optimal_utilization": 0.05625,
+    "ordered": {
+      "first_action_probability": 0.17533147446811198,
+      "second_action_probability": 0.16311217304319142,
+      "ordered_product_probability": 0.0702812704130149
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "q_learning",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.9477888788895286,
+    "optimal_utilization": 0.05,
+    "ordered": {
+      "first_action_probability": 0.014130699168890714,
+      "second_action_probability": 0.013177785091102123,
+      "ordered_product_probability": 0.00020854887871371374
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "successful_observed",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.945889682805295,
+    "optimal_utilization": 0.05,
+    "ordered": {
+      "first_action_probability": 0.012794801965355873,
+      "second_action_probability": 0.012159569934010506,
+      "ordered_product_probability": 0.0001673291346654367
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "real",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.8563359771392796,
+    "optimal_utilization": 0.04375,
+    "ordered": {
+      "first_action_probability": 0.025118326768279076,
+      "second_action_probability": 0.022365948744118215,
+      "ordered_product_probability": 0.0005931769383021098
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "reward_shuffled",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.9356416499959785,
+    "optimal_utilization": 0.040625,
+    "ordered": {
+      "first_action_probability": 0.04079293385148049,
+      "second_action_probability": 0.038882420398294926,
+      "ordered_product_probability": 0.002686352362143954
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "action_shuffled",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.8764087180249229,
+    "optimal_utilization": 0.040625,
+    "ordered": {
+      "first_action_probability": 0.02561978027224541,
+      "second_action_probability": 0.02263040319085121,
+      "ordered_product_probability": 0.0006082785651614443
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "reset",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.2,
+    "reward": 0.7070428500874272,
+    "optimal_utilization": 0.046875,
+    "ordered": {
+      "first_action_probability": 0.2542449653148651,
+      "second_action_probability": 0.18588599115610122,
+      "ordered_product_probability": 0.06238152450199188
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "coverage",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.745469095145256,
+    "optimal_utilization": 0.040625,
+    "ordered": {
+      "first_action_probability": 0.03465284779667854,
+      "second_action_probability": 0.031860414519906045,
+      "ordered_product_probability": 0.0014480353616346184
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "random",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.708688655326991,
+    "optimal_utilization": 0.0375,
+    "ordered": {
+      "first_action_probability": 0.03507875520735979,
+      "second_action_probability": 0.03230716697871685,
+      "ordered_product_probability": 0.001688925818612158
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "repeat",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.2,
+    "reward": 0.6574816942085808,
+    "optimal_utilization": 0.046875,
+    "ordered": {
+      "first_action_probability": 0.17523002913221716,
+      "second_action_probability": 0.16668271673843266,
+      "ordered_product_probability": 0.06853278543230985
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "q_learning",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.8630479842938528,
+    "optimal_utilization": 0.040625,
+    "ordered": {
+      "first_action_probability": 0.019973985478281976,
+      "second_action_probability": 0.019402860105037688,
+      "ordered_product_probability": 0.0004487813072878797
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "successful_observed",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.7677915507841014,
+    "optimal_utilization": 0.04375,
+    "ordered": {
+      "first_action_probability": 0.017606817930936814,
+      "second_action_probability": 0.01737031126394868,
+      "ordered_product_probability": 0.00034221562423240306
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "real",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.8658148233082258,
+    "optimal_utilization": 0.040625,
+    "ordered": {
+      "first_action_probability": 0.07633503824472428,
+      "second_action_probability": 0.07451347447931767,
+      "ordered_product_probability": 0.021012761760278754
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "reward_shuffled",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.9075077500006021,
+    "optimal_utilization": 0.04375,
+    "ordered": {
+      "first_action_probability": 0.025713559426367282,
+      "second_action_probability": 0.02050576191395521,
+      "ordered_product_probability": 0.0006911021104541238
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "action_shuffled",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.8688072249218288,
+    "optimal_utilization": 0.04375,
+    "ordered": {
+      "first_action_probability": 0.058545929938554765,
+      "second_action_probability": 0.05411456897854805,
+      "ordered_product_probability": 0.009715653915740625
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "reset",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.4,
+    "reward": 0.896759954915931,
+    "optimal_utilization": 0.04375,
+    "ordered": {
+      "first_action_probability": 0.23896281719207763,
+      "second_action_probability": 0.1858846940100193,
+      "ordered_product_probability": 0.06352142694312544
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "coverage",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.925259346185185,
+    "optimal_utilization": 0.034375,
+    "ordered": {
+      "first_action_probability": 0.047839788161218165,
+      "second_action_probability": 0.03983141370117664,
+      "ordered_product_probability": 0.004953522112931727
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "random",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.8666775006892834,
+    "optimal_utilization": 0.04375,
+    "ordered": {
+      "first_action_probability": 0.09393243938684463,
+      "second_action_probability": 0.08796314895153046,
+      "ordered_product_probability": 0.021530689493218874
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "repeat",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.2,
+    "reward": 0.8977739665990804,
+    "optimal_utilization": 0.05,
+    "ordered": {
+      "first_action_probability": 0.17533147446811198,
+      "second_action_probability": 0.16311217304319142,
+      "ordered_product_probability": 0.0702812704130149
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "q_learning",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.8275020273203573,
+    "optimal_utilization": 0.046875,
+    "ordered": {
+      "first_action_probability": 0.014130699168890714,
+      "second_action_probability": 0.013177785091102123,
+      "ordered_product_probability": 0.00020854887871371374
+    }
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "successful_observed",
+    "preferred_matches": false,
+    "worlds": 5,
+    "seeds": 2,
+    "switching_rate": 0.0,
+    "reward": 0.7841596816204157,
+    "optimal_utilization": 0.040625,
+    "ordered": {
+      "first_action_probability": 0.012794801965355873,
+      "second_action_probability": 0.012159569934010506,
+      "ordered_product_probability": 0.0001673291346654367
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "real",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.41357581366478646,
+    "optimal_utilization": 0.09505208333333333,
+    "ordered": {
+      "first_action_probability": 0.32922504221399623,
+      "second_action_probability": 0.32736632227897644,
+      "ordered_product_probability": 0.10552526906689559
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "reward_shuffled",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.41357581366478646,
+    "optimal_utilization": 0.09505208333333333,
+    "ordered": {
+      "first_action_probability": 0.32922503848870593,
+      "second_action_probability": 0.32736631979544956,
+      "ordered_product_probability": 0.10552526694106605
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "action_shuffled",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.41357581366478646,
+    "optimal_utilization": 0.09505208333333333,
+    "ordered": {
+      "first_action_probability": 0.3292250446975231,
+      "second_action_probability": 0.32736631482839584,
+      "ordered_product_probability": 0.10552526665849515
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "reset",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.40489617946773215,
+    "optimal_utilization": 0.09375,
+    "ordered": {
+      "first_action_probability": 0.3285798691213131,
+      "second_action_probability": 0.3274358498553435,
+      "ordered_product_probability": 0.10545990687950187
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "coverage",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.41357581366478646,
+    "optimal_utilization": 0.09505208333333333,
+    "ordered": {
+      "first_action_probability": 0.3292250484228134,
+      "second_action_probability": 0.32736631979544956,
+      "ordered_product_probability": 0.10552526921346428
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "random",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.41357581366478646,
+    "optimal_utilization": 0.09505208333333333,
+    "ordered": {
+      "first_action_probability": 0.3292250571151574,
+      "second_action_probability": 0.32736631482839584,
+      "ordered_product_probability": 0.10552527161710568
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "repeat",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.41357581366478646,
+    "optimal_utilization": 0.09505208333333333,
+    "ordered": {
+      "first_action_probability": 0.32922503476341564,
+      "second_action_probability": 0.32736631234486896,
+      "ordered_product_probability": 0.1055252630109856
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "q_learning",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.41357581366478646,
+    "optimal_utilization": 0.09505208333333333,
+    "ordered": {
+      "first_action_probability": 0.3292250360051791,
+      "second_action_probability": 0.32736631979544956,
+      "ordered_product_probability": 0.10552526561570819
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "frozen",
+    "intervention": "successful_observed",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.41357581366478646,
+    "optimal_utilization": 0.09505208333333333,
+    "ordered": {
+      "first_action_probability": 0.32922503476341564,
+      "second_action_probability": 0.32736632972955704,
+      "ordered_product_probability": 0.10552526934254818
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "real",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.43342016207157735,
+    "optimal_utilization": 0.11067708333333333,
+    "ordered": {
+      "first_action_probability": 0.3382175664107005,
+      "second_action_probability": 0.3379441226522128,
+      "ordered_product_probability": 0.11373908992637956
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "reward_shuffled",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.43342016207157735,
+    "optimal_utilization": 0.11067708333333333,
+    "ordered": {
+      "first_action_probability": 0.33821771790583927,
+      "second_action_probability": 0.337943730254968,
+      "ordered_product_probability": 0.11373904423246047
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "action_shuffled",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.43342016207157735,
+    "optimal_utilization": 0.11067708333333333,
+    "ordered": {
+      "first_action_probability": 0.33821698774894077,
+      "second_action_probability": 0.3379440555969874,
+      "ordered_product_probability": 0.11373890682637892
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "reset",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.25,
+    "reward": 0.4251217419022308,
+    "optimal_utilization": 0.109375,
+    "ordered": {
+      "first_action_probability": 0.3394850368301074,
+      "second_action_probability": 0.3404747893412908,
+      "ordered_product_probability": 0.11548214280903187
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "coverage",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.43342016207157735,
+    "optimal_utilization": 0.11067708333333333,
+    "ordered": {
+      "first_action_probability": 0.33821353564659756,
+      "second_action_probability": 0.3379431714614232,
+      "ordered_product_probability": 0.11373721557175946
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "random",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.43342016207157735,
+    "optimal_utilization": 0.11067708333333333,
+    "ordered": {
+      "first_action_probability": 0.338214248418808,
+      "second_action_probability": 0.3379427095254262,
+      "ordered_product_probability": 0.11373735541954984
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "repeat",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.43342016207157735,
+    "optimal_utilization": 0.11067708333333333,
+    "ordered": {
+      "first_action_probability": 0.3382262662053108,
+      "second_action_probability": 0.337964229285717,
+      "ordered_product_probability": 0.11374682675549767
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "q_learning",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.43342016207157735,
+    "optimal_utilization": 0.11067708333333333,
+    "ordered": {
+      "first_action_probability": 0.33821332454681396,
+      "second_action_probability": 0.3379422451059024,
+      "ordered_product_probability": 0.11373687921039573
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "frozen",
+    "intervention": "successful_observed",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.43342016207157735,
+    "optimal_utilization": 0.11067708333333333,
+    "ordered": {
+      "first_action_probability": 0.33821307371060055,
+      "second_action_probability": 0.33794303238391876,
+      "ordered_product_probability": 0.11373705527769655
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "real",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.48009734104242247,
+    "optimal_utilization": 0.08333333333333333,
+    "ordered": {
+      "first_action_probability": 0.32922504221399623,
+      "second_action_probability": 0.32736632227897644,
+      "ordered_product_probability": 0.10552526906689559
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "reward_shuffled",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.48009734104242247,
+    "optimal_utilization": 0.08333333333333333,
+    "ordered": {
+      "first_action_probability": 0.32922503848870593,
+      "second_action_probability": 0.32736631979544956,
+      "ordered_product_probability": 0.10552526694106605
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "action_shuffled",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.48009734104242247,
+    "optimal_utilization": 0.08333333333333333,
+    "ordered": {
+      "first_action_probability": 0.3292250446975231,
+      "second_action_probability": 0.32736631482839584,
+      "ordered_product_probability": 0.10552526665849515
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "reset",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.47373323347335067,
+    "optimal_utilization": 0.08203125,
+    "ordered": {
+      "first_action_probability": 0.3285798691213131,
+      "second_action_probability": 0.3274358498553435,
+      "ordered_product_probability": 0.10545990687950187
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "coverage",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.48009734104242247,
+    "optimal_utilization": 0.08333333333333333,
+    "ordered": {
+      "first_action_probability": 0.3292250484228134,
+      "second_action_probability": 0.32736631979544956,
+      "ordered_product_probability": 0.10552526921346428
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "random",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.48009734104242247,
+    "optimal_utilization": 0.08333333333333333,
+    "ordered": {
+      "first_action_probability": 0.3292250571151574,
+      "second_action_probability": 0.32736631482839584,
+      "ordered_product_probability": 0.10552527161710568
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "repeat",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.48009734104242247,
+    "optimal_utilization": 0.08333333333333333,
+    "ordered": {
+      "first_action_probability": 0.32922503476341564,
+      "second_action_probability": 0.32736631234486896,
+      "ordered_product_probability": 0.1055252630109856
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "q_learning",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.48009734104242247,
+    "optimal_utilization": 0.08333333333333333,
+    "ordered": {
+      "first_action_probability": 0.3292250360051791,
+      "second_action_probability": 0.32736631979544956,
+      "ordered_product_probability": 0.10552526561570819
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "evaluation": "online",
+    "intervention": "successful_observed",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.4166666666666667,
+    "reward": 0.48009734104242247,
+    "optimal_utilization": 0.08333333333333333,
+    "ordered": {
+      "first_action_probability": 0.32922503476341564,
+      "second_action_probability": 0.32736632972955704,
+      "ordered_product_probability": 0.10552526934254818
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "real",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.47352725798178724,
+    "optimal_utilization": 0.10286458333333333,
+    "ordered": {
+      "first_action_probability": 0.3382175664107005,
+      "second_action_probability": 0.3379441226522128,
+      "ordered_product_probability": 0.11373908992637956
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "reward_shuffled",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.47352725798178724,
+    "optimal_utilization": 0.10286458333333333,
+    "ordered": {
+      "first_action_probability": 0.33821771790583927,
+      "second_action_probability": 0.337943730254968,
+      "ordered_product_probability": 0.11373904423246047
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "action_shuffled",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.47352725798178724,
+    "optimal_utilization": 0.10286458333333333,
+    "ordered": {
+      "first_action_probability": 0.33821698774894077,
+      "second_action_probability": 0.3379440555969874,
+      "ordered_product_probability": 0.11373890682637892
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "reset",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.25,
+    "reward": 0.4796323807622036,
+    "optimal_utilization": 0.10286458333333333,
+    "ordered": {
+      "first_action_probability": 0.3394850368301074,
+      "second_action_probability": 0.3404747893412908,
+      "ordered_product_probability": 0.11548214280903187
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "coverage",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.47352725798178724,
+    "optimal_utilization": 0.10286458333333333,
+    "ordered": {
+      "first_action_probability": 0.33821353564659756,
+      "second_action_probability": 0.3379431714614232,
+      "ordered_product_probability": 0.11373721557175946
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "random",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.47352725798178724,
+    "optimal_utilization": 0.10286458333333333,
+    "ordered": {
+      "first_action_probability": 0.338214248418808,
+      "second_action_probability": 0.3379427095254262,
+      "ordered_product_probability": 0.11373735541954984
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "repeat",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.47352725798178724,
+    "optimal_utilization": 0.10286458333333333,
+    "ordered": {
+      "first_action_probability": 0.3382262662053108,
+      "second_action_probability": 0.337964229285717,
+      "ordered_product_probability": 0.11374682675549767
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "q_learning",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.47352725798178724,
+    "optimal_utilization": 0.10286458333333333,
+    "ordered": {
+      "first_action_probability": 0.33821332454681396,
+      "second_action_probability": 0.3379422451059024,
+      "ordered_product_probability": 0.11373687921039573
+    }
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "evaluation": "online",
+    "intervention": "successful_observed",
+    "preferred_matches": null,
+    "worlds": 12,
+    "seeds": 2,
+    "switching_rate": 0.3333333333333333,
+    "reward": 0.47352725798178724,
+    "optimal_utilization": 0.10286458333333333,
+    "ordered": {
+      "first_action_probability": 0.33821307371060055,
+      "second_action_probability": 0.33794303238391876,
+      "ordered_product_probability": 0.11373705527769655
+    }
+  }
+]

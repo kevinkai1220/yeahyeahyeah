@@ -1,0 +1,6 @@
+{
+  "world_condition_rows": 1032,
+  "inputs": [
+    "runs/history_optimization_diagnostics_v1/checkpoint_pilot"
+  ]
+}

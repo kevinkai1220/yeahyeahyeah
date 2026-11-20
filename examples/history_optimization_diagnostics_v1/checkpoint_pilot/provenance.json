@@ -1,0 +1,1430 @@
+[
+  {
+    "regime": "A2",
+    "seed": 0,
+    "checkpoint": "/home/dsail26f1/yeahyeahyeah/runs/full_study_corrected_v1/A2/seed_0/checkpoints/trained.pt",
+    "initialization_audit": {
+      "status": "verified Single = Dual exploiter = shared pretrain",
+      "initialization_sha256": "6b80037e2d432d109a9bcc067e12d7b5c6ebfa824b86d8fc2e39725ce5ab7d17",
+      "pretrain_sha256": "025cb8bebaaf9940412c2008dc8135d0254d28402d754fb1ee54ea29025b568a"
+    },
+    "checkpoint_sha256": "44a9d6b91c8b3eb6edb458041a2ca92d2a27da86577c9e5ab496222e9e028590",
+    "source_config": {
+      "environment": {
+        "n_actions": 3,
+        "reward_sigma": 1.0,
+        "difficulty": "medium",
+        "opponent_dependence": 0.0,
+        "opponents": [
+          "random",
+          "fixed"
+        ],
+        "opponent_checkpoint": null
+      },
+      "training": {
+        "train_worlds": 60,
+        "pretraining_episodes": 300,
+        "episodes": 1200,
+        "hidden": 64,
+        "exploration_steps": 32,
+        "exploitation_steps": 128,
+        "exploration_lambda": 0.1,
+        "gamma": 1.0,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.0003,
+        "ppo_epochs": 4,
+        "clip": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01,
+        "max_grad_norm": 0.5,
+        "history_pool_size": 6,
+        "history_sampling_ratios": [
+          0.4,
+          0.3,
+          0.3
+        ],
+        "privileged_curriculum": false,
+        "single_k_only": false,
+        "q_aware": false,
+        "rollout_batch_size": 8,
+        "advantage_normalization": "batch",
+        "dual_credit": "observed_suffix"
+      },
+      "q_learning": {
+        "alpha": 0.2,
+        "gamma": 0.99,
+        "epsilon_start": 0.3,
+        "epsilon_end": 0.05,
+        "epsilon_decay_steps": 160,
+        "replay_passes": 10
+      },
+      "evaluation": {
+        "num_test_worlds": 100,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "modes": [
+          "frozen",
+          "online"
+        ],
+        "update_interval": 32,
+        "auc_windows": [
+          32,
+          64,
+          128
+        ],
+        "exploration_budgets": [
+          8,
+          16,
+          32,
+          64
+        ],
+        "exploitation_budgets": [
+          128
+        ],
+        "history_reference": true,
+        "bootstrap_replicates": 1000,
+        "adaptation_speed": {
+          "window": 16,
+          "hold": 8,
+          "thresholds": [
+            0.25,
+            0.5,
+            0.75,
+            0.9
+          ],
+          "denominator_epsilon": 1e-08
+        },
+        "online_advantage_normalization": "legacy_episode"
+      },
+      "hardware": {
+        "device": "auto",
+        "use_all_available_gpus": true,
+        "cpu_workers": 1,
+        "threads_per_worker": 1,
+        "max_retries": 1
+      },
+      "logging": {
+        "save_trajectories": true,
+        "save_plots": true,
+        "checkpoint_interval": 20
+      }
+    },
+    "evaluation_config": {
+      "environment": {
+        "n_actions": 3,
+        "reward_sigma": 1.0,
+        "difficulty": "medium",
+        "opponent_dependence": 0.0,
+        "opponents": [
+          "random",
+          "fixed"
+        ],
+        "opponent_checkpoint": null
+      },
+      "training": {
+        "train_worlds": 60,
+        "pretraining_episodes": 300,
+        "episodes": 1200,
+        "hidden": 64,
+        "exploration_steps": 32,
+        "exploitation_steps": 128,
+        "exploration_lambda": 0.1,
+        "gamma": 1.0,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.0003,
+        "ppo_epochs": 4,
+        "clip": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01,
+        "max_grad_norm": 0.5,
+        "history_pool_size": 6,
+        "history_sampling_ratios": [
+          0.4,
+          0.3,
+          0.3
+        ],
+        "privileged_curriculum": false,
+        "single_k_only": false,
+        "q_aware": false,
+        "rollout_batch_size": 8,
+        "advantage_normalization": "batch",
+        "dual_credit": "observed_suffix"
+      },
+      "q_learning": {
+        "alpha": 0.2,
+        "gamma": 0.99,
+        "epsilon_start": 0.3,
+        "epsilon_end": 0.05,
+        "epsilon_decay_steps": 160,
+        "replay_passes": 10
+      },
+      "evaluation": {
+        "num_test_worlds": 6,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "modes": [
+          "frozen",
+          "online"
+        ],
+        "update_interval": 32,
+        "auc_windows": [
+          32,
+          64,
+          128
+        ],
+        "exploration_budgets": [
+          8,
+          16,
+          32,
+          64
+        ],
+        "exploitation_budgets": [
+          128
+        ],
+        "history_reference": true,
+        "bootstrap_replicates": 1000,
+        "adaptation_speed": {
+          "window": 16,
+          "hold": 8,
+          "thresholds": [
+            0.25,
+            0.5,
+            0.75,
+            0.9
+          ],
+          "denominator_epsilon": 1e-08
+        },
+        "online_advantage_normalization": "legacy_episode"
+      },
+      "hardware": {
+        "device": "auto",
+        "use_all_available_gpus": true,
+        "cpu_workers": 1,
+        "threads_per_worker": 1,
+        "max_retries": 1
+      },
+      "logging": {
+        "save_trajectories": true,
+        "save_plots": true,
+        "checkpoint_interval": 20
+      }
+    },
+    "execution": {
+      "git_commit": "3dd5a95959f7f55c43ff2c130c41a156a857d170",
+      "git_status": "?? logs/",
+      "source_sha256": {
+        "meta_exploration/hardware.py": "6d7796a89c2539f629c6f6c48ad35d65ab935529ae9db74fba8f6f91b6132f23",
+        "meta_exploration/__init__.py": "06b926db64af459e7861a69c7f187ecc5703b5b9779c31e12a1f6d1875f71ca0",
+        "meta_exploration/diagnostics.py": "cf259a96f050f898454e1ccd845c1e56e4dca618cd1baad529de781ecf25a44a",
+        "meta_exploration/config.py": "e80f0ff112e16aaac8cb70b883c08a7ee22f03e542e39ed1b0722f00155c1584",
+        "meta_exploration/learning.py": "55296ef44d5b59eae17a55ff300b1da5a2837d0fed22b9e840a09629dc7e0b9c",
+        "meta_exploration/environment.py": "8f19aace944ad602695b156efd89d3c85ec5b1d2fa229c50ca88a9925483fc4f",
+        "meta_exploration/history_diagnostics_summary.py": "019d7ff406a6717dff064bb5d5a9e29cf168c57d2ea195c39b0e8371b454883f",
+        "meta_exploration/__main__.py": "31c7374b52614779f4083700ee2f9f51788ba984efe207d6320b91b4b6851187",
+        "meta_exploration/optimization_pilot.py": "edbd81579a9faa3e0be67c27a3410efd6f53717bb04f48b5378a44e5a3ca3cb7",
+        "meta_exploration/benchmark.py": "ac3d98f2716d22f2aa6d0d233044f2fdf5a52d1dd284361f84b4644ecf7ceb4f",
+        "meta_exploration/adaptation.py": "dae3505f480fb20aa577a6e1383c606d937a98a7503fd12dfcb2d5a65ba29ad9",
+        "meta_exploration/history_diagnostics.py": "a1492271f6c8ee84bdde954b397ed1c816578d6f0cc4f75d21ceed026583db1a",
+        "meta_exploration/evaluation.py": "3721e932f665a83d5a1987c8b3eb2970f94b2bfee5a7517b57a7d4f4d1e988b3",
+        "meta_exploration/plotting.py": "dc4acef8dd316cc0d5160863594e5d977eb77c523829a128914a7178b51016ef",
+        "meta_exploration/training.py": "198409980ee383f6b7361beb4010de52dfe7799e57af24e95946d600f609b865",
+        "marl/models.py": "ca2e6cb1e827030f1cb32e27dc9f33d0d6baad72773cd6d1ea5d4ffe9cc49541"
+      },
+      "python": "3.14.7",
+      "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+      "torch": "2.14.1+cu126",
+      "cuda": "12.6",
+      "device": "cuda:0",
+      "seed": 0,
+      "config": {
+        "environment": {
+          "n_actions": 3,
+          "reward_sigma": 1.0,
+          "difficulty": "medium",
+          "opponent_dependence": 0.0,
+          "opponents": [
+            "random",
+            "fixed"
+          ],
+          "opponent_checkpoint": null
+        },
+        "training": {
+          "train_worlds": 60,
+          "pretraining_episodes": 300,
+          "episodes": 1200,
+          "hidden": 64,
+          "exploration_steps": 32,
+          "exploitation_steps": 128,
+          "exploration_lambda": 0.1,
+          "gamma": 1.0,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "ppo_epochs": 4,
+          "clip": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01,
+          "max_grad_norm": 0.5,
+          "history_pool_size": 6,
+          "history_sampling_ratios": [
+            0.4,
+            0.3,
+            0.3
+          ],
+          "privileged_curriculum": false,
+          "single_k_only": false,
+          "q_aware": false,
+          "rollout_batch_size": 8,
+          "advantage_normalization": "batch",
+          "dual_credit": "observed_suffix"
+        },
+        "q_learning": {
+          "alpha": 0.2,
+          "gamma": 0.99,
+          "epsilon_start": 0.3,
+          "epsilon_end": 0.05,
+          "epsilon_decay_steps": 160,
+          "replay_passes": 10
+        },
+        "evaluation": {
+          "num_test_worlds": 6,
+          "seeds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "modes": [
+            "frozen",
+            "online"
+          ],
+          "update_interval": 32,
+          "auc_windows": [
+            32,
+            64,
+            128
+          ],
+          "exploration_budgets": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "exploitation_budgets": [
+            128
+          ],
+          "history_reference": true,
+          "bootstrap_replicates": 1000,
+          "adaptation_speed": {
+            "window": 16,
+            "hold": 8,
+            "thresholds": [
+              0.25,
+              0.5,
+              0.75,
+              0.9
+            ],
+            "denominator_epsilon": 1e-08
+          },
+          "online_advantage_normalization": "legacy_episode"
+        },
+        "hardware": {
+          "device": "auto",
+          "use_all_available_gpus": true,
+          "cpu_workers": 1,
+          "threads_per_worker": 1,
+          "max_retries": 1
+        },
+        "logging": {
+          "save_trajectories": true,
+          "save_plots": true,
+          "checkpoint_interval": 20
+        }
+      },
+      "rollout_order": "episode index modulo training world count; per-episode local RNG",
+      "checkpoint_boundary": "complete rollout batch; no pending trajectories",
+      "checkpoint_rng": "torch CPU/CUDA, numpy global; per-episode controller/environment RNG seeded by episode"
+    }
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "checkpoint": "/home/dsail26f1/yeahyeahyeah/runs/full_study_corrected_v1/A2/seed_1/checkpoints/trained.pt",
+    "initialization_audit": {
+      "status": "verified Single = Dual exploiter = shared pretrain",
+      "initialization_sha256": "6f375f5350d24a4969d8fedc1075808a2cbd8852c8ad8b197be9d4507820c453",
+      "pretrain_sha256": "4a5b52575ac29f0c4c59e74d0ea76941fd3e7b7777835ef71bd09f3f5c6467cc"
+    },
+    "checkpoint_sha256": "d3d73c10df87355730998805bb55b487ff38c4702ffc91117cb6261f18ac7643",
+    "source_config": {
+      "environment": {
+        "n_actions": 3,
+        "reward_sigma": 1.0,
+        "difficulty": "medium",
+        "opponent_dependence": 0.0,
+        "opponents": [
+          "random",
+          "fixed"
+        ],
+        "opponent_checkpoint": null
+      },
+      "training": {
+        "train_worlds": 60,
+        "pretraining_episodes": 300,
+        "episodes": 1200,
+        "hidden": 64,
+        "exploration_steps": 32,
+        "exploitation_steps": 128,
+        "exploration_lambda": 0.1,
+        "gamma": 1.0,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.0003,
+        "ppo_epochs": 4,
+        "clip": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01,
+        "max_grad_norm": 0.5,
+        "history_pool_size": 6,
+        "history_sampling_ratios": [
+          0.4,
+          0.3,
+          0.3
+        ],
+        "privileged_curriculum": false,
+        "single_k_only": false,
+        "q_aware": false,
+        "rollout_batch_size": 8,
+        "advantage_normalization": "batch",
+        "dual_credit": "observed_suffix"
+      },
+      "q_learning": {
+        "alpha": 0.2,
+        "gamma": 0.99,
+        "epsilon_start": 0.3,
+        "epsilon_end": 0.05,
+        "epsilon_decay_steps": 160,
+        "replay_passes": 10
+      },
+      "evaluation": {
+        "num_test_worlds": 100,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "modes": [
+          "frozen",
+          "online"
+        ],
+        "update_interval": 32,
+        "auc_windows": [
+          32,
+          64,
+          128
+        ],
+        "exploration_budgets": [
+          8,
+          16,
+          32,
+          64
+        ],
+        "exploitation_budgets": [
+          128
+        ],
+        "history_reference": true,
+        "bootstrap_replicates": 1000,
+        "adaptation_speed": {
+          "window": 16,
+          "hold": 8,
+          "thresholds": [
+            0.25,
+            0.5,
+            0.75,
+            0.9
+          ],
+          "denominator_epsilon": 1e-08
+        },
+        "online_advantage_normalization": "legacy_episode"
+      },
+      "hardware": {
+        "device": "auto",
+        "use_all_available_gpus": true,
+        "cpu_workers": 1,
+        "threads_per_worker": 1,
+        "max_retries": 1
+      },
+      "logging": {
+        "save_trajectories": true,
+        "save_plots": true,
+        "checkpoint_interval": 20
+      }
+    },
+    "evaluation_config": {
+      "environment": {
+        "n_actions": 3,
+        "reward_sigma": 1.0,
+        "difficulty": "medium",
+        "opponent_dependence": 0.0,
+        "opponents": [
+          "random",
+          "fixed"
+        ],
+        "opponent_checkpoint": null
+      },
+      "training": {
+        "train_worlds": 60,
+        "pretraining_episodes": 300,
+        "episodes": 1200,
+        "hidden": 64,
+        "exploration_steps": 32,
+        "exploitation_steps": 128,
+        "exploration_lambda": 0.1,
+        "gamma": 1.0,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.0003,
+        "ppo_epochs": 4,
+        "clip": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01,
+        "max_grad_norm": 0.5,
+        "history_pool_size": 6,
+        "history_sampling_ratios": [
+          0.4,
+          0.3,
+          0.3
+        ],
+        "privileged_curriculum": false,
+        "single_k_only": false,
+        "q_aware": false,
+        "rollout_batch_size": 8,
+        "advantage_normalization": "batch",
+        "dual_credit": "observed_suffix"
+      },
+      "q_learning": {
+        "alpha": 0.2,
+        "gamma": 0.99,
+        "epsilon_start": 0.3,
+        "epsilon_end": 0.05,
+        "epsilon_decay_steps": 160,
+        "replay_passes": 10
+      },
+      "evaluation": {
+        "num_test_worlds": 6,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "modes": [
+          "frozen",
+          "online"
+        ],
+        "update_interval": 32,
+        "auc_windows": [
+          32,
+          64,
+          128
+        ],
+        "exploration_budgets": [
+          8,
+          16,
+          32,
+          64
+        ],
+        "exploitation_budgets": [
+          128
+        ],
+        "history_reference": true,
+        "bootstrap_replicates": 1000,
+        "adaptation_speed": {
+          "window": 16,
+          "hold": 8,
+          "thresholds": [
+            0.25,
+            0.5,
+            0.75,
+            0.9
+          ],
+          "denominator_epsilon": 1e-08
+        },
+        "online_advantage_normalization": "legacy_episode"
+      },
+      "hardware": {
+        "device": "auto",
+        "use_all_available_gpus": true,
+        "cpu_workers": 1,
+        "threads_per_worker": 1,
+        "max_retries": 1
+      },
+      "logging": {
+        "save_trajectories": true,
+        "save_plots": true,
+        "checkpoint_interval": 20
+      }
+    },
+    "execution": {
+      "git_commit": "3dd5a95959f7f55c43ff2c130c41a156a857d170",
+      "git_status": "?? logs/",
+      "source_sha256": {
+        "meta_exploration/hardware.py": "6d7796a89c2539f629c6f6c48ad35d65ab935529ae9db74fba8f6f91b6132f23",
+        "meta_exploration/__init__.py": "06b926db64af459e7861a69c7f187ecc5703b5b9779c31e12a1f6d1875f71ca0",
+        "meta_exploration/diagnostics.py": "cf259a96f050f898454e1ccd845c1e56e4dca618cd1baad529de781ecf25a44a",
+        "meta_exploration/config.py": "e80f0ff112e16aaac8cb70b883c08a7ee22f03e542e39ed1b0722f00155c1584",
+        "meta_exploration/learning.py": "55296ef44d5b59eae17a55ff300b1da5a2837d0fed22b9e840a09629dc7e0b9c",
+        "meta_exploration/environment.py": "8f19aace944ad602695b156efd89d3c85ec5b1d2fa229c50ca88a9925483fc4f",
+        "meta_exploration/history_diagnostics_summary.py": "019d7ff406a6717dff064bb5d5a9e29cf168c57d2ea195c39b0e8371b454883f",
+        "meta_exploration/__main__.py": "31c7374b52614779f4083700ee2f9f51788ba984efe207d6320b91b4b6851187",
+        "meta_exploration/optimization_pilot.py": "edbd81579a9faa3e0be67c27a3410efd6f53717bb04f48b5378a44e5a3ca3cb7",
+        "meta_exploration/benchmark.py": "ac3d98f2716d22f2aa6d0d233044f2fdf5a52d1dd284361f84b4644ecf7ceb4f",
+        "meta_exploration/adaptation.py": "dae3505f480fb20aa577a6e1383c606d937a98a7503fd12dfcb2d5a65ba29ad9",
+        "meta_exploration/history_diagnostics.py": "a1492271f6c8ee84bdde954b397ed1c816578d6f0cc4f75d21ceed026583db1a",
+        "meta_exploration/evaluation.py": "3721e932f665a83d5a1987c8b3eb2970f94b2bfee5a7517b57a7d4f4d1e988b3",
+        "meta_exploration/plotting.py": "dc4acef8dd316cc0d5160863594e5d977eb77c523829a128914a7178b51016ef",
+        "meta_exploration/training.py": "198409980ee383f6b7361beb4010de52dfe7799e57af24e95946d600f609b865",
+        "marl/models.py": "ca2e6cb1e827030f1cb32e27dc9f33d0d6baad72773cd6d1ea5d4ffe9cc49541"
+      },
+      "python": "3.14.7",
+      "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+      "torch": "2.14.1+cu126",
+      "cuda": "12.6",
+      "device": "cuda:0",
+      "seed": 1,
+      "config": {
+        "environment": {
+          "n_actions": 3,
+          "reward_sigma": 1.0,
+          "difficulty": "medium",
+          "opponent_dependence": 0.0,
+          "opponents": [
+            "random",
+            "fixed"
+          ],
+          "opponent_checkpoint": null
+        },
+        "training": {
+          "train_worlds": 60,
+          "pretraining_episodes": 300,
+          "episodes": 1200,
+          "hidden": 64,
+          "exploration_steps": 32,
+          "exploitation_steps": 128,
+          "exploration_lambda": 0.1,
+          "gamma": 1.0,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "ppo_epochs": 4,
+          "clip": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01,
+          "max_grad_norm": 0.5,
+          "history_pool_size": 6,
+          "history_sampling_ratios": [
+            0.4,
+            0.3,
+            0.3
+          ],
+          "privileged_curriculum": false,
+          "single_k_only": false,
+          "q_aware": false,
+          "rollout_batch_size": 8,
+          "advantage_normalization": "batch",
+          "dual_credit": "observed_suffix"
+        },
+        "q_learning": {
+          "alpha": 0.2,
+          "gamma": 0.99,
+          "epsilon_start": 0.3,
+          "epsilon_end": 0.05,
+          "epsilon_decay_steps": 160,
+          "replay_passes": 10
+        },
+        "evaluation": {
+          "num_test_worlds": 6,
+          "seeds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "modes": [
+            "frozen",
+            "online"
+          ],
+          "update_interval": 32,
+          "auc_windows": [
+            32,
+            64,
+            128
+          ],
+          "exploration_budgets": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "exploitation_budgets": [
+            128
+          ],
+          "history_reference": true,
+          "bootstrap_replicates": 1000,
+          "adaptation_speed": {
+            "window": 16,
+            "hold": 8,
+            "thresholds": [
+              0.25,
+              0.5,
+              0.75,
+              0.9
+            ],
+            "denominator_epsilon": 1e-08
+          },
+          "online_advantage_normalization": "legacy_episode"
+        },
+        "hardware": {
+          "device": "auto",
+          "use_all_available_gpus": true,
+          "cpu_workers": 1,
+          "threads_per_worker": 1,
+          "max_retries": 1
+        },
+        "logging": {
+          "save_trajectories": true,
+          "save_plots": true,
+          "checkpoint_interval": 20
+        }
+      },
+      "rollout_order": "episode index modulo training world count; per-episode local RNG",
+      "checkpoint_boundary": "complete rollout batch; no pending trajectories",
+      "checkpoint_rng": "torch CPU/CUDA, numpy global; per-episode controller/environment RNG seeded by episode"
+    }
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "checkpoint": "/home/dsail26f1/yeahyeahyeah/runs/full_study_corrected_v1/A3/seed_0/checkpoints/trained.pt",
+    "initialization_audit": {
+      "status": "verified Single = Dual exploiter = shared pretrain",
+      "initialization_sha256": "cf97953c8f8cb5f6488671a86cfb4aa209aac38bd146f144980f636a2377a3c7",
+      "pretrain_sha256": "d43ce8821ed5dbf5ce96cfbb8ceb00af1b62feda1a2d0b5d8f6657d6d30eba13"
+    },
+    "checkpoint_sha256": "ead28442594959f91a91a7a09e9c2bf2add60b63ee89bd21710ed707bc705bd5",
+    "source_config": {
+      "environment": {
+        "n_actions": 3,
+        "reward_sigma": 1.0,
+        "difficulty": "medium",
+        "opponent_dependence": 0.0,
+        "opponents": [
+          "random",
+          "fixed"
+        ],
+        "opponent_checkpoint": null
+      },
+      "training": {
+        "train_worlds": 60,
+        "pretraining_episodes": 300,
+        "episodes": 1200,
+        "hidden": 64,
+        "exploration_steps": 32,
+        "exploitation_steps": 128,
+        "exploration_lambda": 0.1,
+        "gamma": 1.0,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.0003,
+        "ppo_epochs": 4,
+        "clip": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01,
+        "max_grad_norm": 0.5,
+        "history_pool_size": 6,
+        "history_sampling_ratios": [
+          0.4,
+          0.3,
+          0.3
+        ],
+        "privileged_curriculum": false,
+        "single_k_only": false,
+        "q_aware": false,
+        "rollout_batch_size": 8,
+        "advantage_normalization": "batch",
+        "dual_credit": "observed_suffix"
+      },
+      "q_learning": {
+        "alpha": 0.2,
+        "gamma": 0.99,
+        "epsilon_start": 0.3,
+        "epsilon_end": 0.05,
+        "epsilon_decay_steps": 160,
+        "replay_passes": 10
+      },
+      "evaluation": {
+        "num_test_worlds": 100,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "modes": [
+          "frozen",
+          "online"
+        ],
+        "update_interval": 32,
+        "auc_windows": [
+          32,
+          64,
+          128
+        ],
+        "exploration_budgets": [
+          8,
+          16,
+          32,
+          64
+        ],
+        "exploitation_budgets": [
+          128
+        ],
+        "history_reference": true,
+        "bootstrap_replicates": 1000,
+        "adaptation_speed": {
+          "window": 16,
+          "hold": 8,
+          "thresholds": [
+            0.25,
+            0.5,
+            0.75,
+            0.9
+          ],
+          "denominator_epsilon": 1e-08
+        },
+        "online_advantage_normalization": "legacy_episode"
+      },
+      "hardware": {
+        "device": "auto",
+        "use_all_available_gpus": true,
+        "cpu_workers": 1,
+        "threads_per_worker": 1,
+        "max_retries": 1
+      },
+      "logging": {
+        "save_trajectories": true,
+        "save_plots": true,
+        "checkpoint_interval": 20
+      }
+    },
+    "evaluation_config": {
+      "environment": {
+        "n_actions": 3,
+        "reward_sigma": 1.0,
+        "difficulty": "medium",
+        "opponent_dependence": 0.0,
+        "opponents": [
+          "random",
+          "fixed"
+        ],
+        "opponent_checkpoint": null
+      },
+      "training": {
+        "train_worlds": 60,
+        "pretraining_episodes": 300,
+        "episodes": 1200,
+        "hidden": 64,
+        "exploration_steps": 32,
+        "exploitation_steps": 128,
+        "exploration_lambda": 0.1,
+        "gamma": 1.0,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.0003,
+        "ppo_epochs": 4,
+        "clip": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01,
+        "max_grad_norm": 0.5,
+        "history_pool_size": 6,
+        "history_sampling_ratios": [
+          0.4,
+          0.3,
+          0.3
+        ],
+        "privileged_curriculum": false,
+        "single_k_only": false,
+        "q_aware": false,
+        "rollout_batch_size": 8,
+        "advantage_normalization": "batch",
+        "dual_credit": "observed_suffix"
+      },
+      "q_learning": {
+        "alpha": 0.2,
+        "gamma": 0.99,
+        "epsilon_start": 0.3,
+        "epsilon_end": 0.05,
+        "epsilon_decay_steps": 160,
+        "replay_passes": 10
+      },
+      "evaluation": {
+        "num_test_worlds": 6,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "modes": [
+          "frozen",
+          "online"
+        ],
+        "update_interval": 32,
+        "auc_windows": [
+          32,
+          64,
+          128
+        ],
+        "exploration_budgets": [
+          8,
+          16,
+          32,
+          64
+        ],
+        "exploitation_budgets": [
+          128
+        ],
+        "history_reference": true,
+        "bootstrap_replicates": 1000,
+        "adaptation_speed": {
+          "window": 16,
+          "hold": 8,
+          "thresholds": [
+            0.25,
+            0.5,
+            0.75,
+            0.9
+          ],
+          "denominator_epsilon": 1e-08
+        },
+        "online_advantage_normalization": "legacy_episode"
+      },
+      "hardware": {
+        "device": "auto",
+        "use_all_available_gpus": true,
+        "cpu_workers": 1,
+        "threads_per_worker": 1,
+        "max_retries": 1
+      },
+      "logging": {
+        "save_trajectories": true,
+        "save_plots": true,
+        "checkpoint_interval": 20
+      }
+    },
+    "execution": {
+      "git_commit": "3dd5a95959f7f55c43ff2c130c41a156a857d170",
+      "git_status": "?? logs/",
+      "source_sha256": {
+        "meta_exploration/hardware.py": "6d7796a89c2539f629c6f6c48ad35d65ab935529ae9db74fba8f6f91b6132f23",
+        "meta_exploration/__init__.py": "06b926db64af459e7861a69c7f187ecc5703b5b9779c31e12a1f6d1875f71ca0",
+        "meta_exploration/diagnostics.py": "cf259a96f050f898454e1ccd845c1e56e4dca618cd1baad529de781ecf25a44a",
+        "meta_exploration/config.py": "e80f0ff112e16aaac8cb70b883c08a7ee22f03e542e39ed1b0722f00155c1584",
+        "meta_exploration/learning.py": "55296ef44d5b59eae17a55ff300b1da5a2837d0fed22b9e840a09629dc7e0b9c",
+        "meta_exploration/environment.py": "8f19aace944ad602695b156efd89d3c85ec5b1d2fa229c50ca88a9925483fc4f",
+        "meta_exploration/history_diagnostics_summary.py": "019d7ff406a6717dff064bb5d5a9e29cf168c57d2ea195c39b0e8371b454883f",
+        "meta_exploration/__main__.py": "31c7374b52614779f4083700ee2f9f51788ba984efe207d6320b91b4b6851187",
+        "meta_exploration/optimization_pilot.py": "edbd81579a9faa3e0be67c27a3410efd6f53717bb04f48b5378a44e5a3ca3cb7",
+        "meta_exploration/benchmark.py": "ac3d98f2716d22f2aa6d0d233044f2fdf5a52d1dd284361f84b4644ecf7ceb4f",
+        "meta_exploration/adaptation.py": "dae3505f480fb20aa577a6e1383c606d937a98a7503fd12dfcb2d5a65ba29ad9",
+        "meta_exploration/history_diagnostics.py": "a1492271f6c8ee84bdde954b397ed1c816578d6f0cc4f75d21ceed026583db1a",
+        "meta_exploration/evaluation.py": "3721e932f665a83d5a1987c8b3eb2970f94b2bfee5a7517b57a7d4f4d1e988b3",
+        "meta_exploration/plotting.py": "dc4acef8dd316cc0d5160863594e5d977eb77c523829a128914a7178b51016ef",
+        "meta_exploration/training.py": "198409980ee383f6b7361beb4010de52dfe7799e57af24e95946d600f609b865",
+        "marl/models.py": "ca2e6cb1e827030f1cb32e27dc9f33d0d6baad72773cd6d1ea5d4ffe9cc49541"
+      },
+      "python": "3.14.7",
+      "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+      "torch": "2.14.1+cu126",
+      "cuda": "12.6",
+      "device": "cuda:0",
+      "seed": 0,
+      "config": {
+        "environment": {
+          "n_actions": 3,
+          "reward_sigma": 1.0,
+          "difficulty": "medium",
+          "opponent_dependence": 0.0,
+          "opponents": [
+            "random",
+            "fixed"
+          ],
+          "opponent_checkpoint": null
+        },
+        "training": {
+          "train_worlds": 60,
+          "pretraining_episodes": 300,
+          "episodes": 1200,
+          "hidden": 64,
+          "exploration_steps": 32,
+          "exploitation_steps": 128,
+          "exploration_lambda": 0.1,
+          "gamma": 1.0,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "ppo_epochs": 4,
+          "clip": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01,
+          "max_grad_norm": 0.5,
+          "history_pool_size": 6,
+          "history_sampling_ratios": [
+            0.4,
+            0.3,
+            0.3
+          ],
+          "privileged_curriculum": false,
+          "single_k_only": false,
+          "q_aware": false,
+          "rollout_batch_size": 8,
+          "advantage_normalization": "batch",
+          "dual_credit": "observed_suffix"
+        },
+        "q_learning": {
+          "alpha": 0.2,
+          "gamma": 0.99,
+          "epsilon_start": 0.3,
+          "epsilon_end": 0.05,
+          "epsilon_decay_steps": 160,
+          "replay_passes": 10
+        },
+        "evaluation": {
+          "num_test_worlds": 6,
+          "seeds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "modes": [
+            "frozen",
+            "online"
+          ],
+          "update_interval": 32,
+          "auc_windows": [
+            32,
+            64,
+            128
+          ],
+          "exploration_budgets": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "exploitation_budgets": [
+            128
+          ],
+          "history_reference": true,
+          "bootstrap_replicates": 1000,
+          "adaptation_speed": {
+            "window": 16,
+            "hold": 8,
+            "thresholds": [
+              0.25,
+              0.5,
+              0.75,
+              0.9
+            ],
+            "denominator_epsilon": 1e-08
+          },
+          "online_advantage_normalization": "legacy_episode"
+        },
+        "hardware": {
+          "device": "auto",
+          "use_all_available_gpus": true,
+          "cpu_workers": 1,
+          "threads_per_worker": 1,
+          "max_retries": 1
+        },
+        "logging": {
+          "save_trajectories": true,
+          "save_plots": true,
+          "checkpoint_interval": 20
+        }
+      },
+      "rollout_order": "episode index modulo training world count; per-episode local RNG",
+      "checkpoint_boundary": "complete rollout batch; no pending trajectories",
+      "checkpoint_rng": "torch CPU/CUDA, numpy global; per-episode controller/environment RNG seeded by episode"
+    }
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "checkpoint": "/home/dsail26f1/yeahyeahyeah/runs/full_study_corrected_v1/A3/seed_1/checkpoints/trained.pt",
+    "initialization_audit": {
+      "status": "verified Single = Dual exploiter = shared pretrain",
+      "initialization_sha256": "9c80c78f0afecd3f0739f095f104ed68e96016e1c2ec78156e96fa9286851968",
+      "pretrain_sha256": "287b52a1ccb7032715a899bb9581d0dad5d5ff41c49ba971098fa5264fe4fb9f"
+    },
+    "checkpoint_sha256": "778ca14496651eedbe588cd3845947bd9409664b423c49d306bbc797e0979c66",
+    "source_config": {
+      "environment": {
+        "n_actions": 3,
+        "reward_sigma": 1.0,
+        "difficulty": "medium",
+        "opponent_dependence": 0.0,
+        "opponents": [
+          "random",
+          "fixed"
+        ],
+        "opponent_checkpoint": null
+      },
+      "training": {
+        "train_worlds": 60,
+        "pretraining_episodes": 300,
+        "episodes": 1200,
+        "hidden": 64,
+        "exploration_steps": 32,
+        "exploitation_steps": 128,
+        "exploration_lambda": 0.1,
+        "gamma": 1.0,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.0003,
+        "ppo_epochs": 4,
+        "clip": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01,
+        "max_grad_norm": 0.5,
+        "history_pool_size": 6,
+        "history_sampling_ratios": [
+          0.4,
+          0.3,
+          0.3
+        ],
+        "privileged_curriculum": false,
+        "single_k_only": false,
+        "q_aware": false,
+        "rollout_batch_size": 8,
+        "advantage_normalization": "batch",
+        "dual_credit": "observed_suffix"
+      },
+      "q_learning": {
+        "alpha": 0.2,
+        "gamma": 0.99,
+        "epsilon_start": 0.3,
+        "epsilon_end": 0.05,
+        "epsilon_decay_steps": 160,
+        "replay_passes": 10
+      },
+      "evaluation": {
+        "num_test_worlds": 100,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "modes": [
+          "frozen",
+          "online"
+        ],
+        "update_interval": 32,
+        "auc_windows": [
+          32,
+          64,
+          128
+        ],
+        "exploration_budgets": [
+          8,
+          16,
+          32,
+          64
+        ],
+        "exploitation_budgets": [
+          128
+        ],
+        "history_reference": true,
+        "bootstrap_replicates": 1000,
+        "adaptation_speed": {
+          "window": 16,
+          "hold": 8,
+          "thresholds": [
+            0.25,
+            0.5,
+            0.75,
+            0.9
+          ],
+          "denominator_epsilon": 1e-08
+        },
+        "online_advantage_normalization": "legacy_episode"
+      },
+      "hardware": {
+        "device": "auto",
+        "use_all_available_gpus": true,
+        "cpu_workers": 1,
+        "threads_per_worker": 1,
+        "max_retries": 1
+      },
+      "logging": {
+        "save_trajectories": true,
+        "save_plots": true,
+        "checkpoint_interval": 20
+      }
+    },
+    "evaluation_config": {
+      "environment": {
+        "n_actions": 3,
+        "reward_sigma": 1.0,
+        "difficulty": "medium",
+        "opponent_dependence": 0.0,
+        "opponents": [
+          "random",
+          "fixed"
+        ],
+        "opponent_checkpoint": null
+      },
+      "training": {
+        "train_worlds": 60,
+        "pretraining_episodes": 300,
+        "episodes": 1200,
+        "hidden": 64,
+        "exploration_steps": 32,
+        "exploitation_steps": 128,
+        "exploration_lambda": 0.1,
+        "gamma": 1.0,
+        "gae_lambda": 0.95,
+        "learning_rate": 0.0003,
+        "ppo_epochs": 4,
+        "clip": 0.2,
+        "value_coefficient": 0.5,
+        "entropy_coefficient": 0.01,
+        "max_grad_norm": 0.5,
+        "history_pool_size": 6,
+        "history_sampling_ratios": [
+          0.4,
+          0.3,
+          0.3
+        ],
+        "privileged_curriculum": false,
+        "single_k_only": false,
+        "q_aware": false,
+        "rollout_batch_size": 8,
+        "advantage_normalization": "batch",
+        "dual_credit": "observed_suffix"
+      },
+      "q_learning": {
+        "alpha": 0.2,
+        "gamma": 0.99,
+        "epsilon_start": 0.3,
+        "epsilon_end": 0.05,
+        "epsilon_decay_steps": 160,
+        "replay_passes": 10
+      },
+      "evaluation": {
+        "num_test_worlds": 6,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "modes": [
+          "frozen",
+          "online"
+        ],
+        "update_interval": 32,
+        "auc_windows": [
+          32,
+          64,
+          128
+        ],
+        "exploration_budgets": [
+          8,
+          16,
+          32,
+          64
+        ],
+        "exploitation_budgets": [
+          128
+        ],
+        "history_reference": true,
+        "bootstrap_replicates": 1000,
+        "adaptation_speed": {
+          "window": 16,
+          "hold": 8,
+          "thresholds": [
+            0.25,
+            0.5,
+            0.75,
+            0.9
+          ],
+          "denominator_epsilon": 1e-08
+        },
+        "online_advantage_normalization": "legacy_episode"
+      },
+      "hardware": {
+        "device": "auto",
+        "use_all_available_gpus": true,
+        "cpu_workers": 1,
+        "threads_per_worker": 1,
+        "max_retries": 1
+      },
+      "logging": {
+        "save_trajectories": true,
+        "save_plots": true,
+        "checkpoint_interval": 20
+      }
+    },
+    "execution": {
+      "git_commit": "3dd5a95959f7f55c43ff2c130c41a156a857d170",
+      "git_status": "?? logs/",
+      "source_sha256": {
+        "meta_exploration/hardware.py": "6d7796a89c2539f629c6f6c48ad35d65ab935529ae9db74fba8f6f91b6132f23",
+        "meta_exploration/__init__.py": "06b926db64af459e7861a69c7f187ecc5703b5b9779c31e12a1f6d1875f71ca0",
+        "meta_exploration/diagnostics.py": "cf259a96f050f898454e1ccd845c1e56e4dca618cd1baad529de781ecf25a44a",
+        "meta_exploration/config.py": "e80f0ff112e16aaac8cb70b883c08a7ee22f03e542e39ed1b0722f00155c1584",
+        "meta_exploration/learning.py": "55296ef44d5b59eae17a55ff300b1da5a2837d0fed22b9e840a09629dc7e0b9c",
+        "meta_exploration/environment.py": "8f19aace944ad602695b156efd89d3c85ec5b1d2fa229c50ca88a9925483fc4f",
+        "meta_exploration/history_diagnostics_summary.py": "019d7ff406a6717dff064bb5d5a9e29cf168c57d2ea195c39b0e8371b454883f",
+        "meta_exploration/__main__.py": "31c7374b52614779f4083700ee2f9f51788ba984efe207d6320b91b4b6851187",
+        "meta_exploration/optimization_pilot.py": "edbd81579a9faa3e0be67c27a3410efd6f53717bb04f48b5378a44e5a3ca3cb7",
+        "meta_exploration/benchmark.py": "ac3d98f2716d22f2aa6d0d233044f2fdf5a52d1dd284361f84b4644ecf7ceb4f",
+        "meta_exploration/adaptation.py": "dae3505f480fb20aa577a6e1383c606d937a98a7503fd12dfcb2d5a65ba29ad9",
+        "meta_exploration/history_diagnostics.py": "a1492271f6c8ee84bdde954b397ed1c816578d6f0cc4f75d21ceed026583db1a",
+        "meta_exploration/evaluation.py": "3721e932f665a83d5a1987c8b3eb2970f94b2bfee5a7517b57a7d4f4d1e988b3",
+        "meta_exploration/plotting.py": "dc4acef8dd316cc0d5160863594e5d977eb77c523829a128914a7178b51016ef",
+        "meta_exploration/training.py": "198409980ee383f6b7361beb4010de52dfe7799e57af24e95946d600f609b865",
+        "marl/models.py": "ca2e6cb1e827030f1cb32e27dc9f33d0d6baad72773cd6d1ea5d4ffe9cc49541"
+      },
+      "python": "3.14.7",
+      "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+      "torch": "2.14.1+cu126",
+      "cuda": "12.6",
+      "device": "cuda:0",
+      "seed": 1,
+      "config": {
+        "environment": {
+          "n_actions": 3,
+          "reward_sigma": 1.0,
+          "difficulty": "medium",
+          "opponent_dependence": 0.0,
+          "opponents": [
+            "random",
+            "fixed"
+          ],
+          "opponent_checkpoint": null
+        },
+        "training": {
+          "train_worlds": 60,
+          "pretraining_episodes": 300,
+          "episodes": 1200,
+          "hidden": 64,
+          "exploration_steps": 32,
+          "exploitation_steps": 128,
+          "exploration_lambda": 0.1,
+          "gamma": 1.0,
+          "gae_lambda": 0.95,
+          "learning_rate": 0.0003,
+          "ppo_epochs": 4,
+          "clip": 0.2,
+          "value_coefficient": 0.5,
+          "entropy_coefficient": 0.01,
+          "max_grad_norm": 0.5,
+          "history_pool_size": 6,
+          "history_sampling_ratios": [
+            0.4,
+            0.3,
+            0.3
+          ],
+          "privileged_curriculum": false,
+          "single_k_only": false,
+          "q_aware": false,
+          "rollout_batch_size": 8,
+          "advantage_normalization": "batch",
+          "dual_credit": "observed_suffix"
+        },
+        "q_learning": {
+          "alpha": 0.2,
+          "gamma": 0.99,
+          "epsilon_start": 0.3,
+          "epsilon_end": 0.05,
+          "epsilon_decay_steps": 160,
+          "replay_passes": 10
+        },
+        "evaluation": {
+          "num_test_worlds": 6,
+          "seeds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "modes": [
+            "frozen",
+            "online"
+          ],
+          "update_interval": 32,
+          "auc_windows": [
+            32,
+            64,
+            128
+          ],
+          "exploration_budgets": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "exploitation_budgets": [
+            128
+          ],
+          "history_reference": true,
+          "bootstrap_replicates": 1000,
+          "adaptation_speed": {
+            "window": 16,
+            "hold": 8,
+            "thresholds": [
+              0.25,
+              0.5,
+              0.75,
+              0.9
+            ],
+            "denominator_epsilon": 1e-08
+          },
+          "online_advantage_normalization": "legacy_episode"
+        },
+        "hardware": {
+          "device": "auto",
+          "use_all_available_gpus": true,
+          "cpu_workers": 1,
+          "threads_per_worker": 1,
+          "max_retries": 1
+        },
+        "logging": {
+          "save_trajectories": true,
+          "save_plots": true,
+          "checkpoint_interval": 20
+        }
+      },
+      "rollout_order": "episode index modulo training world count; per-episode local RNG",
+      "checkpoint_boundary": "complete rollout batch; no pending trajectories",
+      "checkpoint_rng": "torch CPU/CUDA, numpy global; per-episode controller/environment RNG seeded by episode"
+    }
+  }
+]
