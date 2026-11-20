@@ -1,0 +1,5 @@
+{
+  "training": {"rollout_batch_size": 8, "advantage_normalization": "batch", "dual_credit": "observed_suffix", "gamma": 1.0},
+  "neural_td": {"hidden": 64, "gamma": 0.99, "prefix_timing": "online", "prefix_updates": 4, "k_updates": 1, "pretrain_interactions": 96000, "evaluation_budgets": [8,16,32,64], "evaluation_timings": ["online"]},
+  "evaluation": {"online_advantage_normalization": "legacy_episode", "adaptation_speed": {"window": 16, "hold": 8, "thresholds": [0.25,0.5,0.75,0.9]}}
+}

@@ -1,0 +1,49 @@
+{
+  "training": {
+    "train_worlds": 6,
+    "episodes": 24,
+    "hidden": 32,
+    "exploration_steps": 32,
+    "exploitation_steps": 128,
+    "rollout_batch_size": 8,
+    "advantage_normalization": "batch",
+    "dual_credit": "observed_suffix",
+    "gamma": 1.0,
+    "learning_rate": 0.001
+  },
+  "neural_td": {
+    "hidden": 32,
+    "prefix_updates": 2,
+    "k_updates": 1,
+    "pretrain_interactions": 960,
+    "evaluation_budgets": [
+      16,
+      32
+    ],
+    "evaluation_timings": [
+      "online",
+      "batch"
+    ]
+  },
+  "evaluation": {
+    "num_test_worlds": 4,
+    "history_reference": false,
+    "bootstrap_replicates": 1000,
+    "online_advantage_normalization": "legacy_episode",
+    "adaptation_speed": {
+      "window": 16,
+      "hold": 8,
+      "thresholds": [
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ]
+    }
+  },
+  "logging": {
+    "save_trajectories": true,
+    "save_plots": true,
+    "checkpoint_interval": 8
+  }
+}

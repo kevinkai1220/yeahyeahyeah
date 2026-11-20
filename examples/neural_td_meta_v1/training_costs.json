@@ -1,0 +1,98 @@
+[
+  {
+    "regime": "A2",
+    "seed": 1,
+    "pretraining": {
+      "interactions": 960,
+      "td_updates": 960,
+      "sampled_transitions": 30720,
+      "optimizer_seconds": 6.616274525411427
+    },
+    "main_interactions": 3840,
+    "inner_td_updates": 4608,
+    "inner_sampled_transitions": 147456,
+    "outer_optimizer_steps": 12,
+    "outer_transitions": 768,
+    "outer_token_passes": 3072,
+    "td_parameters": 1539,
+    "explorer_parameters": 2852,
+    "initialization_fixed_during_meta": true,
+    "same_world_rollouts": 1,
+    "q_gamma": 0.99,
+    "outer_gamma": 1.0,
+    "outer_credit": "complete MC return-to-go; no intrinsic reward",
+    "target_parameters": 1539
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "pretraining": {
+      "interactions": 960,
+      "td_updates": 960,
+      "sampled_transitions": 30720,
+      "optimizer_seconds": 6.393016601912677
+    },
+    "main_interactions": 3840,
+    "inner_td_updates": 4608,
+    "inner_sampled_transitions": 147456,
+    "outer_optimizer_steps": 12,
+    "outer_transitions": 768,
+    "outer_token_passes": 3072,
+    "td_parameters": 1539,
+    "explorer_parameters": 2852,
+    "initialization_fixed_during_meta": true,
+    "same_world_rollouts": 1,
+    "q_gamma": 0.99,
+    "outer_gamma": 1.0,
+    "outer_credit": "complete MC return-to-go; no intrinsic reward",
+    "target_parameters": 1539
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "pretraining": {
+      "interactions": 960,
+      "td_updates": 960,
+      "sampled_transitions": 30720,
+      "optimizer_seconds": 6.785630167461932
+    },
+    "main_interactions": 3840,
+    "inner_td_updates": 4608,
+    "inner_sampled_transitions": 147456,
+    "outer_optimizer_steps": 12,
+    "outer_transitions": 768,
+    "outer_token_passes": 3072,
+    "td_parameters": 1539,
+    "explorer_parameters": 2852,
+    "initialization_fixed_during_meta": true,
+    "same_world_rollouts": 1,
+    "q_gamma": 0.99,
+    "outer_gamma": 1.0,
+    "outer_credit": "complete MC return-to-go; no intrinsic reward",
+    "target_parameters": 1539
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "pretraining": {
+      "interactions": 960,
+      "td_updates": 960,
+      "sampled_transitions": 30720,
+      "optimizer_seconds": 6.320579115301371
+    },
+    "main_interactions": 3840,
+    "inner_td_updates": 4608,
+    "inner_sampled_transitions": 147456,
+    "outer_optimizer_steps": 12,
+    "outer_transitions": 768,
+    "outer_token_passes": 3072,
+    "td_parameters": 1539,
+    "explorer_parameters": 2852,
+    "initialization_fixed_during_meta": true,
+    "same_world_rollouts": 1,
+    "q_gamma": 0.99,
+    "outer_gamma": 1.0,
+    "outer_credit": "complete MC return-to-go; no intrinsic reward",
+    "target_parameters": 1539
+  }
+]

@@ -386,3 +386,11 @@ changing historical defaults or overwriting existing runs.
 
 See [server commands and experimental controls](docs/history_optimization_diagnostics.md)
 and [executed CPU results and limitations](analysis/history_optimization_diagnostics/REPORT.md).
+
+## Neural off-policy TD meta-exploration
+
+A separate feedforward Double DQN exploiter adapts through world-local parameter
+updates on exploration transitions. Its statistics-conditioned meta-explorer is
+trained by downstream return with corrected batch PPO. Existing recurrent PPO and
+Tabular Q algorithms remain unchanged. See [protocol, CLI, and GPU commands](docs/neural_td_meta.md)
+and [executed gate/pilot results](examples/neural_td_meta_v1/REPORT.md).

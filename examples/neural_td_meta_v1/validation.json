@@ -1,0 +1,39 @@
+{
+  "baseline_suite": {
+    "passed": 95,
+    "skipped": 1
+  },
+  "final_suite": {
+    "passed": 121,
+    "skipped": 2,
+    "seconds": 40.01,
+    "command": "python -m pytest -q"
+  },
+  "neural_td_suite": {
+    "passed": 26,
+    "skipped": 1,
+    "command": "python -m pytest tests/meta/test_neural_td.py -q"
+  },
+  "cuda_status": "Unavailable locally; CUDA backward tests skipped, not passed",
+  "gates": {
+    "online_B36": "4/6; failed threshold",
+    "online_B180": "5/6; failed threshold",
+    "batch_B36": "6/6; passed threshold"
+  },
+  "pilot": {
+    "training_runs": 4,
+    "seeds": [
+      0,
+      1
+    ],
+    "regimes": [
+      "A2",
+      "A3"
+    ],
+    "world_condition_rows": 1152,
+    "main_episodes_per_run": 24
+  },
+  "full_study_executed": false,
+  "original_runs_modified": false,
+  "git_diff_check": "passed"
+}
