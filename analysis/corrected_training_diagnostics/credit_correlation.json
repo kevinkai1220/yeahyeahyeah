@@ -1,0 +1,102 @@
+[
+  {
+    "regime": "A1",
+    "seed": 0,
+    "median_credit_return_correlation": 0.9998644808314575
+  },
+  {
+    "regime": "A1",
+    "seed": 1,
+    "median_credit_return_correlation": 0.9999069969557512
+  },
+  {
+    "regime": "A1",
+    "seed": 2,
+    "median_credit_return_correlation": 0.9999245723987722
+  },
+  {
+    "regime": "A1",
+    "seed": 3,
+    "median_credit_return_correlation": 0.9999467479161721
+  },
+  {
+    "regime": "A1",
+    "seed": 4,
+    "median_credit_return_correlation": 0.999934172953749
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "median_credit_return_correlation": 0.9999783749966883
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "median_credit_return_correlation": 0.9999840285685766
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "median_credit_return_correlation": 0.9999860572037187
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "median_credit_return_correlation": 0.9999869651287192
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "median_credit_return_correlation": 0.9999885649376423
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "median_credit_return_correlation": 0.999284190106231
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "median_credit_return_correlation": 0.9993426712279057
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "median_credit_return_correlation": 0.999494711657867
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "median_credit_return_correlation": 0.9995016536978105
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "median_credit_return_correlation": 0.9994745630596842
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "median_credit_return_correlation": 0.9999744468241387
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "median_credit_return_correlation": 0.9997884827468984
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "median_credit_return_correlation": 0.9998300959964919
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "median_credit_return_correlation": 0.9998588116148981
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "median_credit_return_correlation": 0.9999326286502047
+  }
+]

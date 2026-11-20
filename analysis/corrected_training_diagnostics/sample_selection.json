@@ -1,0 +1,1402 @@
+[
+  {
+    "regime": "A2",
+    "seed": 0,
+    "world_id": "test-type2-332",
+    "discovered": false,
+    "reward": -0.24135302046900312
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "world_id": "test-type2-92",
+    "discovered": true,
+    "reward": -0.16036012618720824
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "world_id": "test-type2-922",
+    "discovered": true,
+    "reward": 4.892724002914455
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "world_id": "test-type2-572",
+    "discovered": false,
+    "reward": 2.379485361841212
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "world_id": "test-type2-252",
+    "discovered": true,
+    "reward": 5.022806744273748
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "world_id": "test-type2-692",
+    "discovered": true,
+    "reward": -0.319062300329947
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "world_id": "test-type2-42",
+    "discovered": false,
+    "reward": 5.562221155014352
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "world_id": "test-type2-762",
+    "discovered": false,
+    "reward": -0.29111747272056165
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "world_id": "test-type2-602",
+    "discovered": false,
+    "reward": -0.2692447708560145
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "world_id": "test-type2-532",
+    "discovered": true,
+    "reward": 2.5430284822005254
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "world_id": "test-type2-1000392",
+    "discovered": true,
+    "reward": 2.442454378293556
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "world_id": "test-type2-1000422",
+    "discovered": true,
+    "reward": 2.47798366980352
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "world_id": "test-type2-1000542",
+    "discovered": true,
+    "reward": 0.11465967190606231
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "world_id": "test-type2-1000272",
+    "discovered": true,
+    "reward": 4.847573683938452
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "world_id": "test-type2-1000162",
+    "discovered": false,
+    "reward": 2.1707627672407184
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "world_id": "test-type2-1000202",
+    "discovered": false,
+    "reward": 0.07147662266507068
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "world_id": "test-type2-1000592",
+    "discovered": true,
+    "reward": 4.839879447313297
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "world_id": "test-type2-1000132",
+    "discovered": true,
+    "reward": -0.23656725347104257
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "world_id": "test-type2-1000472",
+    "discovered": true,
+    "reward": 0.08480521388899549
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "world_id": "test-type2-1000172",
+    "discovered": true,
+    "reward": 5.2889600229840426
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "world_id": "test-type2-2000062",
+    "discovered": true,
+    "reward": -0.7280335260980166
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "world_id": "test-type2-2000112",
+    "discovered": true,
+    "reward": 4.630803565497502
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "world_id": "test-type2-2000142",
+    "discovered": true,
+    "reward": 4.828293491890092
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "world_id": "test-type2-2000742",
+    "discovered": true,
+    "reward": 2.3169714179126704
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "world_id": "test-type2-2000702",
+    "discovered": true,
+    "reward": 2.3350051242962238
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "world_id": "test-type2-2000382",
+    "discovered": true,
+    "reward": 1.9545785414723644
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "world_id": "test-type2-2000732",
+    "discovered": true,
+    "reward": 2.4987323001962483
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "world_id": "test-type2-2000842",
+    "discovered": true,
+    "reward": 2.22441056274943
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "world_id": "test-type2-2000912",
+    "discovered": false,
+    "reward": 0.155008321874966
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "world_id": "test-type2-2000442",
+    "discovered": true,
+    "reward": 5.054072316175064
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "world_id": "test-type2-3000462",
+    "discovered": true,
+    "reward": 4.815954400654756
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "world_id": "test-type2-3000012",
+    "discovered": true,
+    "reward": 2.4205580517779
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "world_id": "test-type2-3000752",
+    "discovered": true,
+    "reward": 2.5704432480842563
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "world_id": "test-type2-3000402",
+    "discovered": true,
+    "reward": 2.4550296926968596
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "world_id": "test-type2-3000472",
+    "discovered": true,
+    "reward": 2.5633567071902363
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "world_id": "test-type2-3000702",
+    "discovered": true,
+    "reward": 2.2184468889337623
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "world_id": "test-type2-3000482",
+    "discovered": false,
+    "reward": 2.4897275671403047
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "world_id": "test-type2-3000882",
+    "discovered": true,
+    "reward": -0.0373956236557369
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "world_id": "test-type2-3000992",
+    "discovered": true,
+    "reward": 2.1364260639995236
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "world_id": "test-type2-3000512",
+    "discovered": false,
+    "reward": 2.2877738280263156
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "world_id": "test-type2-4000632",
+    "discovered": true,
+    "reward": 5.3369758610527995
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "world_id": "test-type2-4000472",
+    "discovered": false,
+    "reward": 2.4530531694862026
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "world_id": "test-type2-4000532",
+    "discovered": true,
+    "reward": 2.232286026202
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "world_id": "test-type2-4000052",
+    "discovered": true,
+    "reward": 2.436231088507264
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "world_id": "test-type2-4000302",
+    "discovered": true,
+    "reward": 4.799497025398998
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "world_id": "test-type2-4000062",
+    "discovered": true,
+    "reward": 5.24128113738325
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "world_id": "test-type2-4000292",
+    "discovered": false,
+    "reward": 1.4539837242080231
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "world_id": "test-type2-4000452",
+    "discovered": true,
+    "reward": -0.09830369954549714
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "world_id": "test-type2-4000932",
+    "discovered": true,
+    "reward": 5.713894257205367
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "world_id": "test-type2-4000552",
+    "discovered": true,
+    "reward": 2.4426081338705106
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "world_id": "test-type3-53",
+    "discovered": true,
+    "reward": 0.6594224012233056
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "world_id": "test-type3-553",
+    "discovered": true,
+    "reward": 1.1914794188142235
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "world_id": "test-type3-693",
+    "discovered": false,
+    "reward": 0.653115943672997
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "world_id": "test-type3-453",
+    "discovered": false,
+    "reward": 0.9332972634145971
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "world_id": "test-type3-803",
+    "discovered": true,
+    "reward": 0.8805682956133827
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "world_id": "test-type3-643",
+    "discovered": true,
+    "reward": 0.8337890775234974
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "world_id": "test-type3-403",
+    "discovered": true,
+    "reward": 0.852525152492176
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "world_id": "test-type3-623",
+    "discovered": true,
+    "reward": 0.42113683456499507
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "world_id": "test-type3-703",
+    "discovered": false,
+    "reward": 0.5494341780780863
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "world_id": "test-type3-833",
+    "discovered": false,
+    "reward": 0.5526175125935969
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "world_id": "test-type3-1000473",
+    "discovered": false,
+    "reward": 0.47721211443345213
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "world_id": "test-type3-1000933",
+    "discovered": true,
+    "reward": 0.39466591033725124
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "world_id": "test-type3-1000043",
+    "discovered": false,
+    "reward": 0.5439932208851966
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "world_id": "test-type3-1000393",
+    "discovered": false,
+    "reward": 0.6247478138255718
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "world_id": "test-type3-1000583",
+    "discovered": false,
+    "reward": 0.6695752427411178
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "world_id": "test-type3-1000843",
+    "discovered": false,
+    "reward": 0.03717838007973184
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "world_id": "test-type3-1000663",
+    "discovered": true,
+    "reward": 0.9192206503036089
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "world_id": "test-type3-1000733",
+    "discovered": false,
+    "reward": 1.187230816455274
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "world_id": "test-type3-1000003",
+    "discovered": true,
+    "reward": 0.5153649531347602
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "world_id": "test-type3-1000943",
+    "discovered": true,
+    "reward": 0.07355545286242124
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "world_id": "test-type3-2000133",
+    "discovered": false,
+    "reward": 0.11824247815356304
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "world_id": "test-type3-2000963",
+    "discovered": true,
+    "reward": 0.44926617860718
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "world_id": "test-type3-2000363",
+    "discovered": false,
+    "reward": 0.19371760252442607
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "world_id": "test-type3-2000923",
+    "discovered": false,
+    "reward": 0.6053534532474114
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "world_id": "test-type3-2000213",
+    "discovered": true,
+    "reward": 0.5791996822920505
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "world_id": "test-type3-2000083",
+    "discovered": true,
+    "reward": 0.2531264856967378
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "world_id": "test-type3-2000193",
+    "discovered": true,
+    "reward": 0.7798070973814262
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "world_id": "test-type3-2000263",
+    "discovered": true,
+    "reward": 0.1730495019445651
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "world_id": "test-type3-2000743",
+    "discovered": false,
+    "reward": 0.11343982388040791
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "world_id": "test-type3-2000423",
+    "discovered": false,
+    "reward": 0.3821984726497287
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "world_id": "test-type3-3000353",
+    "discovered": true,
+    "reward": -0.04056349666300606
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "world_id": "test-type3-3000023",
+    "discovered": false,
+    "reward": 0.1593968982463884
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "world_id": "test-type3-3000433",
+    "discovered": true,
+    "reward": -0.018763201821096753
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "world_id": "test-type3-3000633",
+    "discovered": true,
+    "reward": 1.1589310261807542
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "world_id": "test-type3-3000033",
+    "discovered": true,
+    "reward": 1.376721199823608
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "world_id": "test-type3-3000163",
+    "discovered": false,
+    "reward": 0.3742096687152032
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "world_id": "test-type3-3000993",
+    "discovered": false,
+    "reward": 0.09524815520256341
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "world_id": "test-type3-3000333",
+    "discovered": true,
+    "reward": 1.0358583004432749
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "world_id": "test-type3-3000053",
+    "discovered": true,
+    "reward": 0.6829612162376979
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "world_id": "test-type3-3000543",
+    "discovered": true,
+    "reward": 1.019598033471543
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "world_id": "test-type3-4000093",
+    "discovered": true,
+    "reward": 0.5921905017598599
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "world_id": "test-type3-4000303",
+    "discovered": true,
+    "reward": -0.2854526598319117
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "world_id": "test-type3-4000353",
+    "discovered": false,
+    "reward": 0.9759617413709953
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "world_id": "test-type3-4000013",
+    "discovered": true,
+    "reward": 1.1584759897769343
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "world_id": "test-type3-4000223",
+    "discovered": false,
+    "reward": 0.271912366438437
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "world_id": "test-type3-4000483",
+    "discovered": true,
+    "reward": 0.5665092153501059
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "world_id": "test-type3-4000923",
+    "discovered": false,
+    "reward": -0.005379285498340103
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "world_id": "test-type3-4000883",
+    "discovered": true,
+    "reward": 0.5225801654960279
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "world_id": "test-type3-4000073",
+    "discovered": true,
+    "reward": 0.28471825440927806
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "world_id": "test-type3-4000103",
+    "discovered": true,
+    "reward": 0.620394348682024
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type2-112",
+    "discovered": false,
+    "reward": -0.18815870095500564
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type2-12",
+    "discovered": true,
+    "reward": 4.298045134967689
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type3-23",
+    "discovered": false,
+    "reward": -0.457855721694037
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type2-252",
+    "discovered": true,
+    "reward": 4.168691318701088
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type2-52",
+    "discovered": true,
+    "reward": 5.127368623436711
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type2-272",
+    "discovered": true,
+    "reward": 5.1287197545485395
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type3-193",
+    "discovered": false,
+    "reward": 2.0643031515287777
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type2-82",
+    "discovered": false,
+    "reward": -0.08125780886419266
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type3-323",
+    "discovered": false,
+    "reward": 1.9551110672755843
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type3-103",
+    "discovered": true,
+    "reward": -0.2002220582673114
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type3-213",
+    "discovered": true,
+    "reward": -0.024648580033626355
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type3-293",
+    "discovered": true,
+    "reward": -0.008806879295547
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type3-73",
+    "discovered": true,
+    "reward": -0.539559466559804
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type2-102",
+    "discovered": false,
+    "reward": 2.232631407170045
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type2-202",
+    "discovered": false,
+    "reward": -0.6552305380157126
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type3-183",
+    "discovered": false,
+    "reward": -0.2290105019267108
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type2-132",
+    "discovered": true,
+    "reward": 4.41963476756658
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type3-223",
+    "discovered": false,
+    "reward": 2.081260891857188
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type3-253",
+    "discovered": true,
+    "reward": -0.11343184290916838
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_id": "test-type2-72",
+    "discovered": false,
+    "reward": 2.2775665662872147
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type2-1000012",
+    "discovered": true,
+    "reward": 0.5023663414404355
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type3-1000013",
+    "discovered": true,
+    "reward": 0.057042170500773315
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type2-1000182",
+    "discovered": true,
+    "reward": -0.07526274368730332
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type3-1000053",
+    "discovered": false,
+    "reward": 0.7832841588638646
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type3-1000073",
+    "discovered": false,
+    "reward": 0.5824932211979006
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type2-1000172",
+    "discovered": true,
+    "reward": 0.6851010328670664
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type2-1000232",
+    "discovered": true,
+    "reward": 1.424241147710852
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type3-1000143",
+    "discovered": true,
+    "reward": 0.7484176117406578
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type3-1000123",
+    "discovered": true,
+    "reward": 0.6992896247975757
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type2-1000142",
+    "discovered": true,
+    "reward": 0.6676328338107997
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type3-1000103",
+    "discovered": true,
+    "reward": 0.5668603240672214
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type3-1000113",
+    "discovered": true,
+    "reward": 0.6365900515138707
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type3-1000213",
+    "discovered": true,
+    "reward": 0.46489470861530335
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type2-1000282",
+    "discovered": true,
+    "reward": 0.18860400614957346
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type2-1000102",
+    "discovered": true,
+    "reward": 1.1193963318576952
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type3-1000063",
+    "discovered": false,
+    "reward": 0.8079856932601226
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type2-1000032",
+    "discovered": true,
+    "reward": 1.3230224677951656
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type3-1000043",
+    "discovered": false,
+    "reward": 0.42919274848811706
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type2-1000262",
+    "discovered": true,
+    "reward": 0.18173335150217895
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_id": "test-type2-1000322",
+    "discovered": false,
+    "reward": 1.896581664828893
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type3-2000173",
+    "discovered": true,
+    "reward": 0.02544114639450011
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type3-2000203",
+    "discovered": false,
+    "reward": 0.8286382859206376
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type2-2000252",
+    "discovered": true,
+    "reward": 1.4616698811552427
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type3-2000293",
+    "discovered": true,
+    "reward": 0.5922456582340226
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type3-2000033",
+    "discovered": true,
+    "reward": 1.1820546920828656
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type3-2000093",
+    "discovered": true,
+    "reward": 0.3799806060140273
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type3-2000283",
+    "discovered": true,
+    "reward": 1.387902728921964
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type2-2000132",
+    "discovered": true,
+    "reward": 0.5608098421381924
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type2-2000112",
+    "discovered": true,
+    "reward": 0.182273786640828
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type3-2000253",
+    "discovered": false,
+    "reward": 0.4862457271849115
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type2-2000312",
+    "discovered": true,
+    "reward": 1.991580466745139
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type3-2000273",
+    "discovered": true,
+    "reward": 0.6188401446556976
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type2-2000082",
+    "discovered": true,
+    "reward": 1.023231873282093
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type3-2000133",
+    "discovered": true,
+    "reward": 0.10852918194433026
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type2-2000302",
+    "discovered": true,
+    "reward": 0.7890384297281537
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type2-2000092",
+    "discovered": true,
+    "reward": 0.6241969739128428
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type3-2000213",
+    "discovered": false,
+    "reward": 0.48247769772951465
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type2-2000172",
+    "discovered": true,
+    "reward": 0.8057714759238255
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type2-2000202",
+    "discovered": false,
+    "reward": 0.21529033446393508
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_id": "test-type2-2000212",
+    "discovered": true,
+    "reward": 1.5149837478617751
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type3-3000133",
+    "discovered": false,
+    "reward": 0.2518889707925316
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type3-3000293",
+    "discovered": false,
+    "reward": 0.5527125412571622
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type2-3000202",
+    "discovered": true,
+    "reward": 0.3762817766953598
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type3-3000083",
+    "discovered": true,
+    "reward": 0.9771108855929016
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type2-3000252",
+    "discovered": true,
+    "reward": 0.9971429665954015
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type2-3000222",
+    "discovered": false,
+    "reward": 0.4306804999134359
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type2-3000012",
+    "discovered": true,
+    "reward": 0.1045868645403872
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type2-3000112",
+    "discovered": true,
+    "reward": 0.3810863766926459
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type2-3000172",
+    "discovered": false,
+    "reward": 0.7126062536265255
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type3-3000013",
+    "discovered": true,
+    "reward": -0.02151408793644423
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type3-3000073",
+    "discovered": true,
+    "reward": 1.0091530580216403
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type2-3000052",
+    "discovered": true,
+    "reward": 1.1141012912789119
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type3-3000053",
+    "discovered": true,
+    "reward": 0.03173368577557473
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type2-3000152",
+    "discovered": true,
+    "reward": -0.14113026087359026
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type3-3000023",
+    "discovered": false,
+    "reward": 0.5982716155405959
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type2-3000092",
+    "discovered": false,
+    "reward": 0.8439780730515429
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type2-3000322",
+    "discovered": true,
+    "reward": 0.8173422240760819
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type3-3000303",
+    "discovered": false,
+    "reward": -0.038488787247580536
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type3-3000163",
+    "discovered": true,
+    "reward": 0.7723606501597957
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_id": "test-type3-3000063",
+    "discovered": true,
+    "reward": 0.1552862089731194
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type2-4000132",
+    "discovered": false,
+    "reward": 0.023958237378163903
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type2-4000322",
+    "discovered": false,
+    "reward": -0.0929396001358637
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type2-4000152",
+    "discovered": true,
+    "reward": 1.772864396246117
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type3-4000153",
+    "discovered": false,
+    "reward": 0.42412505190682703
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type3-4000033",
+    "discovered": true,
+    "reward": 0.13327393153659314
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type3-4000233",
+    "discovered": true,
+    "reward": 0.12629463266298224
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type2-4000072",
+    "discovered": false,
+    "reward": 0.8284432378625217
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type3-4000253",
+    "discovered": true,
+    "reward": 0.1875034221740728
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type2-4000262",
+    "discovered": true,
+    "reward": 1.699944135940457
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type3-4000023",
+    "discovered": true,
+    "reward": 1.0452212837461223
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type3-4000073",
+    "discovered": true,
+    "reward": 0.4680270278473789
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type3-4000173",
+    "discovered": true,
+    "reward": 0.7396702431698796
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type2-4000052",
+    "discovered": true,
+    "reward": 2.0912120131283443
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type2-4000212",
+    "discovered": true,
+    "reward": 1.9735413189736537
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type2-4000232",
+    "discovered": true,
+    "reward": 2.9427875367675216
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type3-4000243",
+    "discovered": true,
+    "reward": 0.8745078252911496
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type3-4000103",
+    "discovered": true,
+    "reward": 0.6721535753514056
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type2-4000012",
+    "discovered": false,
+    "reward": 0.5395109316380555
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type2-4000222",
+    "discovered": false,
+    "reward": 0.12571081222703984
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_id": "test-type3-4000203",
+    "discovered": true,
+    "reward": -0.18104993017057164
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "training": {
+    "pretraining_episodes": 24, "episodes": 128, "hidden": 32,
+    "exploration_steps": 18, "exploitation_steps": 32, "learning_rate": 0.001,
+    "history_pool_size": 3, "rollout_batch_size": 8,
+    "advantage_normalization": "batch", "dual_credit": "observed_suffix",
+    "sequence_minibatch_size": 0, "gradient_diagnostics": true, "critic_loss_scale": 1.0
+  },
+  "evaluation": {
+    "num_test_worlds": 6, "seeds": [0,1,2], "update_interval": 16,
+    "history_reference": false, "auc_windows": [32], "bootstrap_replicates": 1000,
+    "adaptation_speed": {"window": 16, "hold": 8, "thresholds": [0.25,0.5,0.75,0.9]}
+  },
+  "logging": {"save_trajectories": false, "save_plots": true, "checkpoint_interval": 8}
+}

@@ -206,40 +206,84 @@ def ppo_batch_update(controller, optimizer, episodes, config, refresh=False, nor
     raw = np.concatenate([e[1] for e in episodes])
     before = torch.cat([p.detach().flatten().clone() for p in model.parameters()])
     stats = []
+    minibatch = int(tr.get('sequence_minibatch_size', 0)) or len(episodes)
+    if minibatch < 1:
+        raise ValueError('sequence_minibatch_size must be nonnegative')
+    value_scale = float(tr.get('critic_loss_scale', 1.))
+    if value_scale <= 0:
+        raise ValueError('critic_loss_scale must be positive')
+    # Critic predicts original return units. Only its squared error is rescaled;
+    # actor rewards, GAE, bootstrap and value inference retain original units.
+    groups = {'shared': [p for n,p in model.named_parameters() if n.startswith(('encoder.', 'gru.'))],
+              'actor_head': list(model.actors.parameters()), 'critic_head': list(model.critics.parameters())}
+    group_before = {k: torch.cat([p.detach().flatten().clone() for p in ps]) for k,ps in groups.items()}
+    offsets = np.cumsum([0]+[len(e[0]) for e in episodes])
     start = time.monotonic()
     was_training = model.training
     model.train()  # cuDNN RNN backward requires the forward to run in train mode.
     try:
         for _ in range(tr['ppo_epochs']):
-            logits, values, _ = model(x)
-            valid_logits = torch.cat([logits[i, len(e[3]):len(e[3])+len(e[0]), 0] for i,e in enumerate(episodes)])
-            valid_values = torch.cat([values[i, len(e[3]):len(e[3])+len(e[0]), 0] for i,e in enumerate(episodes)])
-            dist = Categorical(logits=valid_logits)
-            logs = dist.log_prob(actions)
-            ratio = (logs-old_logs).exp()
-            actor_loss = -torch.minimum(ratio*adv, ratio.clamp(1-tr['clip'],1+tr['clip'])*adv).mean()
-            critic_loss = (valid_values-ret).square().mean()
-            entropy = dist.entropy().mean()
-            loss = actor_loss + tr['value_coefficient']*critic_loss - tr['entropy_coefficient']*entropy
-            if not torch.isfinite(loss):
-                raise FloatingPointError('Nonfinite PPO loss')
-            parameters = tuple(model.parameters())
-            def grad_norm(term):
-                grads = torch.autograd.grad(term, parameters, retain_graph=True, allow_unused=True)
-                return float(torch.sqrt(sum(g.square().sum() for g in grads if g is not None)).detach())
-            actor_grad = grad_norm(actor_loss)
-            critic_grad = grad_norm(tr['value_coefficient']*critic_loss)
-            optimizer.zero_grad(set_to_none=True)
-            loss.backward()
-            total_grad = torch.nn.utils.clip_grad_norm_(parameters, tr['max_grad_norm'], error_if_nonfinite=True)
-            optimizer.step()
-            stats.append(dict(loss=float(loss.detach()), actor_loss=float(actor_loss.detach()),
-                critic_loss=float(critic_loss.detach()), entropy=float(entropy.detach()),
-                actor_gradient_norm=actor_grad, critic_gradient_norm=critic_grad,
-                gradient_norm=float(total_grad),
-                approximate_kl=float(((ratio-1)-(logs-old_logs)).mean().detach()),
-                clip_fraction=float(((ratio-1).abs()>tr['clip']).float().mean().detach()),
-                value_explained_variance=float((1-(ret-valid_values).var(unbiased=False)/(ret.var(unbiased=False)+1e-8)).detach())))
+            order = torch.randperm(len(episodes)).tolist() if minibatch < len(episodes) else list(range(len(episodes)))
+            for offset in range(0, len(order), minibatch):
+                indices = order[offset:offset+minibatch]
+                selected = [episodes[i] for i in indices]
+                token_indices = torch.tensor(np.concatenate([np.arange(offsets[i], offsets[i+1]) for i in indices]), device=device)
+                mb_adv, mb_ret = adv[token_indices], ret[token_indices]
+                logits, values, _ = model(x[indices])
+                valid_logits = torch.cat([logits[i, len(e[3]):len(e[3])+len(e[0]), 0] for i,e in enumerate(selected)])
+                valid_values = torch.cat([values[i, len(e[3]):len(e[3])+len(e[0]), 0] for i,e in enumerate(selected)])
+                dist = Categorical(logits=valid_logits)
+                logs = dist.log_prob(actions[token_indices])
+                ratio = (logs-old_logs[token_indices]).exp()
+                actor_loss = -torch.minimum(ratio*mb_adv, ratio.clamp(1-tr['clip'],1+tr['clip'])*mb_adv).mean()
+                critic_loss = ((valid_values-mb_ret)/value_scale).square().mean()
+                entropy = dist.entropy().mean()
+                loss = actor_loss + tr['value_coefficient']*critic_loss - tr['entropy_coefficient']*entropy
+                if not torch.isfinite(loss):
+                    raise FloatingPointError('Nonfinite PPO loss')
+                parameters = tuple(model.parameters())
+                def grad_norm(term):
+                    grads = torch.autograd.grad(term, parameters, retain_graph=True, allow_unused=True)
+                    return float(torch.sqrt(sum(g.square().sum() for g in grads if g is not None)).detach())
+                actor_grad = grad_norm(actor_loss)
+                critic_grad = grad_norm(tr['value_coefficient']*critic_loss)
+                detail = {}
+                if tr.get('gradient_diagnostics', False):
+                    shared = groups['shared']
+                    ag = torch.autograd.grad(actor_loss, shared, retain_graph=True)
+                    cg = torch.autograd.grad(tr['value_coefficient']*critic_loss, shared, retain_graph=True)
+                    av, cv = [torch.cat([g.flatten() for g in gs]) for gs in (ag,cg)]
+                    detail.update(shared_actor_gradient_norm=float(av.norm()), shared_critic_gradient_norm=float(cv.norm()),
+                        shared_gradient_cosine=float(torch.dot(av,cv)/(av.norm()*cv.norm()+1e-12)))
+                optimizer.zero_grad(set_to_none=True)
+                loss.backward()
+                if tr.get('gradient_diagnostics', False):
+                    detail.update({k+'_pre_clip_gradient_norm':float(torch.sqrt(sum(p.grad.square().sum() for p in ps if p.grad is not None))) for k,ps in groups.items()})
+                clipping = tr.get('gradient_clipping', 'global')
+                if clipping == 'global':
+                    total_grad = torch.nn.utils.clip_grad_norm_(parameters, tr['max_grad_norm'], error_if_nonfinite=True)
+                elif clipping == 'parameter_groups':
+                    # Shared trunk is clipped ONCE, separately from each head.
+                    # This does not separate actor/critic contributions to the trunk.
+                    total_grad = torch.sqrt(sum(p.grad.square().sum() for p in parameters if p.grad is not None))
+                    for ps in groups.values():
+                        torch.nn.utils.clip_grad_norm_(ps, tr['max_grad_norm'], error_if_nonfinite=True)
+                else:
+                    raise ValueError(f'Unknown clipping {clipping}')
+                if tr.get('gradient_diagnostics', False):
+                    detail.update({k+'_post_clip_gradient_norm':float(torch.sqrt(sum(p.grad.square().sum() for p in ps if p.grad is not None))) for k,ps in groups.items()})
+                post_grad = torch.sqrt(sum(p.grad.square().sum() for p in parameters if p.grad is not None))
+                optimizer.step()
+                stats.append(dict(loss=float(loss.detach()), actor_loss=float(actor_loss.detach()),
+                    critic_loss=float(critic_loss.detach()), entropy=float(entropy.detach()),
+                    actor_gradient_norm=actor_grad, critic_gradient_norm=critic_grad,
+                    gradient_norm=float(total_grad), post_clipping_gradient_norm=float(post_grad),
+                    clipping_factor=float(post_grad)/(float(total_grad)+1e-12),
+                    value_target_mean=float(mb_ret.mean()), value_target_std=float(mb_ret.std(unbiased=False)),
+                    critic_mse_original_units=float((valid_values-mb_ret).square().mean().detach()), **detail,
+                    approximate_kl=float(((ratio-1)-(logs-old_logs[token_indices])).mean().detach()),
+                    clip_fraction=float(((ratio-1).abs()>tr['clip']).float().mean().detach()),
+                    value_explained_variance=float((1-(mb_ret-valid_values).var(unbiased=False)/(mb_ret.var(unbiased=False)+1e-8)).detach())))
         controller.version = expected+1
         model.policy_version = controller.version
         if refresh:
@@ -249,7 +293,9 @@ def ppo_batch_update(controller, optimizer, episodes, config, refresh=False, nor
     if device.type == 'cuda':
         torch.cuda.synchronize(device)
     after = torch.cat([p.detach().flatten() for p in model.parameters()])
-    return dict(updates=tr['ppo_epochs'], transitions=len(actions), episodes=len(episodes),
+    return dict(updates=len(stats), transitions=len(actions), episodes=len(episodes),
+        sequence_minibatch_size=minibatch, optimized_token_passes=len(actions)*tr['ppo_epochs'],
+        **{k+'_parameter_delta':float((torch.cat([p.detach().flatten() for p in ps])-group_before[k]).norm()) for k,ps in groups.items()},
         policy_version=controller.version, rollout_policy_version=expected,
         normalization=norm, raw_advantage_mean=float(raw.mean()), raw_advantage_std=float(raw.std()),
         raw_advantage_min=float(raw.min()), raw_advantage_max=float(raw.max()),

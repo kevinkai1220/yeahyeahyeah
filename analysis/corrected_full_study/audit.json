@@ -1,0 +1,12 @@
+{
+  "aggregate_rows": 3712,
+  "speed_rows": 10240,
+  "paired_rows": 2880,
+  "unchanged_q_summary_checks": 888,
+  "survival_consistency_checks": 2560,
+  "dual_prefix_summary_checks": 56,
+  "nominal_worlds_per_regime": 500,
+  "nominal_seeds": 5,
+  "limitation": "Uploaded aggregates only; no corrected config, per-world metrics, trajectories, checkpoints, training/runtime logs. No new paired old/new test or seed reconstruction.",
+  "csv_literal_escape": false
+}

@@ -295,15 +295,21 @@ def train(config, regime, seed, out, device='cpu', pretrain_only=False):
                              **rng_state()), resume)
     atomic_save(dict(models={k: m.state_dict() for k, m in models.items()}, config=config), out / 'checkpoints' / 'trained.pt')
     n = sum(p.numel() for p in shared.parameters())
+    # Read actual optimizer operations, including short final/minibatches and resume.
+    update_steps = {}
+    for line in (out / 'training.jsonl').read_text().splitlines():
+        row = json.loads(line)
+        if row['stage'].endswith('_update'):
+            update_steps[row['stage']] = update_steps.get(row['stage'], 0) + row['updates']
     write_json(out / 'costs.json', dict(pretraining_interactions=pretrain_interactions,
         per_method_training_interactions=t['episodes']*(B+K),
         single_optimized_transitions=t['episodes']*(K if t['single_k_only'] else B+K),
         dual_exploiter_optimized_transitions=t['episodes']*K,
         explorer_optimized_transitions=t['episodes']*B,
-        single_optimizer_steps=math.ceil(t['episodes']/batch_size)*t['ppo_epochs'],
-        dual_exploiter_optimizer_steps=math.ceil(t['episodes']/batch_size)*t['ppo_epochs'],
-        extra_explorer_optimizer_steps=math.ceil(t['episodes']/batch_size)*t['ppo_epochs'],
-        pretraining_optimizer_steps=math.ceil(t['pretraining_episodes']/t.get('pretraining_ppo', {}).get('rollout_batch_size', batch_size))*t.get('pretraining_ppo', {}).get('ppo_epochs', t['ppo_epochs']),
+        single_optimizer_steps=update_steps.get('single_policy_update', 0),
+        dual_exploiter_optimizer_steps=update_steps.get('dual_neural_update', 0),
+        extra_explorer_optimizer_steps=update_steps.get('explorer_update', 0),
+        pretraining_optimizer_steps=update_steps.get('pretraining_update', 0),
         rollout_batch_size=batch_size, advantage_normalization=t.get('advantage_normalization', 'legacy_episode'),
         neural_parameters=n, single_trainable_parameters=n, dual_trainable_parameters=2*n,
         dual_q_trainable_parameters=n, q_table_entries=96, q_baseline_training_interactions=t['episodes']*(B+K),

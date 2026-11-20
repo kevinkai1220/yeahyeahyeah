@@ -1,0 +1,18 @@
+{
+  "A2": {
+    "worlds": 18,
+    "actual_good_repeated_evidence_worlds": 9,
+    "evidence_selected_utilization": 0.4305555555555556,
+    "same_world_real_utilization": 0.4305555555555556,
+    "evidence_selected_reward": 2.965451504156994,
+    "same_world_real_reward": 2.965451504156994
+  },
+  "A3": {
+    "worlds": 18,
+    "actual_good_repeated_evidence_worlds": 11,
+    "evidence_selected_utilization": 0.06818181818181818,
+    "same_world_real_utilization": 0.0625,
+    "evidence_selected_reward": 0.465430979360395,
+    "same_world_real_reward": 0.4207471961187803
+  }
+}

@@ -1,0 +1,562 @@
+[
+  {
+    "regime": "A1",
+    "seed": 0,
+    "stage": "pretraining",
+    "first120": 0.8741992933270536,
+    "last120": 0.8453722513927102
+  },
+  {
+    "regime": "A1",
+    "seed": 0,
+    "stage": "single_policy",
+    "first120": 0.869214957010394,
+    "last120": 0.8823554206507922
+  },
+  {
+    "regime": "A1",
+    "seed": 0,
+    "stage": "dual_neural",
+    "first120": 0.8327621838064909,
+    "last120": 0.8251289489574827
+  },
+  {
+    "regime": "A1",
+    "seed": 0,
+    "stage": "explorer",
+    "first120": 0.8327621838064909,
+    "last120": 0.8251289489574827
+  },
+  {
+    "regime": "A1",
+    "seed": 1,
+    "stage": "pretraining",
+    "first120": 0.8696198044176705,
+    "last120": 0.940216005619347
+  },
+  {
+    "regime": "A1",
+    "seed": 1,
+    "stage": "single_policy",
+    "first120": 0.896402595212204,
+    "last120": 0.8780809820035707
+  },
+  {
+    "regime": "A1",
+    "seed": 1,
+    "stage": "dual_neural",
+    "first120": 0.8989002971027859,
+    "last120": 0.8808661453118276
+  },
+  {
+    "regime": "A1",
+    "seed": 1,
+    "stage": "explorer",
+    "first120": 0.8989002971027859,
+    "last120": 0.8808661453118276
+  },
+  {
+    "regime": "A1",
+    "seed": 2,
+    "stage": "pretraining",
+    "first120": 0.74886465509759,
+    "last120": 0.7417775081481454
+  },
+  {
+    "regime": "A1",
+    "seed": 2,
+    "stage": "single_policy",
+    "first120": 0.7431640080568289,
+    "last120": 0.7412833870107923
+  },
+  {
+    "regime": "A1",
+    "seed": 2,
+    "stage": "dual_neural",
+    "first120": 0.7353265347553787,
+    "last120": 0.7274874051758052
+  },
+  {
+    "regime": "A1",
+    "seed": 2,
+    "stage": "explorer",
+    "first120": 0.7353265347553787,
+    "last120": 0.7274874051758052
+  },
+  {
+    "regime": "A1",
+    "seed": 3,
+    "stage": "pretraining",
+    "first120": 0.7974296035224578,
+    "last120": 0.8828028296405684
+  },
+  {
+    "regime": "A1",
+    "seed": 3,
+    "stage": "single_policy",
+    "first120": 0.8128004154894501,
+    "last120": 0.9095703943697078
+  },
+  {
+    "regime": "A1",
+    "seed": 3,
+    "stage": "dual_neural",
+    "first120": 0.8166591401006063,
+    "last120": 0.951928665824546
+  },
+  {
+    "regime": "A1",
+    "seed": 3,
+    "stage": "explorer",
+    "first120": 0.8166591401006063,
+    "last120": 0.951928665824546
+  },
+  {
+    "regime": "A1",
+    "seed": 4,
+    "stage": "pretraining",
+    "first120": 0.753489804318528,
+    "last120": 0.7679621548211878
+  },
+  {
+    "regime": "A1",
+    "seed": 4,
+    "stage": "single_policy",
+    "first120": 0.7193251172955027,
+    "last120": 0.810928418213236
+  },
+  {
+    "regime": "A1",
+    "seed": 4,
+    "stage": "dual_neural",
+    "first120": 0.8035495169528877,
+    "last120": 0.7842989126950488
+  },
+  {
+    "regime": "A1",
+    "seed": 4,
+    "stage": "explorer",
+    "first120": 0.8035495169528877,
+    "last120": 0.7842989126950488
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "stage": "pretraining",
+    "first120": 0.46355614010997853,
+    "last120": 1.017291456206174
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "stage": "single_policy",
+    "first120": 1.3769814851952435,
+    "last120": 2.4511133431268717
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "stage": "dual_neural",
+    "first120": 1.5677755848693296,
+    "last120": 2.475065085845253
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "stage": "explorer",
+    "first120": 1.5677755848693296,
+    "last120": 2.475065085845253
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "stage": "pretraining",
+    "first120": 0.4365713965951923,
+    "last120": 0.7834968464781433
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "stage": "single_policy",
+    "first120": 0.849866701172181,
+    "last120": 2.320903675952489
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "stage": "dual_neural",
+    "first120": 1.1678161422203932,
+    "last120": 2.2024965833980596
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "stage": "explorer",
+    "first120": 1.1678161422203932,
+    "last120": 2.2024965833980596
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "stage": "pretraining",
+    "first120": 0.5163448405056045,
+    "last120": 0.8243976476272384
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "stage": "single_policy",
+    "first120": 1.419818570231206,
+    "last120": 2.859366912091579
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "stage": "dual_neural",
+    "first120": 1.3896966461750209,
+    "last120": 2.6933755453415267
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "stage": "explorer",
+    "first120": 1.3896966461750209,
+    "last120": 2.6933755453415267
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "stage": "pretraining",
+    "first120": 0.49787398536784677,
+    "last120": 0.8788944783961413
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "stage": "single_policy",
+    "first120": 1.1793004386298824,
+    "last120": 2.5630675439464756
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "stage": "dual_neural",
+    "first120": 1.1971847899222363,
+    "last120": 2.5901092118769133
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "stage": "explorer",
+    "first120": 1.1971847899222363,
+    "last120": 2.5901092118769133
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "stage": "pretraining",
+    "first120": 0.5949008221034314,
+    "last120": 1.4717104128232184
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "stage": "single_policy",
+    "first120": 2.0405652498150557,
+    "last120": 2.8438753641469003
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "stage": "dual_neural",
+    "first120": 1.9983102287656413,
+    "last120": 2.819505193484312
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "stage": "explorer",
+    "first120": 1.9983102287656413,
+    "last120": 2.819505193484312
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "stage": "pretraining",
+    "first120": 0.4820446094555487,
+    "last120": 0.528975484413812
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "stage": "single_policy",
+    "first120": 0.47163326531917693,
+    "last120": 0.4939058853417067
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "stage": "dual_neural",
+    "first120": 0.4572933825667196,
+    "last120": 0.4987837200294437
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "stage": "explorer",
+    "first120": 0.4572933825667196,
+    "last120": 0.4987837200294437
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "stage": "pretraining",
+    "first120": 0.47432086552341285,
+    "last120": 0.4442979331260773
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "stage": "single_policy",
+    "first120": 0.4647032936303756,
+    "last120": 0.4407329201731606
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "stage": "dual_neural",
+    "first120": 0.47046045132816444,
+    "last120": 0.4043344370967918
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "stage": "explorer",
+    "first120": 0.47046045132816444,
+    "last120": 0.4043344370967918
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "stage": "pretraining",
+    "first120": 0.46086703343606583,
+    "last120": 0.4983525322292194
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "stage": "single_policy",
+    "first120": 0.5188449113213172,
+    "last120": 0.45772504311038237
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "stage": "dual_neural",
+    "first120": 0.44995422545358277,
+    "last120": 0.40153488485054456
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "stage": "explorer",
+    "first120": 0.44995422545358277,
+    "last120": 0.40153488485054456
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "stage": "pretraining",
+    "first120": 0.4716238866371802,
+    "last120": 0.44079429826514266
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "stage": "single_policy",
+    "first120": 0.3787099453258259,
+    "last120": 0.4088219775379443
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "stage": "dual_neural",
+    "first120": 0.4173759446027508,
+    "last120": 0.41299667902739673
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "stage": "explorer",
+    "first120": 0.4173759446027508,
+    "last120": 0.41299667902739673
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "stage": "pretraining",
+    "first120": 0.47897302597740393,
+    "last120": 0.4612708077424553
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "stage": "single_policy",
+    "first120": 0.5396202300884417,
+    "last120": 0.4947361509852418
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "stage": "dual_neural",
+    "first120": 0.4920007141475049,
+    "last120": 0.42750150724567393
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "stage": "explorer",
+    "first120": 0.4920007141475049,
+    "last120": 0.42750150724567393
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "stage": "pretraining",
+    "first120": 0.5983003256181372,
+    "last120": 0.7945902389066367
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "stage": "single_policy",
+    "first120": 0.9207887644026446,
+    "last120": 1.486307411028257
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "stage": "dual_neural",
+    "first120": 0.9156972886463348,
+    "last120": 1.4271372393739652
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "stage": "explorer",
+    "first120": 0.9156972886463348,
+    "last120": 1.4271372393739652
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "stage": "pretraining",
+    "first120": 0.6750014994838482,
+    "last120": 0.7381328377753742
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "stage": "single_policy",
+    "first120": 0.7592802739394189,
+    "last120": 0.6526588656551916
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "stage": "dual_neural",
+    "first120": 0.6989976766936221,
+    "last120": 0.6588559333320086
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "stage": "explorer",
+    "first120": 0.6989976766936221,
+    "last120": 0.6588559333320086
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "stage": "pretraining",
+    "first120": 0.5391841797938649,
+    "last120": 0.5780655508444125
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "stage": "single_policy",
+    "first120": 0.5795055246271196,
+    "last120": 0.506090636775285
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "stage": "dual_neural",
+    "first120": 0.6124261657239448,
+    "last120": 0.5752113793295561
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "stage": "explorer",
+    "first120": 0.6124261657239448,
+    "last120": 0.5752113793295561
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "stage": "pretraining",
+    "first120": 0.5655351687249842,
+    "last120": 0.6656650130036155
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "stage": "single_policy",
+    "first120": 0.7421892840287583,
+    "last120": 0.6614873447302035
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "stage": "dual_neural",
+    "first120": 0.7897351747410224,
+    "last120": 0.6460361006190678
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "stage": "explorer",
+    "first120": 0.7897351747410224,
+    "last120": 0.6460361006190678
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "stage": "pretraining",
+    "first120": 0.6035054655004479,
+    "last120": 0.8784180439909463
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "stage": "single_policy",
+    "first120": 0.8602437912063154,
+    "last120": 0.6446610407266467
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "stage": "dual_neural",
+    "first120": 0.8878993010083714,
+    "last120": 0.7055570020727948
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "stage": "explorer",
+    "first120": 0.8878993010083714,
+    "last120": 0.7055570020727948
+  }
+]

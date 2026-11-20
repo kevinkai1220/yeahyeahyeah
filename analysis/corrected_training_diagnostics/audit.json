@@ -1,0 +1,10 @@
+{
+  "complete_runs": 20,
+  "valid_updates": 9760,
+  "paired_prefix_metric_matches": 2000,
+  "raw_histories_checked": 800,
+  "raw_dual_prefix_matches": 200,
+  "all_configs_equal": true,
+  "world_metric_rows": 8000,
+  "aggregate_checks": 464
+}

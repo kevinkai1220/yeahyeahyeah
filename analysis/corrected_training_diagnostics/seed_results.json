@@ -1,0 +1,562 @@
+[
+  {
+    "regime": "A1",
+    "seed": 0,
+    "method": "single_policy",
+    "reward": 1.0066134621976734,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 0,
+    "method": "dual_neural",
+    "reward": 1.0010735598629052,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 0,
+    "method": "q_learning",
+    "reward": 1.7492183100385839,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 0,
+    "method": "dual_q_table",
+    "reward": 1.333912561640586,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 1,
+    "method": "single_policy",
+    "reward": 0.8397881457073936,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 1,
+    "method": "dual_neural",
+    "reward": 0.8517867219442795,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 1,
+    "method": "q_learning",
+    "reward": 1.6048857279547224,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 1,
+    "method": "dual_q_table",
+    "reward": 1.2979106042964812,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 2,
+    "method": "single_policy",
+    "reward": 0.9208458476612016,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 2,
+    "method": "dual_neural",
+    "reward": 0.9685740659560211,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 2,
+    "method": "q_learning",
+    "reward": 1.6625387177442996,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 2,
+    "method": "dual_q_table",
+    "reward": 1.2808925219814191,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 3,
+    "method": "single_policy",
+    "reward": 0.883604234169884,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 3,
+    "method": "dual_neural",
+    "reward": 0.8477757138381091,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 3,
+    "method": "q_learning",
+    "reward": 1.6157798584171348,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 3,
+    "method": "dual_q_table",
+    "reward": 1.278522555867423,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 4,
+    "method": "single_policy",
+    "reward": 0.9011986229165483,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 4,
+    "method": "dual_neural",
+    "reward": 0.876385895176034,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 4,
+    "method": "q_learning",
+    "reward": 1.7278489061448485,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A1",
+    "seed": 4,
+    "method": "dual_q_table",
+    "reward": 1.32532250338911,
+    "optimal_utilization": null
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "method": "single_policy",
+    "reward": 2.52603463587248,
+    "optimal_utilization": 0.3584375
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "method": "dual_neural",
+    "reward": 2.553499352166865,
+    "optimal_utilization": 0.3625
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "method": "q_learning",
+    "reward": 2.3064092961481175,
+    "optimal_utilization": 0.0921875
+  },
+  {
+    "regime": "A2",
+    "seed": 0,
+    "method": "dual_q_table",
+    "reward": 2.388309402296408,
+    "optimal_utilization": 0.32765625
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "method": "single_policy",
+    "reward": 2.401415361865655,
+    "optimal_utilization": 0.33765625
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "method": "dual_neural",
+    "reward": 2.34829332661545,
+    "optimal_utilization": 0.33078125
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "method": "q_learning",
+    "reward": 2.275584878005316,
+    "optimal_utilization": 0.0815625
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "method": "dual_q_table",
+    "reward": 2.216409334102043,
+    "optimal_utilization": 0.28625
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "method": "single_policy",
+    "reward": 2.3571024714229694,
+    "optimal_utilization": 0.33046875
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "method": "dual_neural",
+    "reward": 2.1634491606810053,
+    "optimal_utilization": 0.311875
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "method": "q_learning",
+    "reward": 2.279615405667117,
+    "optimal_utilization": 0.0765625
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "method": "dual_q_table",
+    "reward": 2.0065423504370714,
+    "optimal_utilization": 0.27390625
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "method": "single_policy",
+    "reward": 2.620243041279582,
+    "optimal_utilization": 0.34625
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "method": "dual_neural",
+    "reward": 2.500666789986565,
+    "optimal_utilization": 0.33609375
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "method": "q_learning",
+    "reward": 2.337407019338319,
+    "optimal_utilization": 0.09984375
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "method": "dual_q_table",
+    "reward": 2.086921275550478,
+    "optimal_utilization": 0.296875
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "method": "single_policy",
+    "reward": 2.503580788200583,
+    "optimal_utilization": 0.3221875
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "method": "dual_neural",
+    "reward": 2.5231803010664335,
+    "optimal_utilization": 0.33078125
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "method": "q_learning",
+    "reward": 2.2980627203091366,
+    "optimal_utilization": 0.09609375
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "method": "dual_q_table",
+    "reward": 2.1053912715953564,
+    "optimal_utilization": 0.2909375
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "method": "single_policy",
+    "reward": 0.4792152318836257,
+    "optimal_utilization": 0.09375
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "method": "dual_neural",
+    "reward": 0.5235679617616136,
+    "optimal_utilization": 0.1071875
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "method": "q_learning",
+    "reward": 2.2486350838208256,
+    "optimal_utilization": 0.08
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "method": "dual_q_table",
+    "reward": 1.8087899978524467,
+    "optimal_utilization": 0.13421875
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "method": "single_policy",
+    "reward": 0.5745778149141051,
+    "optimal_utilization": 0.09234375
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "method": "dual_neural",
+    "reward": 0.5513586396966619,
+    "optimal_utilization": 0.10078125
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "method": "q_learning",
+    "reward": 2.224824991602914,
+    "optimal_utilization": 0.06109375
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "method": "dual_q_table",
+    "reward": 1.8929273687411612,
+    "optimal_utilization": 0.20390625
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "method": "single_policy",
+    "reward": 0.5556858396443355,
+    "optimal_utilization": 0.1015625
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "method": "dual_neural",
+    "reward": 0.4766802803032788,
+    "optimal_utilization": 0.0828125
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "method": "q_learning",
+    "reward": 2.23107139858502,
+    "optimal_utilization": 0.08625
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "method": "dual_q_table",
+    "reward": 1.9208129780510026,
+    "optimal_utilization": 0.1890625
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "method": "single_policy",
+    "reward": 0.48979276225213164,
+    "optimal_utilization": 0.0959375
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "method": "dual_neural",
+    "reward": 0.4729703372071137,
+    "optimal_utilization": 0.091875
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "method": "q_learning",
+    "reward": 2.2694760856685576,
+    "optimal_utilization": 0.09703125
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "method": "dual_q_table",
+    "reward": 2.057693670774208,
+    "optimal_utilization": 0.26625
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "method": "single_policy",
+    "reward": 0.5708343999239573,
+    "optimal_utilization": 0.10015625
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "method": "dual_neural",
+    "reward": 0.46380663917634535,
+    "optimal_utilization": 0.094375
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "method": "q_learning",
+    "reward": 2.2669722581440928,
+    "optimal_utilization": 0.08921875
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "method": "dual_q_table",
+    "reward": 1.7983886918847702,
+    "optimal_utilization": 0.23078125
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "method": "single_policy",
+    "reward": 1.4442160444906242,
+    "optimal_utilization": 0.19933712121212122
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "method": "dual_neural",
+    "reward": 1.3760669488897737,
+    "optimal_utilization": 0.19933712121212122
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "method": "q_learning",
+    "reward": 2.123032067304134,
+    "optimal_utilization": 0.07267992424242424
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "method": "dual_q_table",
+    "reward": 1.9742322173744344,
+    "optimal_utilization": 0.27201704545454547
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "method": "single_policy",
+    "reward": 0.7441811572292337,
+    "optimal_utilization": 0.11126893939393939
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "method": "dual_neural",
+    "reward": 0.7007445281637886,
+    "optimal_utilization": 0.11197916666666667
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "method": "q_learning",
+    "reward": 2.0911920606819283,
+    "optimal_utilization": 0.07481060606060606
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "method": "dual_q_table",
+    "reward": 1.9885099675170965,
+    "optimal_utilization": 0.2637310606060606
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "method": "single_policy",
+    "reward": 0.7541649841293413,
+    "optimal_utilization": 0.13517992424242425
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "method": "dual_neural",
+    "reward": 0.7912750113956925,
+    "optimal_utilization": 0.10866477272727272
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "method": "q_learning",
+    "reward": 2.0215637656029695,
+    "optimal_utilization": 0.08451704545454546
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "method": "dual_q_table",
+    "reward": 1.859386951732002,
+    "optimal_utilization": 0.2644412878787879
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "method": "single_policy",
+    "reward": 0.6668265359392322,
+    "optimal_utilization": 0.13115530303030304
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "method": "dual_neural",
+    "reward": 0.5719135339110024,
+    "optimal_utilization": 0.11742424242424243
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "method": "q_learning",
+    "reward": 2.048326373294879,
+    "optimal_utilization": 0.11955492424242424
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "method": "dual_q_table",
+    "reward": 1.6934783530094561,
+    "optimal_utilization": 0.18821022727272727
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "method": "single_policy",
+    "reward": 0.7055657835998866,
+    "optimal_utilization": 0.10653409090909091
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "method": "dual_neural",
+    "reward": 0.7047121991419211,
+    "optimal_utilization": 0.1084280303030303
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "method": "q_learning",
+    "reward": 2.1261064571354837,
+    "optimal_utilization": 0.09114583333333333
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "method": "dual_q_table",
+    "reward": 1.7851457530256005,
+    "optimal_utilization": 0.2608901515151515
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "regime": "A2",
+    "seed": 0,
+    "world_type": "type2",
+    "n_sample": 10,
+    "n_population": 100,
+    "sample_discovery": 0.5,
+    "population_discovery": 0.63
+  },
+  {
+    "regime": "A2",
+    "seed": 1,
+    "world_type": "type2",
+    "n_sample": 10,
+    "n_population": 100,
+    "sample_discovery": 0.8,
+    "population_discovery": 0.81
+  },
+  {
+    "regime": "A2",
+    "seed": 2,
+    "world_type": "type2",
+    "n_sample": 10,
+    "n_population": 100,
+    "sample_discovery": 0.9,
+    "population_discovery": 0.78
+  },
+  {
+    "regime": "A2",
+    "seed": 3,
+    "world_type": "type2",
+    "n_sample": 10,
+    "n_population": 100,
+    "sample_discovery": 0.8,
+    "population_discovery": 0.9
+  },
+  {
+    "regime": "A2",
+    "seed": 4,
+    "world_type": "type2",
+    "n_sample": 10,
+    "n_population": 100,
+    "sample_discovery": 0.8,
+    "population_discovery": 0.74
+  },
+  {
+    "regime": "A3",
+    "seed": 0,
+    "world_type": "type3",
+    "n_sample": 10,
+    "n_population": 100,
+    "sample_discovery": 0.6,
+    "population_discovery": 0.43
+  },
+  {
+    "regime": "A3",
+    "seed": 1,
+    "world_type": "type3",
+    "n_sample": 10,
+    "n_population": 100,
+    "sample_discovery": 0.4,
+    "population_discovery": 0.59
+  },
+  {
+    "regime": "A3",
+    "seed": 2,
+    "world_type": "type3",
+    "n_sample": 10,
+    "n_population": 100,
+    "sample_discovery": 0.5,
+    "population_discovery": 0.53
+  },
+  {
+    "regime": "A3",
+    "seed": 3,
+    "world_type": "type3",
+    "n_sample": 10,
+    "n_population": 100,
+    "sample_discovery": 0.7,
+    "population_discovery": 0.65
+  },
+  {
+    "regime": "A3",
+    "seed": 4,
+    "world_type": "type3",
+    "n_sample": 10,
+    "n_population": 100,
+    "sample_discovery": 0.7,
+    "population_discovery": 0.8
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_type": "type2",
+    "n_sample": 10,
+    "n_population": 33,
+    "sample_discovery": 0.5,
+    "population_discovery": 0.5454545454545454
+  },
+  {
+    "regime": "B",
+    "seed": 0,
+    "world_type": "type3",
+    "n_sample": 10,
+    "n_population": 33,
+    "sample_discovery": 0.5,
+    "population_discovery": 0.48484848484848486
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_type": "type2",
+    "n_sample": 10,
+    "n_population": 33,
+    "sample_discovery": 0.9,
+    "population_discovery": 0.5151515151515151
+  },
+  {
+    "regime": "B",
+    "seed": 1,
+    "world_type": "type3",
+    "n_sample": 10,
+    "n_population": 33,
+    "sample_discovery": 0.6,
+    "population_discovery": 0.6363636363636364
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_type": "type2",
+    "n_sample": 10,
+    "n_population": 33,
+    "sample_discovery": 0.9,
+    "population_discovery": 0.8181818181818182
+  },
+  {
+    "regime": "B",
+    "seed": 2,
+    "world_type": "type3",
+    "n_sample": 10,
+    "n_population": 33,
+    "sample_discovery": 0.7,
+    "population_discovery": 0.6666666666666666
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_type": "type2",
+    "n_sample": 10,
+    "n_population": 33,
+    "sample_discovery": 0.7,
+    "population_discovery": 0.5454545454545454
+  },
+  {
+    "regime": "B",
+    "seed": 3,
+    "world_type": "type3",
+    "n_sample": 10,
+    "n_population": 33,
+    "sample_discovery": 0.6,
+    "population_discovery": 0.5151515151515151
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_type": "type2",
+    "n_sample": 10,
+    "n_population": 33,
+    "sample_discovery": 0.5,
+    "population_discovery": 0.696969696969697
+  },
+  {
+    "regime": "B",
+    "seed": 4,
+    "world_type": "type3",
+    "n_sample": 10,
+    "n_population": 33,
+    "sample_discovery": 0.9,
+    "population_discovery": 0.7878787878787878
+  }
+]

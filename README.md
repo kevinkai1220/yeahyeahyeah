@@ -375,3 +375,14 @@ Actual CPU pilot results and limitations are recorded in
 [the credit-diagnostics report](analysis/credit_diagnostics/REPORT.md).
 Corrected training does not yet establish improved held-out neural performance;
 CUDA execution remains unverified on the available CPU-only machine.
+
+## History utilization and PPO optimization diagnostics
+
+The checkpoint-only runner compares real, shuffled, reset and alternative observed
+histories from a common post-exploration snapshot. It records preference switching,
+ordered-pair probabilities/completion, observed-statistic probes and paired intervals.
+A separate small Type 3 runner tests optimizer cadence and critic scaling without
+changing historical defaults or overwriting existing runs.
+
+See [server commands and experimental controls](docs/history_optimization_diagnostics.md)
+and [executed CPU results and limitations](analysis/history_optimization_diagnostics/REPORT.md).

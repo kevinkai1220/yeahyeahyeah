@@ -1,0 +1,121 @@
+[
+  {
+    "regime": "A1",
+    "method": "dual_neural",
+    "expected_reward": 0.9105951098775091,
+    "base": 0.9105951098775091,
+    "bonus": 0.0
+  },
+  {
+    "regime": "A1",
+    "method": "dual_q_table",
+    "expected_reward": 1.304788067957043,
+    "base": 1.304788067957043,
+    "bonus": 0.0
+  },
+  {
+    "regime": "A1",
+    "method": "q_learning",
+    "expected_reward": 1.673530222581957,
+    "base": 1.673530222581957,
+    "bonus": 0.0
+  },
+  {
+    "regime": "A1",
+    "method": "single_policy",
+    "expected_reward": 0.9118859810525793,
+    "base": 0.9118859810525793,
+    "bonus": 0.0
+  },
+  {
+    "regime": "A2",
+    "method": "dual_neural",
+    "expected_reward": 2.415015142394579,
+    "base": 0.0024308049014942555,
+    "bonus": 2.4125843374930844
+  },
+  {
+    "regime": "A2",
+    "method": "dual_q_table",
+    "expected_reward": 2.1579120830875866,
+    "base": 0.013990191521548486,
+    "bonus": 2.143921891566038
+  },
+  {
+    "regime": "A2",
+    "method": "fixed_initial_action",
+    "expected_reward": 2.0078694386177722,
+    "base": -0.3549181112160168,
+    "bonus": 2.362787549833789
+  },
+  {
+    "regime": "A2",
+    "method": "q_learning",
+    "expected_reward": 2.2966132201849168,
+    "base": 1.642960301898765,
+    "bonus": 0.6536529182861518
+  },
+  {
+    "regime": "A2",
+    "method": "single_policy",
+    "expected_reward": 2.478872616019569,
+    "base": 0.03467768462612653,
+    "bonus": 2.444194931393443
+  },
+  {
+    "regime": "A3",
+    "method": "dual_neural",
+    "expected_reward": 0.5030722071584421,
+    "base": -0.19118117412009514,
+    "bonus": 0.6942533812785374
+  },
+  {
+    "regime": "A3",
+    "method": "dual_q_table",
+    "expected_reward": 1.9011179769901576,
+    "base": 0.41153702648809115,
+    "bonus": 1.489580950502066
+  },
+  {
+    "regime": "A3",
+    "method": "q_learning",
+    "expected_reward": 2.2535913990937213,
+    "base": 1.6504378680755785,
+    "bonus": 0.603153531018143
+  },
+  {
+    "regime": "A3",
+    "method": "single_policy",
+    "expected_reward": 0.5394166452530705,
+    "base": -0.16393475171995145,
+    "bonus": 0.703351396973022
+  },
+  {
+    "regime": "B",
+    "method": "dual_neural",
+    "expected_reward": 0.8311154316048335,
+    "base": 0.2054529769694921,
+    "bonus": 0.6256624546353414
+  },
+  {
+    "regime": "B",
+    "method": "dual_q_table",
+    "expected_reward": 1.8623236358361157,
+    "base": 0.6615004532285496,
+    "bonus": 1.200823182607566
+  },
+  {
+    "regime": "B",
+    "method": "q_learning",
+    "expected_reward": 2.084217132108277,
+    "base": 1.6588660889984923,
+    "bonus": 0.4253510431097842
+  },
+  {
+    "regime": "B",
+    "method": "single_policy",
+    "expected_reward": 0.8651638883820613,
+    "base": 0.20504032914211404,
+    "bonus": 0.6601235592399473
+  }
+]

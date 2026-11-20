@@ -1,0 +1,4 @@
+{
+  "verified_transitions": 32000,
+  "scope": "Replay observed actions on regenerated world/opponent/reward RNG; diagnostic only, not new neural inference"
+}

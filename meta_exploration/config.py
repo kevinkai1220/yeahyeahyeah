@@ -46,6 +46,9 @@ def load_config(path=None):
     assert t['exploration_steps'] > 0 and t['exploitation_steps'] > 0
     assert 0 <= t['gamma'] <= 1 and 0 <= t['gae_lambda'] <= 1
     assert 0 <= t['exploration_lambda'] <= 1
+    assert t.get('sequence_minibatch_size', 0) >= 0
+    assert t.get('critic_loss_scale', 1.) > 0
+    assert t.get('gradient_clipping', 'global') in ('global', 'parameter_groups')
     assert t['rollout_batch_size'] >= 1
     assert t['advantage_normalization'] in ('batch', 'legacy_episode', 'off')
     assert t['dual_credit'] in ('observed_suffix', 'legacy_cross_critic')

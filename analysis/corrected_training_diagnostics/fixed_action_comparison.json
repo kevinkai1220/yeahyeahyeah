@@ -1,0 +1,21 @@
+{
+  "reference_mean": 2.0106720823264563,
+  "reference_expected_conditional_mean": 2.0078694386177722,
+  "comparisons": [
+    {
+      "method": "single_policy",
+      "contrast": "neural minus fixed initial-greedy action",
+      "mean": 0.4710031774017973,
+      "ci_low": 0.35121600859585067,
+      "ci_high": 0.5866761161397216
+    },
+    {
+      "method": "dual_neural",
+      "contrast": "neural minus fixed initial-greedy action",
+      "mean": 0.4071457037768071,
+      "ci_low": 0.30203208161968226,
+      "ci_high": 0.5186788172942873
+    }
+  ],
+  "reference_protocol": "New CPU evaluation on identical worlds/noise/opponent seeds. Fixed action selected ONLY by Single policy initial-observation probability argmax. No history adaptation or oracle selection. Not a new trained policy."
+}

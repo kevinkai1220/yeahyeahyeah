@@ -1,0 +1,47 @@
+[
+  {
+    "path": "runs/history_optimization_diagnostics_v1/minimal_cpu/deterministic/cadence1/seed_0/costs.json",
+    "old_steps": {
+      "single_optimizer_steps": 64,
+      "dual_exploiter_optimizer_steps": 64,
+      "extra_explorer_optimizer_steps": 64,
+      "pretraining_optimizer_steps": 12
+    },
+    "actual_logged_steps": {
+      "single_optimizer_steps": 512,
+      "dual_exploiter_optimizer_steps": 512,
+      "extra_explorer_optimizer_steps": 512,
+      "pretraining_optimizer_steps": 12
+    }
+  },
+  {
+    "path": "runs/history_optimization_diagnostics_v1/minimal_cpu/deterministic/baseline/seed_0/costs.json",
+    "old_steps": {
+      "single_optimizer_steps": 64,
+      "dual_exploiter_optimizer_steps": 64,
+      "extra_explorer_optimizer_steps": 64,
+      "pretraining_optimizer_steps": 12
+    },
+    "actual_logged_steps": {
+      "single_optimizer_steps": 64,
+      "dual_exploiter_optimizer_steps": 64,
+      "extra_explorer_optimizer_steps": 64,
+      "pretraining_optimizer_steps": 12
+    }
+  },
+  {
+    "path": "runs/history_optimization_diagnostics_v1/minimal_cpu/deterministic/value_coef/seed_0/costs.json",
+    "old_steps": {
+      "single_optimizer_steps": 64,
+      "dual_exploiter_optimizer_steps": 64,
+      "extra_explorer_optimizer_steps": 64,
+      "pretraining_optimizer_steps": 12
+    },
+    "actual_logged_steps": {
+      "single_optimizer_steps": 64,
+      "dual_exploiter_optimizer_steps": 64,
+      "extra_explorer_optimizer_steps": 64,
+      "pretraining_optimizer_steps": 12
+    }
+  }
+]

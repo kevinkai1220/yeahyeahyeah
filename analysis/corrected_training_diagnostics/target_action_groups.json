@@ -1,0 +1,452 @@
+[
+  {
+    "seed": 0,
+    "method": "single_policy",
+    "preferred": "A",
+    "true_good": "A",
+    "n": 36,
+    "reward": 5.094293549814475,
+    "optimal_utilization": 0.92578125,
+    "discovery": 0.9722222222222222
+  },
+  {
+    "seed": 0,
+    "method": "single_policy",
+    "preferred": "A",
+    "true_good": "B",
+    "n": 32,
+    "reward": 0.9854881983144025,
+    "optimal_utilization": 0.01708984375,
+    "discovery": 0.4375
+  },
+  {
+    "seed": 0,
+    "method": "single_policy",
+    "preferred": "A",
+    "true_good": "C",
+    "n": 32,
+    "reward": 1.1772897952458141,
+    "optimal_utilization": 0.0615234375,
+    "discovery": 0.5
+  },
+  {
+    "seed": 0,
+    "method": "dual_neural",
+    "preferred": "A",
+    "true_good": "A",
+    "n": 36,
+    "reward": 5.21398728795516,
+    "optimal_utilization": 0.9361979166666666,
+    "discovery": 0.8611111111111112
+  },
+  {
+    "seed": 0,
+    "method": "dual_neural",
+    "preferred": "A",
+    "true_good": "B",
+    "n": 32,
+    "reward": 0.8794757496553476,
+    "optimal_utilization": 0.0146484375,
+    "discovery": 1.0
+  },
+  {
+    "seed": 0,
+    "method": "dual_neural",
+    "preferred": "A",
+    "true_good": "C",
+    "n": 32,
+    "reward": 1.2344740269165517,
+    "optimal_utilization": 0.06494140625,
+    "discovery": 0.0
+  },
+  {
+    "seed": 0,
+    "method": "dual_q_table",
+    "preferred": "A",
+    "true_good": "A",
+    "n": 36,
+    "reward": 2.2632151788665507,
+    "optimal_utilization": 0.3159722222222222,
+    "discovery": 0.8611111111111112
+  },
+  {
+    "seed": 0,
+    "method": "dual_q_table",
+    "preferred": "A",
+    "true_good": "B",
+    "n": 32,
+    "reward": 3.451225203884472,
+    "optimal_utilization": 0.63525390625,
+    "discovery": 1.0
+  },
+  {
+    "seed": 0,
+    "method": "dual_q_table",
+    "preferred": "A",
+    "true_good": "C",
+    "n": 32,
+    "reward": 1.4661246020669356,
+    "optimal_utilization": 0.033203125,
+    "discovery": 0.0
+  },
+  {
+    "seed": 1,
+    "method": "single_policy",
+    "preferred": "A",
+    "true_good": "A",
+    "n": 32,
+    "reward": 5.207579382446556,
+    "optimal_utilization": 0.94677734375,
+    "discovery": 1.0
+  },
+  {
+    "seed": 1,
+    "method": "single_policy",
+    "preferred": "A",
+    "true_good": "B",
+    "n": 38,
+    "reward": 1.2174781593334592,
+    "optimal_utilization": 0.07360197368421052,
+    "discovery": 0.47368421052631576
+  },
+  {
+    "seed": 1,
+    "method": "single_policy",
+    "preferred": "A",
+    "true_good": "C",
+    "n": 30,
+    "reward": 0.9078275297868068,
+    "optimal_utilization": 0.022395833333333334,
+    "discovery": 0.36666666666666664
+  },
+  {
+    "seed": 1,
+    "method": "dual_neural",
+    "preferred": "A",
+    "true_good": "A",
+    "n": 32,
+    "reward": 5.103116699693217,
+    "optimal_utilization": 0.93115234375,
+    "discovery": 0.9375
+  },
+  {
+    "seed": 1,
+    "method": "dual_neural",
+    "preferred": "A",
+    "true_good": "B",
+    "n": 38,
+    "reward": 1.1963330713351257,
+    "optimal_utilization": 0.05838815789473684,
+    "discovery": 0.9736842105263158
+  },
+  {
+    "seed": 1,
+    "method": "dual_neural",
+    "preferred": "A",
+    "true_good": "C",
+    "n": 30,
+    "reward": 0.8689647186875749,
+    "optimal_utilization": 0.035416666666666666,
+    "discovery": 0.4666666666666667
+  },
+  {
+    "seed": 1,
+    "method": "dual_q_table",
+    "preferred": "A",
+    "true_good": "A",
+    "n": 32,
+    "reward": 2.396284843052739,
+    "optimal_utilization": 0.345703125,
+    "discovery": 0.9375
+  },
+  {
+    "seed": 1,
+    "method": "dual_q_table",
+    "preferred": "A",
+    "true_good": "B",
+    "n": 38,
+    "reward": 2.508380729777197,
+    "optimal_utilization": 0.38898026315789475,
+    "discovery": 0.9736842105263158
+  },
+  {
+    "seed": 1,
+    "method": "dual_q_table",
+    "preferred": "A",
+    "true_good": "C",
+    "n": 30,
+    "reward": 1.6547116900327719,
+    "optimal_utilization": 0.09270833333333334,
+    "discovery": 0.4666666666666667
+  },
+  {
+    "seed": 2,
+    "method": "single_policy",
+    "preferred": "B",
+    "true_good": "A",
+    "n": 32,
+    "reward": 1.4579956870024642,
+    "optimal_utilization": 0.02880859375,
+    "discovery": 0.28125
+  },
+  {
+    "seed": 2,
+    "method": "single_policy",
+    "preferred": "B",
+    "true_good": "B",
+    "n": 32,
+    "reward": 4.81260904649802,
+    "optimal_utilization": 0.89990234375,
+    "discovery": 0.96875
+  },
+  {
+    "seed": 2,
+    "method": "single_policy",
+    "preferred": "B",
+    "true_good": "C",
+    "n": 36,
+    "reward": 0.9736359908411509,
+    "optimal_utilization": 0.09244791666666667,
+    "discovery": 0.5
+  },
+  {
+    "seed": 2,
+    "method": "dual_neural",
+    "preferred": "B",
+    "true_good": "A",
+    "n": 32,
+    "reward": 1.3107890070094204,
+    "optimal_utilization": 0.0263671875,
+    "discovery": 0.59375
+  },
+  {
+    "seed": 2,
+    "method": "dual_neural",
+    "preferred": "B",
+    "true_good": "B",
+    "n": 32,
+    "reward": 4.704869625352439,
+    "optimal_utilization": 0.88720703125,
+    "discovery": 1.0
+  },
+  {
+    "seed": 2,
+    "method": "dual_neural",
+    "preferred": "B",
+    "true_good": "C",
+    "n": 36,
+    "reward": 0.6623288842366963,
+    "optimal_utilization": 0.054253472222222224,
+    "discovery": 0.75
+  },
+  {
+    "seed": 2,
+    "method": "dual_q_table",
+    "preferred": "B",
+    "true_good": "A",
+    "n": 32,
+    "reward": 1.701789923206113,
+    "optimal_utilization": 0.1318359375,
+    "discovery": 0.59375
+  },
+  {
+    "seed": 2,
+    "method": "dual_q_table",
+    "preferred": "B",
+    "true_good": "B",
+    "n": 32,
+    "reward": 2.691558809892367,
+    "optimal_utilization": 0.4814453125,
+    "discovery": 1.0
+  },
+  {
+    "seed": 2,
+    "method": "dual_q_table",
+    "preferred": "B",
+    "true_good": "C",
+    "n": 36,
+    "reward": 1.6685298773487718,
+    "optimal_utilization": 0.21571180555555555,
+    "discovery": 0.75
+  },
+  {
+    "seed": 3,
+    "method": "single_policy",
+    "preferred": "A",
+    "true_good": "A",
+    "n": 33,
+    "reward": 5.131677049446779,
+    "optimal_utilization": 0.9408143939393939,
+    "discovery": 0.9696969696969697
+  },
+  {
+    "seed": 3,
+    "method": "single_policy",
+    "preferred": "A",
+    "true_good": "B",
+    "n": 36,
+    "reward": 1.4799522792948214,
+    "optimal_utilization": 0.018229166666666668,
+    "discovery": 0.25
+  },
+  {
+    "seed": 3,
+    "method": "single_policy",
+    "preferred": "A",
+    "true_good": "C",
+    "n": 31,
+    "reward": 1.270989659406481,
+    "optimal_utilization": 0.09425403225806452,
+    "discovery": 0.5161290322580645
+  },
+  {
+    "seed": 3,
+    "method": "dual_neural",
+    "preferred": "A",
+    "true_good": "A",
+    "n": 33,
+    "reward": 5.095454283972567,
+    "optimal_utilization": 0.9327651515151515,
+    "discovery": 0.9696969696969697
+  },
+  {
+    "seed": 3,
+    "method": "dual_neural",
+    "preferred": "A",
+    "true_good": "B",
+    "n": 36,
+    "reward": 1.3596701571917515,
+    "optimal_utilization": 0.0234375,
+    "discovery": 0.8611111111111112
+  },
+  {
+    "seed": 3,
+    "method": "dual_neural",
+    "preferred": "A",
+    "true_good": "C",
+    "n": 31,
+    "reward": 1.0635019989889918,
+    "optimal_utilization": 0.06401209677419355,
+    "discovery": 0.8709677419354839
+  },
+  {
+    "seed": 3,
+    "method": "dual_q_table",
+    "preferred": "A",
+    "true_good": "A",
+    "n": 33,
+    "reward": 2.3087884074885743,
+    "optimal_utilization": 0.3925189393939394,
+    "discovery": 0.9696969696969697
+  },
+  {
+    "seed": 3,
+    "method": "dual_q_table",
+    "preferred": "A",
+    "true_good": "B",
+    "n": 36,
+    "reward": 2.0562672776719313,
+    "optimal_utilization": 0.2769097222222222,
+    "discovery": 0.8611111111111112
+  },
+  {
+    "seed": 3,
+    "method": "dual_q_table",
+    "preferred": "A",
+    "true_good": "C",
+    "n": 31,
+    "reward": 1.8863383261850093,
+    "optimal_utilization": 0.21824596774193547,
+    "discovery": 0.8709677419354839
+  },
+  {
+    "seed": 4,
+    "method": "single_policy",
+    "preferred": "A",
+    "true_good": "A",
+    "n": 31,
+    "reward": 5.029098951708063,
+    "optimal_utilization": 0.9490927419354839,
+    "discovery": 0.967741935483871
+  },
+  {
+    "seed": 4,
+    "method": "single_policy",
+    "preferred": "A",
+    "true_good": "B",
+    "n": 39,
+    "reward": 1.377584593076686,
+    "optimal_utilization": 0.005208333333333333,
+    "discovery": 0.05128205128205128
+  },
+  {
+    "seed": 4,
+    "method": "single_policy",
+    "preferred": "A",
+    "true_good": "C",
+    "n": 30,
+    "reward": 1.357673739570586,
+    "optimal_utilization": 0.08645833333333333,
+    "discovery": 0.5
+  },
+  {
+    "seed": 4,
+    "method": "dual_neural",
+    "preferred": "A",
+    "true_good": "A",
+    "n": 31,
+    "reward": 5.186556295580182,
+    "optimal_utilization": 0.9737903225806451,
+    "discovery": 0.9354838709677419
+  },
+  {
+    "seed": 4,
+    "method": "dual_neural",
+    "preferred": "A",
+    "true_good": "B",
+    "n": 39,
+    "reward": 1.3203171080128584,
+    "optimal_utilization": 0.04046474358974359,
+    "discovery": 0.41025641025641024
+  },
+  {
+    "seed": 4,
+    "method": "dual_neural",
+    "preferred": "A",
+    "true_good": "C",
+    "n": 30,
+    "reward": 1.3347472577052046,
+    "optimal_utilization": 0.04375,
+    "discovery": 0.9666666666666667
+  },
+  {
+    "seed": 4,
+    "method": "dual_q_table",
+    "preferred": "A",
+    "true_good": "A",
+    "n": 31,
+    "reward": 2.2679824154124772,
+    "optimal_utilization": 0.34122983870967744,
+    "discovery": 0.9354838709677419
+  },
+  {
+    "seed": 4,
+    "method": "dual_q_table",
+    "preferred": "A",
+    "true_good": "B",
+    "n": 39,
+    "reward": 1.4009487043885998,
+    "optimal_utilization": 0.10136217948717949,
+    "discovery": 0.41025641025641024
+  },
+  {
+    "seed": 4,
+    "method": "dual_q_table",
+    "preferred": "A",
+    "true_good": "C",
+    "n": 30,
+    "reward": 2.8531557603531144,
+    "optimal_utilization": 0.48541666666666666,
+    "discovery": 0.9666666666666667
+  }
+]

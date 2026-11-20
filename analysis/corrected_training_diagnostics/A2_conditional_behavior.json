@@ -1,0 +1,164 @@
+[
+  {
+    "method": "single_policy",
+    "preferred_matches_optimal": true,
+    "condition": "all",
+    "n": 164,
+    "optimal_use": 0.9322599085365854,
+    "reward": 5.056634193013666,
+    "reach90": 0.9695121951219512
+  },
+  {
+    "method": "single_policy",
+    "preferred_matches_optimal": true,
+    "condition": "discovered",
+    "n": 160,
+    "optimal_use": 0.94326171875,
+    "reward": 5.1157223142511,
+    "reach90": 0.98125
+  },
+  {
+    "method": "single_policy",
+    "preferred_matches_optimal": true,
+    "condition": "supported",
+    "n": 156,
+    "optimal_use": 0.9551282051282052,
+    "reward": 5.18893957501958,
+    "reach90": 0.9935897435897436
+  },
+  {
+    "method": "single_policy",
+    "preferred_matches_optimal": false,
+    "condition": "all",
+    "n": 336,
+    "optimal_use": 0.04943266369047619,
+    "reward": 1.2248500661008503,
+    "reach90": 0.0
+  },
+  {
+    "method": "single_policy",
+    "preferred_matches_optimal": false,
+    "condition": "discovered",
+    "n": 128,
+    "optimal_use": 0.1051025390625,
+    "reward": 0.22873559140317368,
+    "reach90": 0.0
+  },
+  {
+    "method": "single_policy",
+    "preferred_matches_optimal": false,
+    "condition": "supported",
+    "n": 63,
+    "optimal_use": 0.13988095238095238,
+    "reward": 0.04899542441977535,
+    "reach90": 0.0
+  },
+  {
+    "method": "dual_neural",
+    "preferred_matches_optimal": true,
+    "condition": "all",
+    "n": 164,
+    "optimal_use": 0.9320693597560976,
+    "reward": 5.063977690865409,
+    "reach90": 1.0
+  },
+  {
+    "method": "dual_neural",
+    "preferred_matches_optimal": true,
+    "condition": "discovered",
+    "n": 154,
+    "optimal_use": 0.9332386363636364,
+    "reward": 5.063482186012241,
+    "reach90": 1.0
+  },
+  {
+    "method": "dual_neural",
+    "preferred_matches_optimal": true,
+    "condition": "supported",
+    "n": 129,
+    "optimal_use": 0.9385901162790697,
+    "reward": 5.0824218001829164,
+    "reach90": 1.0
+  },
+  {
+    "method": "dual_neural",
+    "preferred_matches_optimal": false,
+    "condition": "all",
+    "n": 336,
+    "optimal_use": 0.042689732142857144,
+    "reward": 1.1262397373503117,
+    "reach90": 0.0
+  },
+  {
+    "method": "dual_neural",
+    "preferred_matches_optimal": false,
+    "condition": "discovered",
+    "n": 232,
+    "optimal_use": 0.0412176724137931,
+    "reward": 1.0852691004642316,
+    "reach90": 0.0
+  },
+  {
+    "method": "dual_neural",
+    "preferred_matches_optimal": false,
+    "condition": "supported",
+    "n": 151,
+    "optimal_use": 0.041390728476821195,
+    "reward": 0.9678643902198003,
+    "reach90": 0.0
+  },
+  {
+    "method": "dual_q_table",
+    "preferred_matches_optimal": true,
+    "condition": "all",
+    "n": 164,
+    "optimal_use": 0.3742378048780488,
+    "reward": 2.3828305832826158,
+    "reach90": 0.09146341463414634
+  },
+  {
+    "method": "dual_q_table",
+    "preferred_matches_optimal": true,
+    "condition": "discovered",
+    "n": 154,
+    "optimal_use": 0.39742288961038963,
+    "reward": 2.440015858460239,
+    "reach90": 0.09740259740259741
+  },
+  {
+    "method": "dual_q_table",
+    "preferred_matches_optimal": true,
+    "condition": "supported",
+    "n": 129,
+    "optimal_use": 0.4367732558139535,
+    "reward": 2.5523515891832163,
+    "reach90": 0.10852713178294573
+  },
+  {
+    "method": "dual_q_table",
+    "preferred_matches_optimal": false,
+    "condition": "all",
+    "n": 336,
+    "optimal_use": 0.2565104166666667,
+    "reward": 2.0523010349398416,
+    "reach90": 0.07738095238095238
+  },
+  {
+    "method": "dual_q_table",
+    "preferred_matches_optimal": false,
+    "condition": "discovered",
+    "n": 232,
+    "optimal_use": 0.3597790948275862,
+    "reward": 2.3815203967548255,
+    "reach90": 0.11206896551724138
+  },
+  {
+    "method": "dual_q_table",
+    "preferred_matches_optimal": false,
+    "condition": "supported",
+    "n": 151,
+    "optimal_use": 0.4600579470198676,
+    "reward": 2.7369274326597215,
+    "reach90": 0.17218543046357615
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "full_suite": {
+    "passed": 95,
+    "skipped": 1,
+    "skip_reason": "CUDA unavailable",
+    "seconds": 69.11
+  },
+  "original_meta_suite": {
+    "passed": 57,
+    "skipped": 1
+  },
+  "cpu_smoke": "frozen and online, 3 seeds, 6 worlds each A2/A3 (prior pilot checkpoints)",
+  "final_frozen": {
+    "rows": 900,
+    "checkpoint_runs": 6,
+    "training_performed": false
+  },
+  "minimal_training": {
+    "variants": [
+      "baseline",
+      "cadence1",
+      "value_coef"
+    ],
+    "seeds": [
+      0
+    ],
+    "episodes": 128
+  },
+  "full_study_checkpoint_evaluated": false,
+  "git_diff_check": "passed"
+}
